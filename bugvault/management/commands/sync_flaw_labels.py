@@ -7,7 +7,7 @@ from collectors.framework.models import CollectorMetadata
 
 
 class Command(BaseCommand):
-    help = "Synchronizes flaw labels definitions to OSIDB"
+    help = "Synchronizes flaw labels definitions to BUGVAULT"
 
     def handle(self, *args, **options):
         now = timezone.now()

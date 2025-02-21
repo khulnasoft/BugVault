@@ -112,7 +112,7 @@ class NullStrFieldsMixin(models.Model):
     See https://docs.djangoproject.com/en/4.0/ref/models/fields/#django.db.models.Field.null
     """
 
-    # TODO: Once OSIDB is autoritative source, we can stop using this compatibility
+    # TODO: Once BUGVAULT is autoritative source, we can stop using this compatibility
     # mixin as we would not allow the null values for the Char/Text fields anymore
     def clean(self):
         super().clean()
@@ -522,7 +522,7 @@ class ACLMixin(models.Model):
         """
         unembargo the whole instance context internally
 
-        in the Bugzilla world a lot of OSIDB entities are actually parts
+        in the Bugzilla world a lot of BUGVAULT entities are actually parts
         of the flaw bug and we will update them by a single query afterwards
         """
         # not every related model class has
@@ -768,7 +768,7 @@ class AlertMixin(ValidateMixin):
         # to lock).
         #
         # transaction.atomic() is there because after IntegrityError, the
-        # transaction can't continue and OSIDB uses ATOMIC_REQUESTS, see
+        # transaction can't continue and BUGVAULT uses ATOMIC_REQUESTS, see
         # https://stackoverflow.com/a/48836554 for use of nested tx.
         #
         # References:

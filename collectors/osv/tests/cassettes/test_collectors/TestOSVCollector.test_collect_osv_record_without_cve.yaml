@@ -566,7 +566,7 @@ interactions:
       string: '{"expand": "description,lead,url,projectKeys", "self": "https://example.com/rest/api/2/project/12337520",
         "id": "12337520", "key": "OSIM", "description": "This project will serve Incident
         Response team as a task repository, managing the workflow in PSIR and integrating
-        with OSIDB.", "lead": {"self": "https://example.com/rest/api/2/user?username=concosta@redhat.com",
+        with BUGVAULT.", "lead": {"self": "https://example.com/rest/api/2/user?username=concosta@redhat.com",
         "key": "JIRAUSER196381", "name": "concosta@redhat.com", "avatarUrls": {"48x48":
         "https://example.com/secure/useravatar?ownerId=JIRAUSER196381&avatarId=41326",
         "24x24": "https://example.com/secure/useravatar?size=small&ownerId=JIRAUSER196381&avatarId=41326",

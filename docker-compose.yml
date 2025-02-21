@@ -88,9 +88,9 @@ services:
         JIRA_TASKMAN_PROJECT_KEY: ${JIRA_TASKMAN_PROJECT_KEY}
         JIRA_TASKMAN_URL: ${JIRA_TASKMAN_URL}
         JIRA_URL: ${JIRA_URL}
-        OSIDB_CORS_ALLOWED_ORIGINS: ${OSIDB_CORS_ALLOWED_ORIGINS}
-        OSIDB_CORS_ALLOW_HEADERS: ${OSIDB_CORS_ALLOW_HEADERS}
-        OSIDB_DEBUG: ${OSIDB_DEBUG}
+        BUGVAULT_CORS_ALLOWED_ORIGINS: ${BUGVAULT_CORS_ALLOWED_ORIGINS}
+        BUGVAULT_CORS_ALLOW_HEADERS: ${BUGVAULT_CORS_ALLOW_HEADERS}
+        BUGVAULT_DEBUG: ${BUGVAULT_DEBUG}
         OSV_START_DATE: ${OSV_START_DATE}
         PRODUCT_DEF_URL: ${PRODUCT_DEF_URL}
         PRODUCT_DEF_BRANCH: ${PRODUCT_DEF_BRANCH}
@@ -145,7 +145,7 @@ services:
       command: ./scripts/run-celery.sh
       deploy:
         mode: replicated
-        replicas: ${OSIDB_CELERY_WORKERS_NO:-2}
+        replicas: ${BUGVAULT_CELERY_WORKERS_NO:-2}
       volumes:
         - ${PWD}:/opt/app-root/src:z
       environment:
@@ -155,7 +155,7 @@ services:
         ET_URL: ${ET_URL}
         JIRA_AUTH_TOKEN: ${JIRA_AUTH_TOKEN:?Variable JIRA_AUTH_TOKEN must be set.}
         JIRA_URL: ${JIRA_URL}
-        OSIDB_DEBUG: ${OSIDB_DEBUG}
+        BUGVAULT_DEBUG: ${BUGVAULT_DEBUG}
         PRODUCT_DEF_URL: ${PRODUCT_DEF_URL}
         PRODUCT_DEF_BRANCH: ${PRODUCT_DEF_BRANCH}
         PS_CONSTANTS_URL: ${PS_CONSTANTS_URL}
@@ -194,7 +194,7 @@ services:
         ET_URL: ${ET_URL}
         JIRA_AUTH_TOKEN: ${JIRA_AUTH_TOKEN:?Variable JIRA_AUTH_TOKEN must be set.}
         JIRA_URL: ${JIRA_URL}
-        OSIDB_DEBUG: ${OSIDB_DEBUG}
+        BUGVAULT_DEBUG: ${BUGVAULT_DEBUG}
         PRODUCT_DEF_URL: ${PRODUCT_DEF_URL}
         PRODUCT_DEF_BRANCH: ${PRODUCT_DEF_BRANCH}
         PS_CONSTANTS_URL: ${PS_CONSTANTS_URL}
@@ -231,7 +231,7 @@ services:
       environment:
         DJANGO_SETTINGS_MODULE: "config.settings_local"
         ET_URL: ${ET_URL}
-        OSIDB_DEBUG: ${OSIDB_DEBUG}
+        BUGVAULT_DEBUG: ${BUGVAULT_DEBUG}
         PRODUCT_DEF_URL: ${PRODUCT_DEF_URL}
         PRODUCT_DEF_BRANCH: ${PRODUCT_DEF_BRANCH}
         PS_CONSTANTS_URL: ${PS_CONSTANTS_URL}

@@ -1,4 +1,4 @@
-# OSIDB -- operations
+# BUGVAULT -- operations
 
 ## Release
 
@@ -97,7 +97,7 @@ release. Announce to the users that there may be a short period of production
 unavailability due to the pod deployment.
 
 Create an `X.Y.Z` tag based off of the `release-X.Y.Z` branch via the
-[releases](https://github.com/RedHatProductSecurity/bugvault/releases) page on GitHub.
+[releases](https://github.com/KhulnaSoft/bugvault/releases) page on GitHub.
 The Changelog should be copied into the release's description so its release link
 can then be used for the new release announcements. The production deployment
 should then happen automatically which can be observed by the changed version
@@ -123,7 +123,7 @@ Descriptions of the scripts located in the `scripts` directory
 
 ### update_release.sh
 
-Updates OSIDB version in all places. Run it from project root directory with X.Y.Z being the target version.
+Updates BUGVAULT version in all places. Run it from project root directory with X.Y.Z being the target version.
 
 ```
 scripts/update_release.sh X.Y.Z
@@ -200,9 +200,9 @@ management command option:
 
 ## Versioning
 
-OSIDB uses [Semantic Versioning](https://semver.org/). We start versioning with 0.0.1.
-Additionally, we consider OSIDB 1.0.0 as the first General Availability version.
+BUGVAULT uses [Semantic Versioning](https://semver.org/). We start versioning with 0.0.1.
+Additionally, we consider BUGVAULT 1.0.0 as the first General Availability version.
 The list of released versions can be found
-[here](https://github.com/RedHatProductSecurity/bugvault/tags) - except those preceding the repository migration.
+[here](https://github.com/KhulnaSoft/bugvault/tags) - except those preceding the repository migration.
 
-To update OSIDB to a new version use [scripts/update_release.sh](../../scripts/update_release.sh).
+To update BUGVAULT to a new version use [scripts/update_release.sh](../../scripts/update_release.sh).

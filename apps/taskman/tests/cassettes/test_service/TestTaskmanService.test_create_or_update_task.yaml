@@ -1735,7 +1735,7 @@ interactions:
         "32x32": "https://example.com/secure/useravatar?size=medium&avatarId=17283"},
         "displayName": "Ondrej Soukup", "active": true, "timeZone": "UTC"}, "aggregateprogress":
         {"progress": 0, "total": 0}, "customfield_12315542": null, "customfield_12313240":
-        {"id": 2861, "name": "OSIDB"}, "customfield_12319742": null, "progress": {"progress":
+        {"id": 2861, "name": "BUGVAULT"}, "customfield_12319742": null, "progress": {"progress":
         0, "total": 0}, "votes": {"self": "https://example.com/rest/api/2/issue/OSIM-14332/votes",
         "votes": 0, "hasVoted": false}, "customfield_12319743": null, "worklog": {"startAt":
         0, "maxResults": 20, "total": 0, "worklogs": []}, "archivedby": null, "customfield_12325158":

@@ -150,7 +150,7 @@ class CVEorgCollector(Collector):
 
     def collect(self) -> str:
         """
-        Collect vulnerability data from the cvelistV5 repository and store them in OSIDB.
+        Collect vulnerability data from the cvelistV5 repository and store them in BUGVAULT.
         """
         if not self.snippet_creation_enabled:
             msg = "Snippet creation is disabled. The CVEorg collector is not running."

@@ -151,7 +151,7 @@ class TestBZImportCollector:
     def test_empty_affiliation(self, flaw_collector):
         """
         test that syncing a flaw with an acknowledgment with an empty (null) affilitation works
-        this is a reproducer of the bug tracked by https://issues.redhat.com/browse/OSIDB-1195
+        this is a reproducer of the bug tracked by https://issues.redhat.com/browse/BUGVAULT-1195
         """
         try:
             # known public flaw with empty
@@ -185,7 +185,7 @@ class TestBugzillaTrackerCollector:
     def test_sync_embargoed_tracker(self, bz_tracker_collector):
         """
         test that an embargoed tracker loaded from Bugzilla is preserved as embargoed
-        reproducer for https://issues.redhat.com/browse/OSIDB-2118
+        reproducer for https://issues.redhat.com/browse/BUGVAULT-2118
         """
         tracker_id = "1642774"
         assert Tracker.objects.count() == 0

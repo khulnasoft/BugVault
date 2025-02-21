@@ -231,7 +231,7 @@ class NVDCollector(Collector, NVDQuerier):
     @staticmethod
     def get_original_nvd_cvss(flaw: Flaw, cvss_version: str) -> Union[str, None]:
         """
-        Return NVD CVSS data stored in OSIDB from `flaw` for the given `cvss_version`.
+        Return NVD CVSS data stored in BUGVAULT from `flaw` for the given `cvss_version`.
         `cvss_version` is of FlawCVSS.CVSSVersion enum type.
         """
         return (
@@ -287,7 +287,7 @@ class NVDCollector(Collector, NVDQuerier):
                 (original_cvss4, new_cvss4, FlawCVSS.CVSSVersion.VERSION4),
             ]:
                 if original_cvss and new_cvss is None:
-                    # NVD CVSS was removed, so do the same in OSIDB
+                    # NVD CVSS was removed, so do the same in BUGVAULT
                     flaw.cvss_scores.filter(issuer=FlawCVSS.CVSSIssuer.NIST).filter(
                         version=version
                     ).delete()

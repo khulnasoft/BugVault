@@ -7,7 +7,7 @@ from rest_framework.viewsets import ModelViewSet
 
 from bugvault.api_views import get_valid_http_methods
 from bugvault.core import set_user_acls
-from bugvault.exceptions import OSIDBException
+from bugvault.exceptions import BUGVAULTException
 from bugvault.mixins import Alert
 from bugvault.models import Flaw, FlawReference, PsContact
 from bugvault.tests.factories import AffectFactory, FlawFactory, FlawReferenceFactory
@@ -58,7 +58,7 @@ class TestCore(object):
         )
 
     def test_flaw_exceptions(self):
-        with pytest.raises(OSIDBException):
+        with pytest.raises(BUGVAULTException):
             set_user_acls(1)
 
     def test_valid_http_methods(self, settings):
@@ -114,7 +114,7 @@ class TestModelDefinitions:
     def test_ps_contact_empty(self):
         """
         test that even an empty PS contact can be properly stored to DB as there
-        are no restrictions on the attributes being present - reproducer for OSIDB-1445
+        are no restrictions on the attributes being present - reproducer for BUGVAULT-1445
         """
         try:
             PsContact(username="unique_name").save()

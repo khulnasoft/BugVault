@@ -138,7 +138,7 @@ class BugzillaSaver(BugzillaQuerier):
             raise DataInconsistencyException(
                 "Save operation based on an outdated model instance: "
                 f"Bugzilla last change time {self.actual_last_change} "
-                f"differs from OSIDB {self.stored_last_change}. "
+                f"differs from BUGVAULT {self.stored_last_change}. "
                 "You need to wait a minute for the data refresh."
             )
 
@@ -202,7 +202,7 @@ class FlawBugzillaSaver(BugzillaSaver):
         """
         # TODO flaws with multiple CVEs introduce a paradox behavior
         # when modifying a flaw the way that the CVE ID is removed as
-        # in OSIDB it basically results in a flaw removal
+        # in BUGVAULT it basically results in a flaw removal
         # so let us restrict it for now - should be rare
         if (
             self.model.objects.filter(meta_attr__bz_id=self.flaw.bz_id).count() > 1
@@ -210,7 +210,7 @@ class FlawBugzillaSaver(BugzillaSaver):
         ):
             raise UnsaveableFlawError(
                 "Unable to remove a CVE ID from a flaw with multiple CVEs "
-                "due to an ambigous N to 1 OSIDB to Buzilla flaw mapping"
+                "due to an ambigous N to 1 BUGVAULT to Buzilla flaw mapping"
             )
 
         return super().update()

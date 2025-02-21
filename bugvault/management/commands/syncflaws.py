@@ -7,7 +7,7 @@ from collectors.bzimport.collectors import FlawCollector
 
 
 class Command(BaseCommand):
-    help = "Synchronizes a list of Bugzilla IDs to OSIDB"
+    help = "Synchronizes a list of Bugzilla IDs to BUGVAULT"
 
     def add_arguments(self, parser):
         parser.add_argument(

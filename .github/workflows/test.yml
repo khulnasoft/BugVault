@@ -92,7 +92,7 @@ jobs:
         run: psql -f etc/pg/local-dev-app-user.sql postgres://postgres:test@postgres:5432/
       - name: Setup LDAP service
         run: ldapadd -c -H "ldap://testldap:1389" -x -D "cn=admin,dc=redhat,dc=com" -w "adminpassword" -f etc/openldap/local-export.ldif || true
-      - name: Run OSIDB tests
+      - name: Run BUGVAULT tests
         env:
           ET_URL: ${{ secrets.ET_URL }}
           PRODUCT_DEF_URL: ${{ secrets.PRODUCT_DEF_URL }}

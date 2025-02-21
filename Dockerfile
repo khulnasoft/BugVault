@@ -1,6 +1,6 @@
 FROM registry.redhat.io/ubi9/ubi:9.4
 
-LABEL summary="OSIDB" \
+LABEL summary="BUGVAULT" \
       maintainer="Product Security DevOps <prodsec-dev@redhat.com>"
 
 ARG PYPI_MIRROR="https://pypi.python.org/simple"

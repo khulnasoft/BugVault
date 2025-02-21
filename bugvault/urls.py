@@ -30,7 +30,7 @@ from .api_views import (
     healthy,
     whoami,
 )
-from .constants import OSIDB_API_VERSION
+from .constants import BUGVAULT_API_VERSION
 
 router = routers.DefaultRouter(trailing_slash=False)
 router.register(r"flaws", FlawView)
@@ -73,35 +73,35 @@ urlpatterns = [
     path("healthy", healthy),
     path("whoami", whoami),
     re_path(
-        rf"^api/{OSIDB_API_VERSION}/flaws/(?P<flaw_id>[^/.]+)/promote$",
+        rf"^api/{BUGVAULT_API_VERSION}/flaws/(?P<flaw_id>[^/.]+)/promote$",
         promote.as_view(),
     ),
     re_path(
-        rf"^api/{OSIDB_API_VERSION}/flaws/(?P<flaw_id>[^/.]+)/reject$",
+        rf"^api/{BUGVAULT_API_VERSION}/flaws/(?P<flaw_id>[^/.]+)/reject$",
         reject.as_view(),
     ),
-    path(f"api/{OSIDB_API_VERSION}/status", StatusView.as_view()),
-    path(f"api/{OSIDB_API_VERSION}/manifest", ManifestView.as_view()),
-    path(f"api/{OSIDB_API_VERSION}/", include(router.urls)),
+    path(f"api/{BUGVAULT_API_VERSION}/status", StatusView.as_view()),
+    path(f"api/{BUGVAULT_API_VERSION}/manifest", ManifestView.as_view()),
+    path(f"api/{BUGVAULT_API_VERSION}/", include(router.urls)),
     path(
-        f"api/{OSIDB_API_VERSION}/schema/", SpectacularAPIView.as_view(), name="schema"
+        f"api/{BUGVAULT_API_VERSION}/schema/", SpectacularAPIView.as_view(), name="schema"
     ),
     path(
-        f"api/{OSIDB_API_VERSION}/schema/swagger-ui/",
+        f"api/{BUGVAULT_API_VERSION}/schema/swagger-ui/",
         SpectacularSwaggerView.as_view(url_name="schema"),
     ),
 ]
 
 urlpatterns.append(
     path(
-        f"api/{OSIDB_API_VERSION}/suggestions",
+        f"api/{BUGVAULT_API_VERSION}/suggestions",
         FlawSuggestionsView.as_view(),
     )
 )
 
 urlpatterns.append(
     path(
-        f"api/{OSIDB_API_VERSION}/introspection",
+        f"api/{BUGVAULT_API_VERSION}/introspection",
         FlawIntrospectionView.as_view(),
     )
 )
@@ -110,7 +110,7 @@ urlpatterns.append(
 if get_env() != "prod":
     urlpatterns.append(
         path(
-            f"api/{OSIDB_API_VERSION}/jira_stage_forwarder",
+            f"api/{BUGVAULT_API_VERSION}/jira_stage_forwarder",
             JiraStageForwarderView.as_view(),
         )
     )

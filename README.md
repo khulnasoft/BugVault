@@ -1,4 +1,4 @@
-# OSIDB
+# BUGVAULT
 
 Open Security Issue Database
 
@@ -14,7 +14,7 @@ Open Security Issue Database
 
 ## Introduction
 
-OSIDB projects aims to create an easy-to-use open-source
+BUGVAULT projects aims to create an easy-to-use open-source
 [PSIRT](https://www.first.org/standards/frameworks/psirts/) tooling framework
 designed for collecting, storing, processing, and providing security
 vulnerability data across software offering portfolio.
@@ -35,7 +35,7 @@ vulnerability data across software offering portfolio.
 
 ## Technologies
 
-OSIDB project is build on [Django](https://www.djangoproject.com/) framework.
+BUGVAULT project is build on [Django](https://www.djangoproject.com/) framework.
 [PostgreSQL](https://www.postgresql.org/) provide the underlying database.
 [Celery](https://docs.celeryq.dev/) with [Redis](https://redis.io/)
 is used for asynchronous workloads execution.
@@ -43,7 +43,7 @@ is used for asynchronous workloads execution.
 Authentication is performed by [Kerberos](https://web.mit.edu/kerberos/)
 and the authorization by [LDAP](https://ldap.com/).
 [Bugzilla](https://www.bugzilla.org/) and [Jira](https://jira.atlassian.com/)
-are currently supported as the data sources. OSIDB runs as a set cooperating containers.
+are currently supported as the data sources. BUGVAULT runs as a set cooperating containers.
 The deployment is done by [Podman](https://podman.io/) and
 [Podman Compose](https://github.com/containers/podman-compose).
 
@@ -77,7 +77,7 @@ can be found [here](docs/developer/DEVELOP.md).
 
 ## Usage
 
-Once you have done setting up your OSIDB instance you can start using it.
+Once you have done setting up your BUGVAULT instance you can start using it.
 Follow the [tutorial](docs/user/TUTORIAL.md) and numerous examples in there
 to get familiar with how to authenticate to and query the service REST API.
 
@@ -85,7 +85,7 @@ All the user facing documentation can be found [here](docs/user/).
 
 ## Contributing
 
-OSIDB project is an open initiative and we welcome any help.
+BUGVAULT project is an open initiative and we welcome any help.
 If you are interested in joining us please start by reading
 [contributing](docs/developer/CONTRIBUTING.md) guidelines.
 
@@ -93,7 +93,7 @@ All the developer facing documentation can be found [here](docs/developer).
 
 ## Status
 
-OSIDB service is still under heavy development and new features, improvements,
+BUGVAULT service is still under heavy development and new features, improvements,
 and bug fixes are being continuously delivered. Everything is potentially a
 subject to change. However, the breaking changes are being considered carefully
 as the project is already in a general availability stage and is being actively

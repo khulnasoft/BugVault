@@ -5,7 +5,7 @@
 from django.apps import AppConfig
 
 
-class OSIDBConfig(AppConfig):
+class BUGVAULTConfig(AppConfig):
     name = "bugvault"
 
     def ready(self):

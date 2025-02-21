@@ -4,15 +4,15 @@
 from rest_framework import status
 
 
-class OSIDBException(Exception):
+class BUGVAULTException(Exception):
     """Base Exception class for bugvault specific exceptions"""
 
 
-class DataInconsistencyException(OSIDBException):
+class DataInconsistencyException(BUGVAULTException):
     """Data Inconsistency Exception"""
 
     http_code = status.HTTP_409_CONFLICT
 
 
-class InvalidTestEnvironmentException(OSIDBException):
+class InvalidTestEnvironmentException(BUGVAULTException):
     """Invalid Test Environment Exception"""

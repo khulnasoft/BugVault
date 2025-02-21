@@ -1,12 +1,12 @@
 interactions:
 - request:
-    body: '{"fields": {"issuetype": {"name": "Bug"}, "project": {"key": "OSIDB"},
+    body: '{"fields": {"issuetype": {"name": "Bug"}, "project": {"key": "BUGVAULT"},
       "priority": {"name": "Minor"}, "description": "Public Security Tracking Issue\n\nFlaws:\n------\n\nsample
       title\nhttps://example.com/show_bug.cgi?id=1663908\n\nComment zero for None\n\nsample
       title\nhttps://example.com/show_bug.cgi?id=1663907\n\nComment zero for None\n\n~~~",
       "labels": ["Security", "SecurityTracking", "flaw:bz#1663907", "flaw:bz#1663908",
       "pscomponent:openshift"], "duedate": "2024-11-26T00:19:54+00:00", "summary":
-      "openshift: various flaws [openshift-4.9.z]", "security": null}, "key": "OSIDB-920"}'
+      "openshift: various flaws [openshift-4.9.z]", "security": null}, "key": "BUGVAULT-920"}'
     headers:
       Accept:
       - application/json,*.*;q=0.9
@@ -25,7 +25,7 @@ interactions:
       X-Atlassian-Token:
       - no-check
     method: PUT
-    uri: https://example.com/rest/api/2/issue/OSIDB-920
+    uri: https://example.com/rest/api/2/issue/BUGVAULT-920
   response:
     body:
       string: ''
@@ -97,18 +97,18 @@ interactions:
       X-Atlassian-Token:
       - no-check
     method: GET
-    uri: https://example.com/rest/api/2/issue/OSIDB-920
+    uri: https://example.com/rest/api/2/issue/BUGVAULT-920
   response:
     body:
       string: '{"expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
         "id": "15283457", "self": "https://example.com/rest/api/2/issue/15283457",
-        "key": "OSIDB-920", "fields": {"issuetype": {"self": "https://example.com/rest/api/2/issuetype/1",
+        "key": "BUGVAULT-920", "fields": {"issuetype": {"self": "https://example.com/rest/api/2/issuetype/1",
         "id": "1", "description": "A problem that impairs or prevents the functions
         of the product.", "iconUrl": "https://example.com/secure/viewavatar?size=xsmall&avatarId=13263&avatarType=issuetype",
         "name": "Bug", "subtask": false, "avatarId": 13263}, "customfield_12324544":
         "0.0", "customfield_12318341": null, "customfield_12319751": 0.0, "timespent":
         null, "customfield_12320940": null, "project": {"self": "https://example.com/rest/api/2/project/12332734",
-        "id": "12332734", "key": "OSIDB", "name": "Open Security Issue Database",
+        "id": "12332734", "key": "BUGVAULT", "name": "Open Security Issue Database",
         "projectTypeKey": "software", "avatarUrls": {"48x48": "https://example.com/secure/projectavatar?pid=12332734&avatarId=10010",
         "24x24": "https://example.com/secure/projectavatar?size=small&pid=12332734&avatarId=10010",
         "16x16": "https://example.com/secure/projectavatar?size=xsmall&pid=12332734&avatarId=10010",
@@ -126,7 +126,7 @@ interactions:
         "customfield_12310183": null, "resolutiondate": null, "workratio": -1, "customfield_12316840":
         null, "customfield_12317379": null, "customfield_12316841": null, "customfield_12315950":
         null, "customfield_12310940": null, "customfield_12319040": null, "lastViewed":
-        "2024-06-17T12:45:21.091+0000", "watches": {"self": "https://example.com/rest/api/2/issue/OSIDB-920/watchers",
+        "2024-06-17T12:45:21.091+0000", "watches": {"self": "https://example.com/rest/api/2/issue/BUGVAULT-920/watchers",
         "watchCount": 3, "isWatching": true}, "created": "2023-05-26T13:54:09.520+0000",
         "customfield_12321240": null, "customfield_12313140": null, "priority": {"self":
         "https://example.com/rest/api/2/priority/4", "iconUrl": "https://example.com/images/icons/priorities/minor.svg",
@@ -178,7 +178,7 @@ interactions:
         null, "customfield_12323645": null, "environment": null, "customfield_12315542":
         null, "customfield_12315740": null, "customfield_12313441": "", "customfield_12313440":
         "0.0", "customfield_12313240": null, "duedate": "2024-11-26", "customfield_12311140":
-        "OSIDB-6", "customfield_12319742": null, "customfield_12319269": null, "progress":
+        "BUGVAULT-6", "customfield_12319742": null, "customfield_12319269": null, "progress":
         {"progress": 0, "total": 0}, "comment": {"comments": [{"self": "https://example.com/rest/api/2/issue/15283457/comment/22407250",
         "id": "22407250", "author": {"self": "https://example.com/rest/api/2/user?username=rh-ee-znovacek",
         "name": "rh-ee-znovacek", "key": "JIRAUSER191853", "emailAddress": "znovacek+stage@redhat.com",
@@ -230,7 +230,7 @@ interactions:
         "32x32": "https://example.com/secure/useravatar?size=medium&avatarId=17283"},
         "displayName": "Ondrej Soukup", "active": true, "timeZone": "UTC"}, "created":
         "2024-05-02T16:13:20.912+0000", "updated": "2024-05-02T16:13:20.912+0000"}],
-        "maxResults": 3, "total": 3, "startAt": 0}, "votes": {"self": "https://example.com/rest/api/2/issue/OSIDB-920/votes",
+        "maxResults": 3, "total": 3, "startAt": 0}, "votes": {"self": "https://example.com/rest/api/2/issue/BUGVAULT-920/votes",
         "votes": 0, "hasVoted": false}, "customfield_12319743": null, "worklog": {"startAt":
         0, "maxResults": 20, "total": 0, "worklogs": []}, "customfield_12310213":
         null, "archivedby": null, "customfield_12311940": "1|zbo868:"}}'
@@ -445,7 +445,7 @@ interactions:
       \"openshift\", \"affectedness\": \"affected\", \"resolution\": \"delegated\",
       \"impact\": \"low\", \"cvss2\": null, \"cvss3\": null, \"cvss4\": null}], \"public\":
       \"2024-05-30T00:19:54Z\", \"reported\": \"1993-04-17T23:22:34Z\", \"impact\":
-      \"low\", \"jira_trackers\": [{\"bts_name\": \"jboss\", \"key\": \"OSIDB-920\"}],
+      \"low\", \"jira_trackers\": [{\"bts_name\": \"jboss\", \"key\": \"BUGVAULT-920\"}],
       \"source\": \"internet\", \"mitigation\": \"foo\", \"statement\": \"Statement
       for None\"}", "ids": ["1663907"]}'
     headers:
@@ -492,7 +492,7 @@ interactions:
         \"affectedness\": \"affected\", \"resolution\": \"delegated\", \"impact\":
         \"low\", \"cvss2\": null, \"cvss3\": null, \"cvss4\": null}], \"public\":
         \"2024-05-30T00:19:54Z\", \"reported\": \"1993-04-17T23:22:34Z\", \"impact\":
-        \"low\", \"jira_trackers\": [{\"bts_name\": \"jboss\", \"key\": \"OSIDB-920\"}],
+        \"low\", \"jira_trackers\": [{\"bts_name\": \"jboss\", \"key\": \"BUGVAULT-920\"}],
         \"source\": \"internet\", \"mitigation\": \"foo\", \"statement\": \"Statement
         for None\"}"}}, "id": 1663907}]}'
     headers:
@@ -649,7 +649,7 @@ interactions:
         \"resolution\": \"delegated\", \"impact\": \"low\", \"cvss2\": null, \"cvss3\":
         null, \"cvss4\": null}], \"public\": \"2024-05-30T00:19:54Z\", \"reported\":
         \"1993-04-17T23:22:34Z\", \"impact\": \"low\", \"jira_trackers\": [{\"bts_name\":
-        \"jboss\", \"key\": \"OSIDB-920\"}], \"source\": \"internet\", \"mitigation\":
+        \"jboss\", \"key\": \"BUGVAULT-920\"}], \"source\": \"internet\", \"mitigation\":
         \"foo\", \"statement\": \"Statement for None\"}", "target_milestone": "---",
         "cf_conditional_nak": ["Upstream"], "target_release": ["---"], "last_change_time":
         "2024-06-17T12:46:41Z", "cf_major_incident": null, "flags": [{"status": "+",
@@ -810,7 +810,7 @@ interactions:
         \"delegated\", \"impact\": \"low\", \"cvss2\": null, \"cvss3\": null, \"cvss4\":
         null}], \"public\": \"2024-05-30T00:19:54Z\", \"reported\": \"1993-04-17T23:22:34Z\",
         \"impact\": \"low\", \"jira_trackers\": [{\"bts_name\": \"jboss\", \"key\":
-        \"OSIDB-920\"}], \"source\": \"internet\", \"mitigation\": \"foo\", \"statement\":
+        \"BUGVAULT-920\"}], \"source\": \"internet\", \"mitigation\": \"foo\", \"statement\":
         \"Statement for None\"}", "remaining_time": 0, "tags": [], "cc_detail": [{"insider":
         false, "real_name": "Dominik ''Rathann'' Mierzejewski", "active": true, "partner":
         false, "name": "dominik@greysector.net", "email": "dominik@greysector.net",
@@ -2448,7 +2448,7 @@ interactions:
         \"resolution\": \"delegated\", \"impact\": \"low\", \"cvss2\": null, \"cvss3\":
         null, \"cvss4\": null}], \"public\": \"2024-05-30T00:19:54Z\", \"reported\":
         \"1993-04-17T23:22:34Z\", \"impact\": \"low\", \"jira_trackers\": [{\"bts_name\":
-        \"jboss\", \"key\": \"OSIDB-920\"}], \"source\": \"internet\", \"mitigation\":
+        \"jboss\", \"key\": \"BUGVAULT-920\"}], \"source\": \"internet\", \"mitigation\":
         \"foo\", \"statement\": \"Statement for None\"}", "is_creator_accessible":
         true, "component": ["vulnerability"], "cf_doc_type": "If docs needed, set
         a value", "description": "\nA use-after-free vulnerability was found in nasm.
@@ -2567,7 +2567,7 @@ interactions:
         \"affected\", \"resolution\": \"delegated\", \"impact\": \"low\", \"cvss2\":
         null, \"cvss3\": null, \"cvss4\": null}], \"public\": \"2024-05-30T00:19:54Z\",
         \"reported\": \"1993-04-17T23:22:34Z\", \"impact\": \"low\", \"jira_trackers\":
-        [{\"bts_name\": \"jboss\", \"key\": \"OSIDB-920\"}], \"source\": \"internet\",
+        [{\"bts_name\": \"jboss\", \"key\": \"BUGVAULT-920\"}], \"source\": \"internet\",
         \"mitigation\": \"foo\", \"statement\": \"Statement for None\"}", "qa_contact":
         "", "is_creator_accessible": true, "classification": "Other", "data_category":
         "Public", "sub_components": {}, "description": "\nA use-after-free vulnerability

@@ -10,7 +10,7 @@
 # NOTE: podman-compose 0.1.7 doesn't support argument '-v' for action 'down', hence deleting volume separately.
 .PHONY: clean
 clean:
-	@echo -n "bugvault: 'make clean' will force stop running bugvault containers, REMOVE OSIDB_PG-DATA VOLUME, delete venv, remove .tox cache, pycache, pg keys, etc ... Are you really sure? [y/N] " && read ans && [ $${ans:-N} = y ]
+	@echo -n "bugvault: 'make clean' will force stop running bugvault containers, REMOVE BUGVAULT_PG-DATA VOLUME, delete venv, remove .tox cache, pycache, pg keys, etc ... Are you really sure? [y/N] " && read ans && [ $${ans:-N} = y ]
 	$(podmancompose) -f docker-compose.yml -f docker-compose.test.yml down
 	$(podman) volume rm bugvault_pg-data || true
 	$(podman) image rm localhost/bugvault-service --force || true

@@ -1,5 +1,5 @@
 """
-transform Bugzilla flaw bug into OSIDB flaw model
+transform Bugzilla flaw bug into BUGVAULT flaw model
 """
 import json
 import logging
@@ -134,7 +134,7 @@ class BugzillaGroupsConvertorMixin:
 
 class BugzillaTrackerConvertor(BugzillaGroupsConvertorMixin, TrackerConvertor):
     """
-    Bugzilla tracker bug to OSIDB tracker convertor.
+    Bugzilla tracker bug to BUGVAULT tracker convertor.
     """
 
     @property
@@ -360,7 +360,7 @@ class FlawSaver:
 
 class FlawConvertor(BugzillaGroupsConvertorMixin):
     """
-    Bugzilla flaw bug to OSIDB flaw model convertor
+    Bugzilla flaw bug to BUGVAULT flaw model convertor
     this class is to performs the transformation only
     it takes the fetched but unprocessed backend models
     and provides all the model pieces to be saved
@@ -756,20 +756,20 @@ class FlawConvertor(BugzillaGroupsConvertorMixin):
         """
         Get new and in-place updated FlawComment Django models for saving with the Flaw.
         - Comments are iterated from number zero, those with identical text between
-          OSIDB & BZ are updated in-place, as long as a diverging comment has not been
+          BUGVAULT & BZ are updated in-place, as long as a diverging comment has not been
           encountered (then the update stops, after that point, pairing the comments
           would be ambiguous and error-prone).
         - If no diverging comment has been encountered, new comments existing only in BZ
           are created as new FlawComment models.
         - If a diverging comment has been encountered, the sync stops there, the rest of
           the BZ comments (with equal and higher "count") are ignored, and for the rest of
-          OSIDB comments only ACLs are updated.
+          BUGVAULT comments only ACLs are updated.
         """
 
-        # Historically, OSIDB has always allowed comment numbers to have holes,
+        # Historically, BUGVAULT has always allowed comment numbers to have holes,
         # e.g. 0, 3, 5, 6, 7. This can be caused by the BZ user not having permissions
         # to the given comments. It is beside the point whether we should allow that
-        # or not because this has always been the state of the OSIDB data as of 2024-07
+        # or not because this has always been the state of the BUGVAULT data as of 2024-07
         # when get_comments is heavily changed.
         # Moreover, a large number of tests depend on that and there's no resources
         # to fix those tests as of 2024-07.
@@ -796,7 +796,7 @@ class FlawConvertor(BugzillaGroupsConvertorMixin):
                     "text"
                 ):
                     # It may happen in some situation that we run out of the DB comments...
-                    # Otherwise identical comments both in OSIDB and BZ, just update OSIDB from BZ.
+                    # Otherwise identical comments both in BUGVAULT and BZ, just update BUGVAULT from BZ.
 
                     db_comment.external_system_id = bz_comment["id"]
                     # Since it is IN BZ, and we're getting it FROM BZ, there's no point to
@@ -832,12 +832,12 @@ class FlawConvertor(BugzillaGroupsConvertorMixin):
             else:
                 # Reaching this means that histories didn't diverge yet (just one side is incomplete).
                 if i > max_bugzilla:
-                    # New comment(s) added in OSIDB without syncing to bugzilla
+                    # New comment(s) added in BUGVAULT without syncing to bugzilla
                     # (maybe bbsync failed, maybe bbsync was disabled).
                     pass
                 else:  # i > max_database
                     # This means bzimport is either still active or that it was disabled and new
-                    # comments weren't made in OSIDB yet since disabling.
+                    # comments weren't made in BUGVAULT yet since disabling.
                     bz_comment = dict_bugzilla.get(i)
                     if bz_comment is not None:
                         new_comment = FlawComment(

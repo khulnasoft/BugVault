@@ -1,6 +1,6 @@
 """
 This code is just a copy-paste from the flaw.py module from the prodsec python library
-becuase in order to be able to opensource OSIDB we need to get rid of the prodsec
+becuase in order to be able to opensource BUGVAULT we need to get rid of the prodsec
 library which is not public.
 """
 

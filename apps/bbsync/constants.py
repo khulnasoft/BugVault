@@ -25,6 +25,6 @@ SYNC_TRACKERS_TO_BZ = get_env(
 
 # in SFM2 there are Bugzilla bot accounts and invalid users being filtered out from the CC lists
 # however the list of the corresponding emails is being pulled from VDB by the old vdbqb library
-# and we definitelly do not want such a dependence in OSIDB so I am adding the list statically
+# and we definitelly do not want such a dependence in BUGVAULT so I am adding the list statically
 # here as the best we can do now and a motivation to leave Bugzilla as soon as possible
 USER_BLACKLIST: list = get_env("BZ_USER_BLACKLIST", default="[]", is_json=True)

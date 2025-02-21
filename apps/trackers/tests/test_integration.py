@@ -66,7 +66,7 @@ class TestTrackerSaver:
         )
         assert tracker.bz_id is None
 
-        # 3) create tracker in OSIDB and Bugzilla
+        # 3) create tracker in BUGVAULT and Bugzilla
         ts = TrackerSaver(tracker, bz_api_key=bugzilla_token)
         created_tracker = ts.save()
         assert created_tracker.bz_id
@@ -143,7 +143,7 @@ class TestTrackerSaver:
             updated_dt=timezone.datetime.strptime(updated_dt, BZ_DT_FMT),
         )
         assert tracker.bz_id == tracker_id
-        # 4) update tracker in OSIDB and Bugzilla
+        # 4) update tracker in BUGVAULT and Bugzilla
         ts = TrackerSaver(tracker, bz_api_key=bugzilla_token)
         updated_tracker = ts.save()
         assert updated_tracker.bz_id == tracker_id
@@ -215,7 +215,7 @@ class TestTrackerAPI:
             resolution=Affect.AffectResolution.DELEGATED,
         )
 
-        # 3) create tracker in OSIDB and Bugzilla
+        # 3) create tracker in BUGVAULT and Bugzilla
         tracker_data = {
             "affects": [affect.uuid],
             "embargoed": flaw.embargoed,
@@ -291,7 +291,7 @@ class TestTrackerAPI:
             updated_dt=timezone.datetime.strptime(updated_dt, BZ_DT_FMT),
         )
         print(ps_update_streams[0].name)
-        # 4) update tracker in OSIDB and Bugzilla
+        # 4) update tracker in BUGVAULT and Bugzilla
         tracker_data = {
             "affects": [affect.uuid],
             "embargoed": flaw.embargoed,
@@ -365,7 +365,7 @@ class TestTrackerAPI:
             impact=flaw.impact,
         )
 
-        # 3) create tracker in OSIDB and Jira
+        # 3) create tracker in BUGVAULT and Jira
         tracker_data = {
             "affects": [affect.uuid],
             "embargoed": flaw.embargoed,
@@ -389,7 +389,7 @@ class TestTrackerAPI:
         #    even though it is not complete
         tracker_json = response.json()
         assert tracker_json["external_system_id"]
-        assert "OSIDB" in tracker_json["external_system_id"]
+        assert "BUGVAULT" in tracker_json["external_system_id"]
         assert not tracker_json["embargoed"]
         assert tracker_json["type"] == Tracker.TrackerType.JIRA
         assert tracker_json["ps_update_stream"] == ps_update_stream.name
@@ -473,7 +473,7 @@ class TestTrackerAPI:
 
         # 3) define a tracker model instance
         #    according an exising Jira tracker
-        tracker_id = "OSIDB-920"
+        tracker_id = "BUGVAULT-920"
         updated_dt = "2024-06-17T12:41:00Z"
         tracker = TrackerFactory(
             affects=[affect1, affect2],
@@ -484,7 +484,7 @@ class TestTrackerAPI:
             updated_dt=timezone.datetime.strptime(updated_dt, BZ_DT_FMT),
         )
 
-        # 4) update tracker in OSIDB and Jira
+        # 4) update tracker in BUGVAULT and Jira
         tracker_data = {
             "affects": [
                 affect1.uuid,
@@ -507,7 +507,7 @@ class TestTrackerAPI:
         #    so check at least the correct data in the response
         tracker_json = response.json()
         assert tracker_json["external_system_id"] == tracker_id
-        assert "OSIDB" in tracker_json["external_system_id"]
+        assert "BUGVAULT" in tracker_json["external_system_id"]
         assert not tracker_json["embargoed"]
         assert tracker_json["type"] == Tracker.TrackerType.JIRA
         assert tracker_json["ps_update_stream"] == ps_update_streams[2].name
@@ -627,7 +627,7 @@ class TestTrackerAPI:
         assert Affect.objects.first() == affect
         assert affect.flaw == flaw
 
-        # 3) create tracker in OSIDB and Jira
+        # 3) create tracker in BUGVAULT and Jira
         tracker_data = {
             "affects": [affect.uuid],
             "embargoed": flaw.embargoed,

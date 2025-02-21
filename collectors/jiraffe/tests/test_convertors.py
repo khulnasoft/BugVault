@@ -19,7 +19,7 @@ pytestmark = pytest.mark.unit
 
 class TestJiraTrackerConvertor:
     """
-    test that Jira issue to OSIDB tracker convertor works
+    test that Jira issue to BUGVAULT tracker convertor works
     """
 
     tracker_id = "ENTMQ-755"

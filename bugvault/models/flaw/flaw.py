@@ -23,7 +23,7 @@ from apps.taskman.constants import (
 from apps.taskman.mixins import JiraTaskSyncMixin
 from apps.workflows.workflow import WorkflowModel
 from collectors.bzimport.constants import FLAW_PLACEHOLDER_KEYWORD
-from bugvault.constants import CVSS3_SEVERITY_SCALE, OSIDB_API_VERSION
+from bugvault.constants import CVSS3_SEVERITY_SCALE, BUGVAULT_API_VERSION
 from bugvault.mixins import (
     ACLMixin,
     ACLMixinManager,
@@ -601,7 +601,7 @@ class Flaw(
 
         # XXX: In SFM2 we check that the REQUIRES_DOC_TEXT flag is set by
         # someone who has review access rights, it is uncertain whether
-        # we'd need this in OSIDB as ideally we would block non-authorized
+        # we'd need this in BUGVAULT as ideally we would block non-authorized
         # users from reviewing in the first place, in which case we don't
         # need to perform this validation
 
@@ -821,7 +821,7 @@ class Flaw(
         """
         if self.is_placeholder:
             raise ValidationError(
-                "OSIDB does not support write operations on placeholder flaws"
+                "BUGVAULT does not support write operations on placeholder flaws"
             )
 
     def _validate_special_consideration_flaw(self, **kwargs):
@@ -930,7 +930,7 @@ class Flaw(
     @property
     def api_url(self):
         """return bugvault api url"""
-        return f"/api/{OSIDB_API_VERSION}/{self.uuid}"
+        return f"/api/{BUGVAULT_API_VERSION}/{self.uuid}"
 
     objects = FlawManager.from_queryset(CustomQuerySetUpdatedDt)()
 
@@ -1019,7 +1019,7 @@ class Flaw(
             bs.save()  # actually send to BZ and update meta attributes in the DB
         except Exception as e:
             # Sync failed but if it was done async the original flaw may be saved, resulting in
-            # incosnsitent data between OSIDB and BZ.
+            # incosnsitent data between BUGVAULT and BZ.
             logger.error(f"Error when syncing flaw {self.uuid} to Bugzilla: {e}.")
             self.alert(
                 "bzsync_failed",
@@ -1044,13 +1044,13 @@ class Flaw(
         decides what to do about the Jira task of this flaw
 
         based on the task existence it is either created or updated and/or transitioned
-        old pre-OSIDB flaws without tasks are ignored unless force_creation is set
+        old pre-BUGVAULT flaws without tasks are ignored unless force_creation is set
         """
         update_task = False
         transition_task = False
 
         if not self.task_key:
-            # old pre-OSIDB flaws without tasks are ignored by default
+            # old pre-BUGVAULT flaws without tasks are ignored by default
             if force_creation or not self.meta_attr.get("bz_id"):
                 update_task = True
 

@@ -43,7 +43,7 @@ class BaseAffectCCBuilder:
         self.ps_module = affect.ps_module
         self.ps_component = affect.ps_component
         self.ps_module_obj = PsModule.objects.get(name=affect.ps_module)
-        # In some specific scenarios (see OSIDB-2985) we need to generate CC lists
+        # In some specific scenarios (see BUGVAULT-2985) we need to generate CC lists
         # in Bugzilla format even for Jira tracker PS modules (namely when generating Flaw CC list),
         # in such scenarios we need to override the CC list format
         self.bts_name = bts_name_override or self.ps_module_obj.bts_name
@@ -223,7 +223,7 @@ class JiraAffectCCBuilder(BaseAffectCCBuilder):
 
         # SFM2 uses a thing called "bz_component" even for *jira*-tracked modules.
         # Its contents are somewhat different from bugzilla-tracked modules, here in
-        # OSIDB illustrated by the differences between JiraAffectCCBuilder and
+        # BUGVAULT illustrated by the differences between JiraAffectCCBuilder and
         # BugzillaAffectCCBuilder (ps2bz_component-equivalent logic not used whole for Jira).
         #
         # In the future, we may opt to make this nicer, but currently our goal is to

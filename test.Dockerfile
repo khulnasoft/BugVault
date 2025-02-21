@@ -1,6 +1,6 @@
 FROM registry.access.redhat.com/ubi9/ubi:9.4
 
-LABEL summary="OSIDB testrunner" \
+LABEL summary="BUGVAULT testrunner" \
       maintainer="Product Security DevOps <prodsec-dev@redhat.com>"
 
 ARG PYPI_MIRROR="https://pypi.python.org/simple"

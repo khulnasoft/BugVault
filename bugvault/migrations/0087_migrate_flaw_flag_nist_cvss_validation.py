@@ -16,7 +16,7 @@ from itertools import islice
 
 BATCH_SIZE = 1000
 
-# maps BZ flags to OSIDB values
+# maps BZ flags to BUGVAULT values
 MAPPING = {
     "": "",
     "?": "REQUESTED",

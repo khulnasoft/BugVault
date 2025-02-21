@@ -150,7 +150,7 @@ class TrackerQueryBuilder:
 
         # TODO
         # 1) use the template instead if any
-        # tracked in https://issues.redhat.com/browse/OSIDB-1191
+        # tracked in https://issues.redhat.com/browse/BUGVAULT-1191
 
         # 2) special community comment header
         if self.ps_module.ps_product.is_community:
@@ -251,7 +251,7 @@ class TrackerQueryBuilder:
         )
         return description_parts
 
-    # TODO this should be eventually replaced by the OSIM/OSIDB link
+    # TODO this should be eventually replaced by the OSIM/BUGVAULT link
     def _description_bugzilla_link(bz_id):
         """
         generate link to Bugzilla bug with the given ID

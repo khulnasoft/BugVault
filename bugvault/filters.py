@@ -1,5 +1,5 @@
 """
-Implement filters for OSIDB REST API results
+Implement filters for BUGVAULT REST API results
 """
 from typing import Union
 
@@ -217,7 +217,7 @@ class IncludeFieldsFilterSet(SparseFieldsFilterSet):
         improved further as it can get very complicated very quickly.
 
         This filter does not use `select_related` for FK relations as the usage
-        of FKs in OSIDB endpoints is seldom used.
+        of FKs in BUGVAULT endpoints is seldom used.
         """
         # we want to convert e.g. foo.id to foo__id, so that it's easier to use
         # with Django's QuerySet.prefetch_related() method directly
@@ -247,7 +247,7 @@ class ExcludeFieldsFilterSet(SparseFieldsFilterSet):
         improved further as it can get very complicated very quickly.
 
         This filter does not use `select_related` for FK relations as the usage
-        of FKs in OSIDB endpoints is seldom used.
+        of FKs in BUGVAULT endpoints is seldom used.
         """
         fields = self._preprocess_fields(value)
         # note: we could attempt to optimize the prefetched fields but it is

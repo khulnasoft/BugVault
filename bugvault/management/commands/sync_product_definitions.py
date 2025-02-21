@@ -10,7 +10,7 @@ from collectors.product_definitions.core import (
 
 
 class Command(BaseCommand):
-    help = "Synchronizes product definitions to OSIDB"
+    help = "Synchronizes product definitions to BUGVAULT"
 
     def handle(self, *args, **options):
         now = timezone.now()

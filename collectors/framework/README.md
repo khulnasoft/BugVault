@@ -51,7 +51,7 @@ def example_collector(collector_obj):
 ```
 
 Then, you need to register your Django application to `INSTALLED_APPS`
-in [settings](../../config/settings.py). Compose your OSIDB instance down and start again so the
+in [settings](../../config/settings.py). Compose your BUGVAULT instance down and start again so the
 Celery hosts are up-to-date. Now you should see a new collector status being reported when running
 
 To enable logs, you need to register new logger for the Collector in [settings](../../config/settings.py)
@@ -59,8 +59,8 @@ under the `LOGGING`.
 
 ```bash
 # provide credentials and optionally set URL and port appropriately
-export OSIDB_ACCESS_TOKEN=$(curl -H 'Content-Type: application/json' '-d' '{"username": USERNAME,"password": PASSWORD}' http://localhost:8000/auth/token | jq ."access" -r)
-curl -H "Authorization: Bearer $OSIDB_ACCESS_TOKEN" -X GET "https://localhost:8000/collectors/api/v1/status" -w "\n" | jq
+export BUGVAULT_ACCESS_TOKEN=$(curl -H 'Content-Type: application/json' '-d' '{"username": USERNAME,"password": PASSWORD}' http://localhost:8000/auth/token | jq ."access" -r)
+curl -H "Authorization: Bearer $BUGVAULT_ACCESS_TOKEN" -X GET "https://localhost:8000/collectors/api/v1/status" -w "\n" | jq
 ```
 
 Now it is completely only up to you and your needs what functionality your collector gets. If you

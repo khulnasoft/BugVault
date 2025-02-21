@@ -267,7 +267,7 @@ class SyncToBzBulkEnablementMixinSerializer(serializers.ModelSerializer):
     sync that happens after e.g. creating a tracker can take minutes for
     huge flaws.
 
-    The parameter does nothing if BZ sync is not enabled in the OSIDB instance.
+    The parameter does nothing if BZ sync is not enabled in the BUGVAULT instance.
     """
 
     sync_to_bz = serializers.BooleanField(

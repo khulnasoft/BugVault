@@ -1,13 +1,13 @@
 # Contributing
-OSIDB is an open initiative and we welcome any help.
+BUGVAULT is an open initiative and we welcome any help.
 Before contributing please read and follow these guidelines.
 
-## How to contribute to OSIDB
+## How to contribute to BUGVAULT
 
 ### Did you find a bug?
 
 * Ensure the bug was not already reported by searching on GitHub under
-  [Issues](https://github.com/RedHatProductSecurity/bugvault/issues).
+  [Issues](https://github.com/KhulnaSoft/bugvault/issues).
 
 * If you're unable to find an open issue addressing the problem:
 
@@ -15,7 +15,7 @@ Before contributing please read and follow these guidelines.
     functionality open a new issue
     [here](https://issues.redhat.com/secure/CreateIssueDetails!init.jspa?pid=12332734&issuetype=1).
 
-  * Otherwise open a new issue [here](https://github.com/RedHatProductSecurity/bugvault/issues/new).
+  * Otherwise open a new issue [here](https://github.com/KhulnaSoft/bugvault/issues/new).
 
 * Be sure to include a title and clear description, as much relevant information as possible,
   and a comand line or code sample or an executable test case demonstrating the
@@ -38,32 +38,32 @@ functionality, or testability of the project will generally not be accepted.
   followed by a Jira ID:
 
   ```
-  Closes OSIDB-111
+  Closes BUGVAULT-111
   ```
   OR
   ```
-  Fixes OSIDB-111
+  Fixes BUGVAULT-111
   ```
 
   To mention multiple Jira IDs, you need to use multiple keywords:
 
   ```
-  Closes OSIDB-111
-  Closes OSIDB-222
-  Fixes OSIDB-333
+  Closes BUGVAULT-111
+  Closes BUGVAULT-222
+  Fixes BUGVAULT-333
   ```
 
   Creating or editing a PR which mentions the Jira issues will transfer the status of all the mentioned Jira issues
   to **Review**.
 
   Closing a PR which sets the status of PR to merged will transfer the status of all the mentioned Jira issues to
-  **Release Pending** and change the Fix Version field to **OSIDB-next**.
+  **Release Pending** and change the Fix Version field to **BUGVAULT-next**.
 
 * Before submitting make sure that linters and tests are passing.
   Details on running the test can be found [here](DEVELOP.md#run-tests).
   Also make sure that the CI pipelines report success in the PR.
 
-* The OSIDB repository requires that all commits be GPG-signed, see
+* The BUGVAULT repository requires that all commits be GPG-signed, see
   [GitHub's documentation](https://docs.github.com/en/authentication/managing-commit-signature-verification/signing-commits)
 
 * Given that signed commit are required, the git flow might be different than
@@ -85,7 +85,7 @@ functionality, or testability of the project will generally not be accepted.
 ### Do you have questions about the source code?
 
 We unfortunately do not have a publicly accessible discussion channel yet.
-You can create an issue [here](https://github.com/RedHatProductSecurity/bugvault/issues/new)
+You can create an issue [here](https://github.com/KhulnaSoft/bugvault/issues/new)
 and ask your question within.
 
 ## License

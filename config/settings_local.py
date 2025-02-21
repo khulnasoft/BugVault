@@ -6,17 +6,17 @@ from .settings import *
 # SECURITY WARNING: keep the secret key used in production/stage secret!
 SECRET_KEY = get_random_secret_key()  # pragma: allowlist secret
 
-# Minimal group for read access of public flaws in OSIDB
+# Minimal group for read access of public flaws in BUGVAULT
 PUBLIC_READ_GROUPS = ["data-prodsec"]
-# Minimal group for write access of public flaws in OSIDB
+# Minimal group for write access of public flaws in BUGVAULT
 PUBLIC_WRITE_GROUP = "data-prodsec-write"
-# Minimal group for read access of embargoed flaws in OSIDB
+# Minimal group for read access of embargoed flaws in BUGVAULT
 EMBARGO_READ_GROUP = "data-topsecret"
-# Minimal group for write access of embargoed flaws in OSIDB
+# Minimal group for write access of embargoed flaws in BUGVAULT
 EMBARGO_WRITE_GROUP = "data-topsecret-write"
-# Minimal group for read access of internal flaws in OSIDB
+# Minimal group for read access of internal flaws in BUGVAULT
 INTERNAL_READ_GROUP = "data-internal-read"
-# Minimal group for write access of internal flaws in OSIDB
+# Minimal group for write access of internal flaws in BUGVAULT
 INTERNAL_WRITE_GROUP = "data-internal-write"
 
 # Contains all non-admin groups
@@ -28,7 +28,7 @@ ALL_GROUPS = [
     INTERNAL_READ_GROUP,
     INTERNAL_WRITE_GROUP,
 ]
-# Minimal group for managing the OSIDB service
+# Minimal group for managing the BUGVAULT service
 SERVICE_MANAGE_GROUP = "bugvault-service-manage"
 
 DEBUG = True

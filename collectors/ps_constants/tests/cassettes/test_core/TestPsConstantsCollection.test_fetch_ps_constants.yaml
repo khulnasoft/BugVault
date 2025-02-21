@@ -130,7 +130,7 @@ interactions:
         are evaluated as a Python regular expression.\n# `blocklist` and `allowlist`
         are meant for case-insensitive matching,\n# `blocklist_special_cases` and
         `allowlist_special_cases` for case-sensitive matching.\n#\n# For more information
-        about how the keywords are used in OSIDB, see\n# https://example.com/RedHatProductSecurity/bugvault/blob/master/collectors/cveorg/keywords.py\n\n\nallowlist:\n
+        about how the keywords are used in BUGVAULT, see\n# https://example.com/KhulnaSoft/bugvault/blob/master/collectors/cveorg/keywords.py\n\n\nallowlist:\n
         \ - GIMP\n  - Spring\n  - dotnet\n  - kernel\n\n# '\\b\\.NET\\b' does not
         match properly because word boundary \\b does not cooperate well with dot\nallowlist_special_cases:\n
         \ - (?:\\W|^)\\.NET\\b\n\nblocklist:\n  - (HPE|Hewlett Packard Enterprise).*(IceWall|FlexNetwork|FlexFabric|OneView|Nimble)\n

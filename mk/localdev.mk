@@ -130,28 +130,28 @@ bash-service:
 
 
 #***********************************
-### Start development shell locally (not in container), with correct OSIDB_DB_PORT
+### Start development shell locally (not in container), with correct BUGVAULT_DB_PORT
 #***********************************
 .PHONY : shell-local
 shell-local: check-venv-active
-	OSIDB_DB_PORT=$$( $(podman) port bugvault-data | awk -F':' '/5432/ { print $$2 }' ) && export OSIDB_DB_PORT && source .env && export OSIDB_DB_PASSWORD && python manage.py shell --settings=config.settings_shell
+	BUGVAULT_DB_PORT=$$( $(podman) port bugvault-data | awk -F':' '/5432/ { print $$2 }' ) && export BUGVAULT_DB_PORT && source .env && export BUGVAULT_DB_PASSWORD && python manage.py shell --settings=config.settings_shell
 
 
 #***********************************
-### Start command.py in a development shell locally, with correct OSIDB_DB_PORT
+### Start command.py in a development shell locally, with correct BUGVAULT_DB_PORT
 #***********************************
 .PHONY : command-local
 command-local: check-venv-active
 	@[ -f command.py ] || { echo ">You must create command.py first." ; exit 1 ; }
-	OSIDB_DB_PORT=$$( $(podman) port bugvault-data | awk -F':' '/5432/ { print $$2 }' ) && export OSIDB_DB_PORT && source .env && export OSIDB_DB_PASSWORD && python manage.py shell --settings=config.settings_shell --command="$$( cat command.py )"
+	BUGVAULT_DB_PORT=$$( $(podman) port bugvault-data | awk -F':' '/5432/ { print $$2 }' ) && export BUGVAULT_DB_PORT && source .env && export BUGVAULT_DB_PASSWORD && python manage.py shell --settings=config.settings_shell --command="$$( cat command.py )"
 
 
 #***********************************
-### Start bash shell locally, with activated venv and correct OSIDB_DB_PORT
+### Start bash shell locally, with activated venv and correct BUGVAULT_DB_PORT
 #***********************************
 .PHONY : bash-local
 bash-local: check-venv-active
-	OSIDB_DB_PORT=$$( $(podman) port bugvault-data | awk -F':' '/5432/ { print $$2 }' ) && export OSIDB_DB_PORT && source .env && export OSIDB_DB_PASSWORD && bash
+	BUGVAULT_DB_PORT=$$( $(podman) port bugvault-data | awk -F':' '/5432/ { print $$2 }' ) && export BUGVAULT_DB_PORT && source .env && export BUGVAULT_DB_PASSWORD && bash
 
 
 #***********************************

@@ -1,4 +1,4 @@
-name: OSIDB Bindings integration
+name: BUGVAULT Bindings integration
 on:
   pull_request:
     paths:
@@ -13,7 +13,7 @@ jobs:
         id: extract_branch
       - uses: actions/checkout@v4
         with:
-          repository: "RedHatProductSecurity/bugvault-bindings"
+          repository: "KhulnaSoft/bugvault-bindings"
       - uses: actions/setup-python@v5
         with:
           python-version: 3.12
@@ -21,5 +21,5 @@ jobs:
         run: pip install -r devel-requirements.txt
       - name: Download recent OpenAPI schema
         run: make download-schema ref=${{ steps.extract_branch.outputs.branch }}
-      - name: Regenerate OSIDB bindings with the new schema file
+      - name: Regenerate BUGVAULT bindings with the new schema file
         run: make update

@@ -336,7 +336,7 @@ class FlawCollector(Collector):
             "step": relativedelta(hours=1),
         },
         # migration of old style acks to SRT notes
-        # https://issues.redhat.com/browse/OSIDB-275
+        # https://issues.redhat.com/browse/BUGVAULT-275
         # 2023-05-11 12:19 UTC – 2023-05-13 02:03 UTC
         # so we prevent large batches going by 5 hours
         {
@@ -397,7 +397,7 @@ class FlawCollector(Collector):
 
             return period_end
 
-        # starting 2024 the Assembler collectors were migrated to OSIDB
+        # starting 2024 the Assembler collectors were migrated to BUGVAULT
         # regularly creating tens to hundreds flaws every day
         return period_start + relativedelta(days=10)
 

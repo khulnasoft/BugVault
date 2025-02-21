@@ -242,7 +242,7 @@ class Tracker(AlertMixin, TrackingMixin, NullStrFieldsMixin, ACLMixin):
                     or "Constraint “unique_external_system_id” is violated." in exc_msg
                 ):
                     # Tracker collector collected this tracker before the whole saving process finished
-                    # in the OSIDB, skip the saving and log it
+                    # in the BUGVAULT, skip the saving and log it
                     warning_msg = (
                         f"{e} occured for tracker with external system id '{self.external_system_id}' and uuid '{self.uuid}',"
                         "skipping the exception as tracker with this external system id was already collected "

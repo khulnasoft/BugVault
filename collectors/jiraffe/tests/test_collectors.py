@@ -276,7 +276,7 @@ class TestJiraTrackerCollector:
             status="New",
             resolution=None,
             # collector only modify trackers
-            # when it is outdated in OSIDB
+            # when it is outdated in BUGVAULT
             updated_dt=datetime.strptime("1970-01-01T00:00:00Z", BZ_DT_FMT),
         )
         collector = JiraTrackerCollector()
@@ -341,7 +341,7 @@ class TestJiraTrackerCollector:
     def test_collect_tracker_with_multi_cve_flaw(self):
         """
         test collecting a Jira issue linked to a multi-CVE flaw
-        https://issues.redhat.com/browse/OSIDB-2708
+        https://issues.redhat.com/browse/BUGVAULT-2708
         """
         flaw_id = "2090226"
         tracker_id = "OSD-12347"
@@ -355,7 +355,7 @@ class TestJiraTrackerCollector:
         PsUpdateStreamFactory(name="openshift-hosted-osd4-default", ps_module=ps_module)
 
         jtc = JiraTrackerCollector()
-        # before fixing OSIDB-2708
+        # before fixing BUGVAULT-2708
         # we get traceback here
         msg = jtc.collect(tracker_id)
         JiraTrackerLinkManager.link_tracker_with_affects(tracker_id)

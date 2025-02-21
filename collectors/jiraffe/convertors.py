@@ -1,5 +1,5 @@
 """
-transform Jira issue into OSIDB tracker model
+transform Jira issue into BUGVAULT tracker model
 """
 
 import json
@@ -90,7 +90,7 @@ class JiraTaskConvertor:
                 try:
                     flaw = Flaw.objects.get(cve_id=label)
                     # prioritize CVE ID over UUID if possible
-                    # so the linking is OSIDB instance independent
+                    # so the linking is BUGVAULT instance independent
                     # by immediately leaving the for cycle here
                     break
                 except Flaw.DoesNotExist:
@@ -223,7 +223,7 @@ class TrackerSaver:
 
 class TrackerConvertor:
     """
-    generic raw tracker to OSIDB tracker convertor
+    generic raw tracker to BUGVAULT tracker convertor
 
     this class transforms raw data from a unified raw format into
     proper Tracker model records and saves them into the database
@@ -321,7 +321,7 @@ class TrackerConvertor:
 
 class JiraTrackerConvertor(TrackerConvertor):
     """
-    Jira tracker issue to OSIDB tracker convertor
+    Jira tracker issue to BUGVAULT tracker convertor
     """
 
     @property

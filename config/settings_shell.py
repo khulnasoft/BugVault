@@ -1,16 +1,16 @@
 from config.settings import *
 
-# Minimal group for read access of public flaws in OSIDB
+# Minimal group for read access of public flaws in BUGVAULT
 PUBLIC_READ_GROUPS = ["data-prodsec"]
-# Minimal group for write access of public flaws in OSIDB
+# Minimal group for write access of public flaws in BUGVAULT
 PUBLIC_WRITE_GROUP = "data-prodsec-write"
-# Minimal group for read access of embargoed flaws in OSIDB
+# Minimal group for read access of embargoed flaws in BUGVAULT
 EMBARGO_READ_GROUP = "data-topsecret"
-# Minimal group for write access of embargoed flaws in OSIDB
+# Minimal group for write access of embargoed flaws in BUGVAULT
 EMBARGO_WRITE_GROUP = "data-topsecret-write"
-# Minimal group for read access of internal flaws in OSIDB
+# Minimal group for read access of internal flaws in BUGVAULT
 INTERNAL_READ_GROUP = "data-internal-read"
-# Minimal group for write access of internal flaws in OSIDB
+# Minimal group for write access of internal flaws in BUGVAULT
 INTERNAL_WRITE_GROUP = "data-internal-write"
 # Contains all non-admin groups
 ALL_GROUPS = [
@@ -21,16 +21,16 @@ ALL_GROUPS = [
     INTERNAL_READ_GROUP,
     INTERNAL_WRITE_GROUP,
 ]
-# Minimal group for managing the OSIDB service
+# Minimal group for managing the BUGVAULT service
 SERVICE_MANAGE_GROUP = "bugvault-service-manage"
 
 DATABASES = {
     "default": {
-        "NAME": get_env("OSIDB_DB_NAME", default="bugvault"),
-        "USER": get_env("OSIDB_DB_USER", default="bugvault_manage_user"),
-        "PASSWORD": get_env("OSIDB_DB_PASSWORD"),
-        "HOST": get_env("OSIDB_DB_HOST", default="localhost"),
-        "PORT": get_env("OSIDB_DB_PORT", default="5432"),
+        "NAME": get_env("BUGVAULT_DB_NAME", default="bugvault"),
+        "USER": get_env("BUGVAULT_DB_USER", default="bugvault_manage_user"),
+        "PASSWORD": get_env("BUGVAULT_DB_PASSWORD"),
+        "HOST": get_env("BUGVAULT_DB_HOST", default="localhost"),
+        "PORT": get_env("BUGVAULT_DB_PORT", default="5432"),
         "ENGINE": "psqlextra.backend",
         "ATOMIC_REQUESTS": True,  # perform HTTP requests as atomic transactions
         "OPTIONS": {

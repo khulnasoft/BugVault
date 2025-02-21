@@ -4,7 +4,7 @@ import pytest
 from django.conf import settings
 from taskman.constants import TASKMAN_API_VERSION
 
-from bugvault.constants import OSIDB_API_VERSION
+from bugvault.constants import BUGVAULT_API_VERSION
 
 
 @pytest.fixture(autouse=True)
@@ -73,7 +73,7 @@ def test_bugvault_scheme_host():
 
 @pytest.fixture
 def bugvault_api_version():
-    return OSIDB_API_VERSION
+    return BUGVAULT_API_VERSION
 
 
 @pytest.fixture

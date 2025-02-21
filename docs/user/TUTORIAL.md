@@ -1,15 +1,15 @@
-# Using the OSIDB REST API with cURL and Python
+# Using the BUGVAULT REST API with cURL and Python
 
-OSIDB exposes a REST API from which any number of clients can connect, from cURL to a custom-made frontend application to serve as web client, in this tutorial we will go through the basics of using the API under different environments.
+BUGVAULT exposes a REST API from which any number of clients can connect, from cURL to a custom-made frontend application to serve as web client, in this tutorial we will go through the basics of using the API under different environments.
 
-To know which endpoints are available and which operations can be performed on each endpoint, please check the [OpenAPI specification](https://github.com/RedHatProductSecurity/bugvault/blob/master/openapi.yml) for OSIDB.
+To know which endpoints are available and which operations can be performed on each endpoint, please check the [OpenAPI specification](https://github.com/KhulnaSoft/bugvault/blob/master/openapi.yml) for BUGVAULT.
 
-> Note: in the following sections, replace ${SERVICE_URL} with the URL of whichever OSIDB service you're attempting to connect to
+> Note: in the following sections, replace ${SERVICE_URL} with the URL of whichever BUGVAULT service you're attempting to connect to
 
 ## Authentication and authorization
 
 The first step towards communicating with the API and retrieving useful data from it is Authentication,
-OSIDB uses a multi-tier authentication system:
+BUGVAULT uses a multi-tier authentication system:
 
   - Clients must first perform Kerberos / GSSAPI authentication using the SPNEGO protocol
   - After kerberos authentication, client will be sent JSON Web Tokens for further authentication
@@ -100,7 +100,7 @@ Now you should get a proper response!
 
 You may have noticed that when requesting a token the server sent back not one
 but two tokens, we made the concious choice to use the one labeled as "access"
-to authorize requests against the server. This is because OSIDB uses
+to authorize requests against the server. This is because BUGVAULT uses
 JSON Web Tokens (JWTs) for authentication, meaning you get a token for access
 and a refresh token from which you can generate new access tokens.
 
@@ -142,7 +142,7 @@ expected to re-authenticate once their refresh token expires.
 ### Verifying tokens
 
 If you're unsure whether any of your tokens, whether access or refresh, is
-still valid or not, OSIDB exposes a token-verification endpoint which will
+still valid or not, BUGVAULT exposes a token-verification endpoint which will
 return either an HTTP 200 response with empty body if the token is valid
 or an HTTP 401 response with a body explaining that the token is invalid
 or expired.
@@ -169,9 +169,9 @@ assert response.ok
 
 ## Fetching flaws
 
-Since we don't know exactly what flaws are within OSIDB, let's start by fetching **all** flaws, and then we can pick and choose one and do more with it.
+Since we don't know exactly what flaws are within BUGVAULT, let's start by fetching **all** flaws, and then we can pick and choose one and do more with it.
 
-> Note: while in theory this endpoint returns every flaw in the OSIDB instance, in practice the results are paginated, meaning that you will receive **some** results and then links to the next/previous chunk/batch.
+> Note: while in theory this endpoint returns every flaw in the BUGVAULT instance, in practice the results are paginated, meaning that you will receive **some** results and then links to the next/previous chunk/batch.
 
 ### Fetching all flaws
 
@@ -218,7 +218,7 @@ assert response.ok
 
 This should return all the details for the flaw with the uuid we requested.
 
-You can also get a flaw's details by using its CVE number instead of its uuid, this method might prove more robust across different OSIDB instances
+You can also get a flaw's details by using its CVE number instead of its uuid, this method might prove more robust across different BUGVAULT instances
 
 With cURL
 
@@ -240,7 +240,7 @@ assert response.ok
 
 ## Searching for flaws
 
-We can also search flaws by different criterion, by passing query parameters, you can find valid query parameters by looking up the [OpenAPI specification](https://github.com/RedHatProductSecurity/bugvault/blob/master/openapi.yml) for the specific endpoint you want to query.
+We can also search flaws by different criterion, by passing query parameters, you can find valid query parameters by looking up the [OpenAPI specification](https://github.com/KhulnaSoft/bugvault/blob/master/openapi.yml) for the specific endpoint you want to query.
 
 ### Searching by specific fields
 
@@ -476,7 +476,7 @@ response = requests.post("${SERVICE_URL}/bugvault/api/v1/flaws", headers=headers
 assert response.ok
 ```
 
-With this, we now have added a brand new Flaw into OSIDB, but we introduced some data that is not 100% correct and need to change it.
+With this, we now have added a brand new Flaw into BUGVAULT, but we introduced some data that is not 100% correct and need to change it.
 
 ## Updating a Flaw
 
@@ -520,7 +520,7 @@ That seems to have worked! We successfully updated our Flaw, however this was ju
 
 ## Deleting a Flaw
 
-Since the Flaw we created is just some dummy Flaw in order to test OSIDB's REST API, let's remove it to avoid polluting the database, doing this is as easy as any of the previous operations.
+Since the Flaw we created is just some dummy Flaw in order to test BUGVAULT's REST API, let's remove it to avoid polluting the database, doing this is as easy as any of the previous operations.
 
 > Note: Deleting has no constraints as of now, but in the future it's highly likely that this won't work in production unless under very strict and specific circumstances to avoid data loss
 
@@ -542,7 +542,7 @@ response = requests.delete("${SERVICE_URL}/bugvault/api/v1/flaws/CVE-2161-0013",
 assert response.ok
 ```
 
-And that's it! Now we know all that we need to know to use the OSIDB REST API.
+And that's it! Now we know all that we need to know to use the BUGVAULT REST API.
 
 
 ## Fetching flaw comments
@@ -604,7 +604,7 @@ assert response.ok
 
 #### Fetch using flaw comment ID as tracked by Bugzilla
 
-Bugzilla assigns each comment a unique numerical ID. This is portable across OSIDB instances.
+Bugzilla assigns each comment a unique numerical ID. This is portable across BUGVAULT instances.
 
 With cURL
 
@@ -626,9 +626,9 @@ assert response.ok
 ```
 
 
-#### Fetch using flaw comment OSIDB-internal UUID
+#### Fetch using flaw comment BUGVAULT-internal UUID
 
-OSIDB creates a unique uuid for each FlawComment. This is **not** portable across OSIDB instances.
+BUGVAULT creates a unique uuid for each FlawComment. This is **not** portable across BUGVAULT instances.
 
 With cURL
 
@@ -651,7 +651,7 @@ assert response.ok
 
 ### Creating a flaw comment
 
-Please note that multiple comments created in parallel are not guaranteed to keep their OSIDB-internal `uuid`.
+Please note that multiple comments created in parallel are not guaranteed to keep their BUGVAULT-internal `uuid`.
 
 With cURL
 

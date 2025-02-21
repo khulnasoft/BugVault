@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"fields": {"issuetype": {"name": "Bug"}, "project": {"key": "OSIDB"},
+    body: '{"fields": {"issuetype": {"name": "Bug"}, "project": {"key": "BUGVAULT"},
       "priority": {"name": "Minor"}, "description": "Public Security Tracking Issue\n\nFlaw:\n-----\n\nsample
       title\nhttps://example.com/show_bug.cgi?id=2217733\n\nComment zero for None\n\n~~~",
       "labels": ["Security", "SecurityTracking", "flaw:bz#2217733", "flawuuid:675df471-7375-4ba1-9d0f-c178a8a58ae7",
@@ -27,7 +27,7 @@ interactions:
     uri: https://example.com/rest/api/2/issue
   response:
     body:
-      string: '{"id": "15939688", "key": "OSIDB-2146", "self": "https://example.com/rest/api/2/issue/15939688"}'
+      string: '{"id": "15939688", "key": "BUGVAULT-2146", "self": "https://example.com/rest/api/2/issue/15939688"}'
     headers:
       Cache-Control:
       - max-age=0, no-cache, no-store
@@ -101,18 +101,18 @@ interactions:
       X-Atlassian-Token:
       - no-check
     method: GET
-    uri: https://example.com/rest/api/2/issue/OSIDB-2146
+    uri: https://example.com/rest/api/2/issue/BUGVAULT-2146
   response:
     body:
       string: '{"expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
         "id": "15939688", "self": "https://example.com/rest/api/2/issue/15939688",
-        "key": "OSIDB-2146", "fields": {"issuetype": {"self": "https://example.com/rest/api/2/issuetype/1",
+        "key": "BUGVAULT-2146", "fields": {"issuetype": {"self": "https://example.com/rest/api/2/issuetype/1",
         "id": "1", "description": "A problem that impairs or prevents the functions
         of the product.", "iconUrl": "https://example.com/secure/viewavatar?size=xsmall&avatarId=13263&avatarType=issuetype",
         "name": "Bug", "subtask": false, "avatarId": 13263}, "customfield_12324544":
         "0.0", "customfield_12318341": null, "customfield_12319751": 0.0, "timespent":
         null, "customfield_12320940": null, "project": {"self": "https://example.com/rest/api/2/project/12332734",
-        "id": "12332734", "key": "OSIDB", "name": "Open Security Issue Database",
+        "id": "12332734", "key": "BUGVAULT", "name": "Open Security Issue Database",
         "projectTypeKey": "software", "avatarUrls": {"48x48": "https://example.com/secure/projectavatar?pid=12332734&avatarId=10010",
         "24x24": "https://example.com/secure/projectavatar?size=small&pid=12332734&avatarId=10010",
         "16x16": "https://example.com/secure/projectavatar?size=xsmall&pid=12332734&avatarId=10010",
@@ -130,7 +130,7 @@ interactions:
         "customfield_12310183": null, "resolutiondate": null, "workratio": -1, "customfield_12316840":
         null, "customfield_12317379": null, "customfield_12316841": null, "customfield_12315950":
         null, "customfield_12310940": null, "customfield_12319040": null, "lastViewed":
-        null, "watches": {"self": "https://example.com/rest/api/2/issue/OSIDB-2146/watchers",
+        null, "watches": {"self": "https://example.com/rest/api/2/issue/BUGVAULT-2146/watchers",
         "watchCount": 1, "isWatching": true}, "created": "2024-06-13T14:46:00.380+0000",
         "customfield_12321240": null, "customfield_12313140": null, "priority": {"self":
         "https://example.com/rest/api/2/priority/4", "iconUrl": "https://example.com/images/icons/priorities/minor.svg",
@@ -180,7 +180,7 @@ interactions:
         null, "duedate": "2024-11-10", "customfield_12311140": null, "customfield_12319742":
         null, "customfield_12319269": null, "progress": {"progress": 0, "total": 0},
         "comment": {"comments": [], "maxResults": 0, "total": 0, "startAt": 0}, "votes":
-        {"self": "https://example.com/rest/api/2/issue/OSIDB-2146/votes", "votes":
+        {"self": "https://example.com/rest/api/2/issue/BUGVAULT-2146/votes", "votes":
         0, "hasVoted": false}, "customfield_12319743": null, "worklog": {"startAt":
         0, "maxResults": 20, "total": 0, "worklogs": []}, "customfield_12310213":
         null, "archivedby": null, "customfield_12311940": "1|zem1xs:"}}'
@@ -257,18 +257,18 @@ interactions:
       X-Atlassian-Token:
       - no-check
     method: GET
-    uri: https://example.com/rest/api/2/issue/OSIDB-2146
+    uri: https://example.com/rest/api/2/issue/BUGVAULT-2146
   response:
     body:
       string: '{"expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
         "id": "15939688", "self": "https://example.com/rest/api/2/issue/15939688",
-        "key": "OSIDB-2146", "fields": {"issuetype": {"self": "https://example.com/rest/api/2/issuetype/1",
+        "key": "BUGVAULT-2146", "fields": {"issuetype": {"self": "https://example.com/rest/api/2/issuetype/1",
         "id": "1", "description": "A problem that impairs or prevents the functions
         of the product.", "iconUrl": "https://example.com/secure/viewavatar?size=xsmall&avatarId=13263&avatarType=issuetype",
         "name": "Bug", "subtask": false, "avatarId": 13263}, "customfield_12324544":
         "0.0", "customfield_12318341": null, "customfield_12319751": 0.0, "timespent":
         null, "customfield_12320940": null, "project": {"self": "https://example.com/rest/api/2/project/12332734",
-        "id": "12332734", "key": "OSIDB", "name": "Open Security Issue Database",
+        "id": "12332734", "key": "BUGVAULT", "name": "Open Security Issue Database",
         "projectTypeKey": "software", "avatarUrls": {"48x48": "https://example.com/secure/projectavatar?pid=12332734&avatarId=10010",
         "24x24": "https://example.com/secure/projectavatar?size=small&pid=12332734&avatarId=10010",
         "16x16": "https://example.com/secure/projectavatar?size=xsmall&pid=12332734&avatarId=10010",
@@ -286,7 +286,7 @@ interactions:
         "customfield_12310183": null, "resolutiondate": null, "workratio": -1, "customfield_12316840":
         null, "customfield_12317379": null, "customfield_12316841": null, "customfield_12315950":
         null, "customfield_12310940": null, "customfield_12319040": null, "lastViewed":
-        null, "watches": {"self": "https://example.com/rest/api/2/issue/OSIDB-2146/watchers",
+        null, "watches": {"self": "https://example.com/rest/api/2/issue/BUGVAULT-2146/watchers",
         "watchCount": 1, "isWatching": true}, "created": "2024-06-13T14:46:00.380+0000",
         "customfield_12321240": null, "customfield_12313140": null, "priority": {"self":
         "https://example.com/rest/api/2/priority/4", "iconUrl": "https://example.com/images/icons/priorities/minor.svg",
@@ -336,7 +336,7 @@ interactions:
         null, "duedate": "2024-11-10", "customfield_12311140": null, "customfield_12319742":
         null, "customfield_12319269": null, "progress": {"progress": 0, "total": 0},
         "comment": {"comments": [], "maxResults": 0, "total": 0, "startAt": 0}, "votes":
-        {"self": "https://example.com/rest/api/2/issue/OSIDB-2146/votes", "votes":
+        {"self": "https://example.com/rest/api/2/issue/BUGVAULT-2146/votes", "votes":
         0, "hasVoted": false}, "customfield_12319743": null, "worklog": {"startAt":
         0, "maxResults": 20, "total": 0, "worklogs": []}, "customfield_12310213":
         null, "archivedby": null, "customfield_12311940": "1|zem1xs:"}}'
@@ -551,7 +551,7 @@ interactions:
       \"affected\", \"resolution\": \"delegated\", \"impact\": \"low\", \"cvss2\":
       null, \"cvss3\": null, \"cvss4\": null}], \"public\": \"2024-05-14T15:38:57Z\",
       \"reported\": \"1996-06-20T13:50:30Z\", \"impact\": \"low\", \"jira_trackers\":
-      [{\"bts_name\": \"jboss\", \"key\": \"OSIDB-2146\"}], \"source\": \"internet\",
+      [{\"bts_name\": \"jboss\", \"key\": \"BUGVAULT-2146\"}], \"source\": \"internet\",
       \"mitigation\": \"foo\", \"statement\": \"Statement for None\"}", "ids": ["2217733"]}'
     headers:
       Accept:
@@ -576,13 +576,13 @@ interactions:
         \"resolution\": \"delegated\", \"impact\": \"low\", \"cvss2\": null, \"cvss3\":
         null, \"cvss4\": null}], \"public\": \"2024-05-23T19:21:01Z\", \"reported\":
         \"2021-07-02T11:01:49Z\", \"impact\": \"low\", \"jira_trackers\": [{\"bts_name\":
-        \"jboss\", \"key\": \"OSIDB-2145\"}], \"source\": \"internet\", \"statement\":
+        \"jboss\", \"key\": \"BUGVAULT-2145\"}], \"source\": \"internet\", \"statement\":
         \"Statement for None\"}", "added": "{\"affects\": [{\"ps_module\": \"openshift-4\",
         \"ps_component\": \"openshift\", \"affectedness\": \"affected\", \"resolution\":
         \"delegated\", \"impact\": \"low\", \"cvss2\": null, \"cvss3\": null, \"cvss4\":
         null}], \"public\": \"2024-05-14T15:38:57Z\", \"reported\": \"1996-06-20T13:50:30Z\",
         \"impact\": \"low\", \"jira_trackers\": [{\"bts_name\": \"jboss\", \"key\":
-        \"OSIDB-2146\"}], \"source\": \"internet\", \"mitigation\": \"foo\", \"statement\":
+        \"BUGVAULT-2146\"}], \"source\": \"internet\", \"mitigation\": \"foo\", \"statement\":
         \"Statement for None\"}"}, "cf_release_notes": {"added": "foo", "removed":
         ""}, "summary": {"added": "continue: start: history: sample title", "removed":
         "impact: include: above: sample title"}}}]}'
@@ -747,7 +747,7 @@ interactions:
         \"delegated\", \"impact\": \"low\", \"cvss2\": null, \"cvss3\": null, \"cvss4\":
         null}], \"public\": \"2024-05-14T15:38:57Z\", \"reported\": \"1996-06-20T13:50:30Z\",
         \"impact\": \"low\", \"jira_trackers\": [{\"bts_name\": \"jboss\", \"key\":
-        \"OSIDB-2146\"}], \"source\": \"internet\", \"mitigation\": \"foo\", \"statement\":
+        \"BUGVAULT-2146\"}], \"source\": \"internet\", \"mitigation\": \"foo\", \"statement\":
         \"Statement for None\"}", "is_creator_accessible": true, "classification":
         "Other", "data_category": "Public", "cc_detail": [{"real_name": "Anton Bobrov",
         "active": true, "insider": true, "partner": false, "name": "abobrov@redhat.com",
@@ -1426,7 +1426,7 @@ interactions:
         \"resolution\": \"delegated\", \"impact\": \"low\", \"cvss2\": null, \"cvss3\":
         null, \"cvss4\": null}], \"public\": \"2024-05-14T15:38:57Z\", \"reported\":
         \"1996-06-20T13:50:30Z\", \"impact\": \"low\", \"jira_trackers\": [{\"bts_name\":
-        \"jboss\", \"key\": \"OSIDB-2146\"}], \"source\": \"internet\", \"mitigation\":
+        \"jboss\", \"key\": \"BUGVAULT-2146\"}], \"source\": \"internet\", \"mitigation\":
         \"foo\", \"statement\": \"Statement for None\"}", "qa_contact": ""}]}'
     headers:
       Access-Control-Allow-Headers:
@@ -1931,7 +1931,7 @@ interactions:
         \"impact\": \"low\", \"cvss2\": null, \"cvss3\": null, \"cvss4\": null}],
         \"public\": \"2024-05-14T15:38:57Z\", \"reported\": \"1996-06-20T13:50:30Z\",
         \"impact\": \"low\", \"jira_trackers\": [{\"bts_name\": \"jboss\", \"key\":
-        \"OSIDB-2146\"}], \"source\": \"internet\", \"mitigation\": \"foo\", \"statement\":
+        \"BUGVAULT-2146\"}], \"source\": \"internet\", \"mitigation\": \"foo\", \"statement\":
         \"Statement for None\"}", "is_creator_accessible": true, "component": ["vulnerability"],
         "cf_doc_type": "If docs needed, set a value", "description": "Cross Site Scripting
         vulnerability in jQuery v.2.2.0 thru v.3.5.0 allows a remote attacker to execute
@@ -2023,7 +2023,7 @@ interactions:
         \"affected\", \"resolution\": \"delegated\", \"impact\": \"low\", \"cvss2\":
         null, \"cvss3\": null, \"cvss4\": null}], \"public\": \"2024-05-14T15:38:57Z\",
         \"reported\": \"1996-06-20T13:50:30Z\", \"impact\": \"low\", \"jira_trackers\":
-        [{\"bts_name\": \"jboss\", \"key\": \"OSIDB-2146\"}], \"source\": \"internet\",
+        [{\"bts_name\": \"jboss\", \"key\": \"BUGVAULT-2146\"}], \"source\": \"internet\",
         \"mitigation\": \"foo\", \"statement\": \"Statement for None\"}", "cf_embargoed":
         null, "creation_time": "2023-06-27T04:14:32Z", "description": "Cross Site
         Scripting vulnerability in jQuery v.2.2.0 thru v.3.5.0 allows a remote attacker

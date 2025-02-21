@@ -1,6 +1,6 @@
 # Authentication for implementors
 If implementing an application and/or service that interfaces with the
-OSIDB REST API, please avoid misusing JWTs as this can lead to
+BUGVAULT REST API, please avoid misusing JWTs as this can lead to
 security issues, here are some tips on handling JWTs:
 
 - Assume that one access token = one request, this will simplify

@@ -6,128 +6,128 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 ### Added
-- Add not affected justification field to affects (OSIDB-380)
+- Add not affected justification field to affects (BUGVAULT-380)
 
 ### Changed
-- Remove time information when validating embargoed flaws (OSIDB-3862)
+- Remove time information when validating embargoed flaws (BUGVAULT-3862)
 - The "Obsolete" tracker resolution is now treated as "Not affected" to allow its use for erroneously filed trackers
 
 ### Fixed
-- Fix CVSS data parsing in NVD collector (OSIDB-4003)
-- Handle delete of last affect when updating flaw collaborators (OSIDB-3986)
+- Fix CVSS data parsing in NVD collector (BUGVAULT-4003)
+- Handle delete of last affect when updating flaw collaborators (BUGVAULT-3986)
 
 ### Removed
-- Remove flaw impact adjustment from NVD collector (OSIDB-3678)
+- Remove flaw impact adjustment from NVD collector (BUGVAULT-3678)
 
 ## [4.7.2] - 2025-01-31
 ### Changed
-- Skip non-migrated Bugzilla tracker sync (OSIDB-3966)
+- Skip non-migrated Bugzilla tracker sync (BUGVAULT-3966)
 
 ## [4.7.1] - 2025-01-30
 ### Fixed
-- Filter out empty events from history API resutls (OSIDB-3942)
-- Make Jira task collector to write only necessary attributes to prevent mid-air collisions (OSIDB-3636)
+- Filter out empty events from history API resutls (BUGVAULT-3942)
+- Make Jira task collector to write only necessary attributes to prevent mid-air collisions (BUGVAULT-3636)
 
 ## [4.7.0] - 2025-01-28
 ### Added
-- Add SLA exclusion policies (OSIDB-3711)
-- Implement 'in' operator in SLA conditions (OSIDB-3711)
-- Enable async Jira task sync and transition (OSIDB-3693)
-- Add collaboration labels on flaw promotion (OSIDB-3804)
-- Add basic end-to-end tests for Flaws, Affects and Trackers (OSIDB-3495)
-- Allow searching by flaw labels (OSIDB-3816)
+- Add SLA exclusion policies (BUGVAULT-3711)
+- Implement 'in' operator in SLA conditions (BUGVAULT-3711)
+- Enable async Jira task sync and transition (BUGVAULT-3693)
+- Add collaboration labels on flaw promotion (BUGVAULT-3804)
+- Add basic end-to-end tests for Flaws, Affects and Trackers (BUGVAULT-3495)
+- Allow searching by flaw labels (BUGVAULT-3816)
 
 ### Changed
-- Removed `last_validated_dt` from exposed JSON Flaw History data (OSIDB-3814), handled edge-case that would cause failure (OSIDB-3858)
-- Trim Jira task summary if flaw's `cve_id` and `title` are too long (OSIDB-3847)
+- Removed `last_validated_dt` from exposed JSON Flaw History data (BUGVAULT-3814), handled edge-case that would cause failure (BUGVAULT-3858)
+- Trim Jira task summary if flaw's `cve_id` and `title` are too long (BUGVAULT-3847)
 - Validate that a flaw has an impact set and RH CVSSv3 score is non-zero,
-  or it does not have an impact set and RH CVSSv3 score is zero (OSIDB-3738)
+  or it does not have an impact set and RH CVSSv3 score is zero (BUGVAULT-3738)
 
 ### Fixed
-- Set emtpy SLA dates explicitly (OSIDB-3943)
+- Set emtpy SLA dates explicitly (BUGVAULT-3943)
 
 ## [4.6.5] - 2025-01-10
 ### Changed
-- Revert pull request #875 from OSIDB-3814
+- Revert pull request #875 from BUGVAULT-3814
 
 ## [4.6.4] - 2025-01-10
 ### Changed
-- Moved docker-compose images from docker.io to mirror.gcr.io (OSIDB-3653)
-- Removed `last_validated_dt` from exposed JSON Flaw History data (OSIDB-3814)
+- Moved docker-compose images from docker.io to mirror.gcr.io (BUGVAULT-3653)
+- Removed `last_validated_dt` from exposed JSON Flaw History data (BUGVAULT-3814)
 
 ## [4.6.3] - 2025-01-09
 ### Fixed
-- Reduce flaw save operations to avoid outdated timestamps (OSIDB-3837)
+- Reduce flaw save operations to avoid outdated timestamps (BUGVAULT-3837)
 
 ## [4.6.2] - 2025-01-08
 ### Added
-- Introduce new field "labels" in Flaw API (OSIDB-3803)
+- Introduce new field "labels" in Flaw API (BUGVAULT-3803)
 
 ### Changed
-- Use keywords from ps-constants in CVEorg collector (OSIDB-3694)
-- External references are synced to Jira trackers (OSIDB-3733)
-- Make flaw audit history public on embargoed flaws (OSIDB-3463)
+- Use keywords from ps-constants in CVEorg collector (BUGVAULT-3694)
+- External references are synced to Jira trackers (BUGVAULT-3733)
+- Make flaw audit history public on embargoed flaws (BUGVAULT-3463)
 
 ### Fixed
-- Fix workflow validation with conditional requirements (OSIDB-3524)
+- Fix workflow validation with conditional requirements (BUGVAULT-3524)
 
 ## [4.6.1] - 2024-12-06
 ### Fixed
-- Fix not enough general CVE Severity/Severity error fallback (OSIDB-3767)
+- Fix not enough general CVE Severity/Severity error fallback (BUGVAULT-3767)
 
 ## [4.6.0] - 2024-12-02
 ### Added
-- Update field `updated_dt` on queryset update (OSIDB-3573)
-- Introduce purl to Affect (OSIDB-3409)
-- Implement field `embargoed` for advanced search (OSIDB-3549)
-- Implement no-week-ending SLA policy support (OSIDB-3500)
-- Implement complex logic in workflow state requirements (OSIDB-3524)
-- Validate and set ps_component from purl (OSIDB-3410)
-- Set Jira Severity and maintain the transition from CVE Severity (OSIDB-3697)
+- Update field `updated_dt` on queryset update (BUGVAULT-3573)
+- Introduce purl to Affect (BUGVAULT-3409)
+- Implement field `embargoed` for advanced search (BUGVAULT-3549)
+- Implement no-week-ending SLA policy support (BUGVAULT-3500)
+- Implement complex logic in workflow state requirements (BUGVAULT-3524)
+- Validate and set ps_component from purl (BUGVAULT-3410)
+- Set Jira Severity and maintain the transition from CVE Severity (BUGVAULT-3697)
 
 ### Changed
 - Add history to several other models: AffectCVSS, FlawAcknowledgment, FlawComment,
-  FlawCVSS, FlawReference, Snippet and Tracker. (OSIDB-3466)
+  FlawCVSS, FlawReference, Snippet and Tracker. (BUGVAULT-3466)
 - Moved metadata creation during tests to root level conftest and
-  automatically set envs during VCR recording (OSIDB-3492)
-- Exclude component and version from Jira tracker updates (OSIDB-3677)
+  automatically set envs during VCR recording (BUGVAULT-3492)
+- Exclude component and version from Jira tracker updates (BUGVAULT-3677)
 - Allow moving a flaw to state DONE if it has no trackers but impact is moderate
-  or low (OSIDB-3524)
-- Set hard limit of paginated results (OSIDB-643)
-- Add all references as links when creating Jira trackers (OSIDB-3733)
-- Set security level together with embargo status (OSIDB-3598)
+  or low (BUGVAULT-3524)
+- Set hard limit of paginated results (BUGVAULT-643)
+- Add all references as links when creating Jira trackers (BUGVAULT-3733)
+- Set security level together with embargo status (BUGVAULT-3598)
 
 ### Removed
-- Remove UBI handler special treatment (OSIDB-3728)
+- Remove UBI handler special treatment (BUGVAULT-3728)
 
 ## [4.5.6] - 2024-11-08
 ### Fixed
-- Properly save updated flaw in NVD collector (OSIDB-3661)
+- Properly save updated flaw in NVD collector (BUGVAULT-3661)
 
 ## [4.5.5] - 2024-11-07
 ### Changed
-- Publish internal flaws only when the triage is completed (OSIDB-3669)
+- Publish internal flaws only when the triage is completed (BUGVAULT-3669)
 - Adjust the NIST flag instead of removing on NIST score deletion
-  and relieve the NIST flag validation to account for it (OSIDB-3672)
-- Adjust flaw impact if NIST CVSS is changed (OSIDB-3661)
+  and relieve the NIST flag validation to account for it (BUGVAULT-3672)
+- Adjust flaw impact if NIST CVSS is changed (BUGVAULT-3661)
 
 ## [4.5.4] - 2024-11-06
 ### Changed
-- Moved envs monkeypatches to root conftest for reusability (OSIDB-3491)
+- Moved envs monkeypatches to root conftest for reusability (BUGVAULT-3491)
 
 ### Fixed
-- Fix conversion of CVSS severity to impact (OSIDB-3661)
-- Ignore invalid CVSS from OSV collector (OSIDB-3663)
+- Fix conversion of CVSS severity to impact (BUGVAULT-3661)
+- Ignore invalid CVSS from OSV collector (BUGVAULT-3663)
 
 ## [4.5.3] - 2024-11-05
 ### Added
-- Implement resolution steps for duplicate tracker validation (OSIDB-3588)
+- Implement resolution steps for duplicate tracker validation (BUGVAULT-3588)
 
 ### Changed
-- Add upstream references to Jira trackers on creation (OSIDB-3148)
-- Change ACL mixin serializer to support internal ACLs (OSIDB-3578)
-- Make product definitions collector atomic (OSIDB-3590)
-- Validate that the CVSSv3 score is zero for flaws with impact "None" (OSIDB-3581)
+- Add upstream references to Jira trackers on creation (BUGVAULT-3148)
+- Change ACL mixin serializer to support internal ACLs (BUGVAULT-3578)
+- Make product definitions collector atomic (BUGVAULT-3590)
+- Validate that the CVSSv3 score is zero for flaws with impact "None" (BUGVAULT-3581)
 
 ## [4.5.2] - 2024-10-24
 ### Changed
@@ -135,155 +135,155 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [4.5.1] - 2024-10-23
 ### Added
-- Implement validation of PS module and PS update stream correspondance (OSIDB-3584)
+- Implement validation of PS module and PS update stream correspondance (BUGVAULT-3584)
 
 ### Changed
-- Avoid tracker creation conflicts by async tracker sync (OSIDB-3593)
-- Skip flaws with CVE ID in OSV collector (OSIDB-3351)
+- Avoid tracker creation conflicts by async tracker sync (BUGVAULT-3593)
+- Skip flaws with CVE ID in OSV collector (BUGVAULT-3351)
 
 ### Fixed
-- Fix Bugzilla flaw summary exceeding (OSIDB-3551)
+- Fix Bugzilla flaw summary exceeding (BUGVAULT-3551)
 
 ## [4.5.0] - 2024-10-22
 ### Added
 - Add new flaw reference type "UPSTREAM"
 
 ### Changed
-- Check title for keywords in CVEorg collector (OSIDB-3545)
+- Check title for keywords in CVEorg collector (BUGVAULT-3545)
 - Update delegated resolution mapping so low impact won't fix
-  changes to fix deferred (OSIDB-3575)
+  changes to fix deferred (BUGVAULT-3575)
 
 ### Fixed
-- ValidationError constraint “unique_external_system_id” during tracker filing (OSIDB-3589)
+- ValidationError constraint “unique_external_system_id” during tracker filing (BUGVAULT-3589)
 
 ## [4.4.1] - 2024-10-17
 ### Added
-- Auto-reset CVSS validation flag on NVD CVSS removal (OSIDB-3407)
+- Auto-reset CVSS validation flag on NVD CVSS removal (BUGVAULT-3407)
 
 ### Changed
-- Restrict tracker file offer by ProdSec support instead of general one (OSIDB-3559)
+- Restrict tracker file offer by ProdSec support instead of general one (BUGVAULT-3559)
 
 ### Fixed
-- Do not add private tracker CC to flaws (OSIDB-3558)
+- Do not add private tracker CC to flaws (BUGVAULT-3558)
 
 ## [4.4.0] - 2024-10-11
 ### Added
-- Introduce moderate tracker streams pre-selection (OSIDB-3346)
-- Introduce minor and 0-day incident types (OSIDB-3390)
-- Collect CVSSv4 in OSV collector (OSIDB-3487)
-- Set Impact for collector flaws based on CVSS severity (OSIDB-3487)
+- Introduce moderate tracker streams pre-selection (BUGVAULT-3346)
+- Introduce minor and 0-day incident types (BUGVAULT-3390)
+- Collect CVSSv4 in OSV collector (BUGVAULT-3487)
+- Set Impact for collector flaws based on CVSS severity (BUGVAULT-3487)
 
 ### Changed
-- Disable flaw drafts creation for NVD collector (OSIDB-3256)
-- Select most relevant CVE, CVSS, CWE, Source for Vulnerability trackers (OSIDB-3348)
-- Tracker validations show affect's module/component (OSIDB-3439)
+- Disable flaw drafts creation for NVD collector (BUGVAULT-3256)
+- Select most relevant CVE, CVSS, CWE, Source for Vulnerability trackers (BUGVAULT-3348)
+- Tracker validations show affect's module/component (BUGVAULT-3439)
 
 ### Fixed
 - Rework and complete the tracker stream pre-selection module to fix it
-- Exclude unsupported PS modules from tracker file offer (OSIDB-3498)
+- Exclude unsupported PS modules from tracker file offer (BUGVAULT-3498)
 - Update flaw timestamp after updating NIST CVSS
-- Deprecate field "order" in the "comments" endpoint (OSIDB-3547)
+- Deprecate field "order" in the "comments" endpoint (BUGVAULT-3547)
 
 ## [4.3.4] - 2024-10-03
 ### Added
-- Create custom DjangoQL lookup field for Flaw.components (OSIDB-3479)
-- Collect NIST CVSSv4 in NVD collector (OSIDB-2300)
+- Create custom DjangoQL lookup field for Flaw.components (BUGVAULT-3479)
+- Collect NIST CVSSv4 in NVD collector (BUGVAULT-2300)
 
 ### Changed
-- Record last impact increase in trackers (OSIDB-3448)
+- Record last impact increase in trackers (BUGVAULT-3448)
 
 ### Fixed
-- Remove duplicate results from advanced search (OSIDB-3482)
-- Collect Jira field metadata for only one issuetype for each project (OSIDB-3485)
-- parent_uuid field in Alert had wrong type in OpenAPI schema (OSIDB-3451)
-- Fix Jira Tracker collector to account for Vulnerability issue type (OSIDB-3489)
-- IntegrityError duplicate key during tracker filing (OSIDB-3433)
+- Remove duplicate results from advanced search (BUGVAULT-3482)
+- Collect Jira field metadata for only one issuetype for each project (BUGVAULT-3485)
+- parent_uuid field in Alert had wrong type in OpenAPI schema (BUGVAULT-3451)
+- Fix Jira Tracker collector to account for Vulnerability issue type (BUGVAULT-3489)
+- IntegrityError duplicate key during tracker filing (BUGVAULT-3433)
 
 ## [4.3.3] - 2024-09-30
 ### Added
-- Update Vulnerability trackers on components change (OSIDB-3323)
+- Update Vulnerability trackers on components change (BUGVAULT-3323)
 - Enable CVEorg collector in production
 
 ### Changed
-- Alert users when Bugzilla sync failed (OSIDB-3252)
+- Alert users when Bugzilla sync failed (BUGVAULT-3252)
 
 ### Fixed
-- Remove infinite recursion when SYNC_FLAWS_TO_BZ is disabled (OSIDB-3430)
+- Remove infinite recursion when SYNC_FLAWS_TO_BZ is disabled (BUGVAULT-3430)
 
 ## [4.3.2] - 2024-09-19
 ### Changed
-- Update the release documentation (OSIDB-3384)
+- Update the release documentation (BUGVAULT-3384)
 
 ## [4.3.1] - 2024-09-11
 ### Added
-- Create new API endpoints for DjangoQL (OSIDB-3338)
-- Implement Jira collector sync managers (OSIDB-3177)
+- Create new API endpoints for DjangoQL (BUGVAULT-3338)
+- Implement Jira collector sync managers (BUGVAULT-3177)
 
 ### Fixed
-- Unable to unembargo flaws with trackers (OSIDB-3398)
+- Unable to unembargo flaws with trackers (BUGVAULT-3398)
 
 ### Removed
-- Remove obsoleted contract priority support (OSIDB-3399)
-- Remove obsoleted comliance priority support (OSIDB-3335)
+- Remove obsoleted contract priority support (BUGVAULT-3399)
+- Remove obsoleted comliance priority support (BUGVAULT-3335)
 
 ## [4.3.0] - 2024-09-04
 ### Added
-- Add CVEorg collector (OSIDB-2234)
-- Allow trackers to have manually set SLAs (OSIDB-3374)
+- Add CVEorg collector (BUGVAULT-2234)
+- Allow trackers to have manually set SLAs (BUGVAULT-3374)
 
 ### Changed
 - Handle frequent Taskman, Trackers and Collectors exceptions
-  instead of internal server error 500 (OSIDB-3280)
-- Sync trackers on impact decrease (OSIDB-3350)
+  instead of internal server error 500 (BUGVAULT-3280)
+- Sync trackers on impact decrease (BUGVAULT-3350)
 
 ### Fixed
-- Tracker validations skipping (OSIDB-3336)
+- Tracker validations skipping (BUGVAULT-3336)
 
 ## [4.2.0] - 2024-08-30
 ### Added
-- Implement DjangoQL for Flaw filtering (OSIDB-3337)
-- Support Vulnerability issuetype for Trackers (OSIDB-2980)
+- Implement DjangoQL for Flaw filtering (BUGVAULT-3337)
+- Support Vulnerability issuetype for Trackers (BUGVAULT-2980)
 - Set requires_cve_description to REQUESTED when unset and the flaw
-  has cve_description (OSIDB-3349)
+  has cve_description (BUGVAULT-3349)
 
 ### Changed
-- Extend CVSS vector length (OSIDB-3362)
+- Extend CVSS vector length (BUGVAULT-3362)
 
 ### Fixed
-- Taskman throwing away logs upon JSON decode error (OSIDB-3296)
-- Wrong due date when filing new Jira tracker (OSIDB-3376)
-- Fix date format error (OSIDB-3364)
+- Taskman throwing away logs upon JSON decode error (BUGVAULT-3296)
+- Wrong due date when filing new Jira tracker (BUGVAULT-3376)
+- Fix date format error (BUGVAULT-3364)
 
 ## [4.1.7] - 2024-08-22
 ### Added
-- Command for manual syncing Jira metadata (OSIDB-3219)
+- Command for manual syncing Jira metadata (BUGVAULT-3219)
 
 ### Changed
-- Saving models only triggers validations once (OSIDB-3108)
-- Update ACLs of linked objects to match collector flaw (OSIDB-3253)
-- Allow start dates to come from multiple sources in SLA (OSIDB-3221)
-- Update public date for collector flaws (OSIDB-3212)
-- Tracker collector ignores up-to-date entries (OSIDB-3244)
-- Adjust BBSync to work in one-way mode (OSIDB-3251)
+- Saving models only triggers validations once (BUGVAULT-3108)
+- Update ACLs of linked objects to match collector flaw (BUGVAULT-3253)
+- Allow start dates to come from multiple sources in SLA (BUGVAULT-3221)
+- Update public date for collector flaws (BUGVAULT-3212)
+- Tracker collector ignores up-to-date entries (BUGVAULT-3244)
+- Adjust BBSync to work in one-way mode (BUGVAULT-3251)
 - Show only official collectors at the collector status endpoint
-- Use OSIDB Bugzilla service account API key for majority of bzsync
-  instead of user ones (OSIDB-3261)
+- Use BUGVAULT Bugzilla service account API key for majority of bzsync
+  instead of user ones (BUGVAULT-3261)
 - Adjust synchronous bzsync to only work one-way
-- Move DEFER from historical to current possible affect resolution (OSIDB-3281)
+- Move DEFER from historical to current possible affect resolution (BUGVAULT-3281)
 
 ### Fixed
-- Cannot modify CVE of existing flaws (OSIDB-3102)
-- Jira metadata collector is not deleting metadata on failure (OSIDB-3219)
-- Avoid deadlocks by not triggering nested validations in m2m relationships (OSIDB-3244)
-- Manually run validation avoiding duplicated trackers (OSIDB-3234)
-- Add delay between Jira metadata fetch calls to prevent rate limiting (OSIDB-3298)
+- Cannot modify CVE of existing flaws (BUGVAULT-3102)
+- Jira metadata collector is not deleting metadata on failure (BUGVAULT-3219)
+- Avoid deadlocks by not triggering nested validations in m2m relationships (BUGVAULT-3244)
+- Manually run validation avoiding duplicated trackers (BUGVAULT-3234)
+- Add delay between Jira metadata fetch calls to prevent rate limiting (BUGVAULT-3298)
 
 ### Removed
 - Stop syncing Bugzilla SRT notes to Bugzilla flaw bugs
 
 ## [4.1.6] - 2024-08-02
 ### Fixed
-- Cannot fill trackers concurrently (OSIDB-3230)
+- Cannot fill trackers concurrently (BUGVAULT-3230)
 
 ## [4.1.5] - 2024-08-01
 ### Removed
@@ -291,207 +291,207 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [4.1.4] - 2024-07-31
 ### Added
-- Implement message throttling in the API (OSIDB-894)
-- Added contract priority description in trackers (OSIDB-3165)
+- Implement message throttling in the API (BUGVAULT-894)
+- Added contract priority description in trackers (BUGVAULT-3165)
 
 ### Changed
 - special_handling_flaw_missing_cve_description Alert to
-  special_consideration_flaw_missing_cve_description (OSIDB-2955)
+  special_consideration_flaw_missing_cve_description (BUGVAULT-2955)
 - special_handling_flaw_missing_statement Alert to
-  special_consideration_flaw_missing_statement (OSIDB-2955)
-- Allow setting empty impact value on flaw (OSIDB-3128)
-- Temporarily move has trackers workflow requirement (OSIDB-3098)
+  special_consideration_flaw_missing_statement (BUGVAULT-2955)
+- Allow setting empty impact value on flaw (BUGVAULT-3128)
+- Temporarily move has trackers workflow requirement (BUGVAULT-3098)
 - Handle Bugzilla errors in API request as 422 instead of
-  500 internal server error (OSIDB-3126)
+  500 internal server error (BUGVAULT-3126)
 - Handle DB deadlock errors triggered by concurrent API requests
-  as 409 instead of 500 internal server error (OSIDB-3048)
-- Propagate Jira errors to the user (OSIDB-3184)
+  as 409 instead of 500 internal server error (BUGVAULT-3048)
+- Propagate Jira errors to the user (BUGVAULT-3184)
 
 ### Fixed
-- Fix duplicate comment issue leading in internal server error (OSIDB-3086)
-- Handle flaw comments with&without bzimport or bifurcated history (OSIDB-3030)
-- Alerts constrained unique so that bzimport doesn't block user requests (OSIDB-3048)
-- Duplicate Alerts created concurrently in multiple threads handled correctly (OSIDB-3048)
-- Make task collector ignore outdated issues (OSIDB-3085)
-- Allow Flaw API to properly unassign owner in Jira (OSIDB-3145)
-- Remove sync from Bugzilla from the async sync to Bugzilla (OSIDB-3199)
-- Do not save to backend systems in JiraTaskSaver (OSIDB-3087)
+- Fix duplicate comment issue leading in internal server error (BUGVAULT-3086)
+- Handle flaw comments with&without bzimport or bifurcated history (BUGVAULT-3030)
+- Alerts constrained unique so that bzimport doesn't block user requests (BUGVAULT-3048)
+- Duplicate Alerts created concurrently in multiple threads handled correctly (BUGVAULT-3048)
+- Make task collector ignore outdated issues (BUGVAULT-3085)
+- Allow Flaw API to properly unassign owner in Jira (BUGVAULT-3145)
+- Remove sync from Bugzilla from the async sync to Bugzilla (BUGVAULT-3199)
+- Do not save to backend systems in JiraTaskSaver (BUGVAULT-3087)
 
 ## [4.1.3] - 2024-07-25
 ### Changed
-- UnackedHandler only recommends active unacked streams (OSIDB-3160)
+- UnackedHandler only recommends active unacked streams (BUGVAULT-3160)
 
 ## [4.1.2] - 2024-07-03
 ### Added
 - Extend flaw-task linking to primarily use the CVE ID
 
 ### Fixed
-- Fix Jira task collector (OSIDB-3064)
-- Fix OSIDB-Bugzilla mid-air collision issues (OSIDB-3083)
-- Null version of PsUpdateStream is not sent to Jira when creating a tracker (OSIDB-3078)
+- Fix Jira task collector (BUGVAULT-3064)
+- Fix BUGVAULT-Bugzilla mid-air collision issues (BUGVAULT-3083)
+- Null version of PsUpdateStream is not sent to Jira when creating a tracker (BUGVAULT-3078)
 
 ## [4.1.1] - 2024-06-28
 ### Added
-- Prefetch Alerts related models for each API endpoint (OSIDB-3053)
+- Prefetch Alerts related models for each API endpoint (BUGVAULT-3053)
 
 ### Fixed
-- Keep vulnerability-draft BZ component when rejecting flaw draft (OSIDB-3023)
-- Fix external sync order in serializers (OSIDB-3029)
-- Make Taskman service validate Jira token (OSIDB-2203)
+- Keep vulnerability-draft BZ component when rejecting flaw draft (BUGVAULT-3023)
+- Fix external sync order in serializers (BUGVAULT-3029)
+- Make Taskman service validate Jira token (BUGVAULT-2203)
 
 ## [4.1.0] - 2024-06-25
 ### Added
-- Implement a way to switch off each collector (OSIDB-2884)
-- Generate Jira tracker "components" field (OSIDB-2988)
-- Rudimentary API request logging (OSIDB-2514)
-- Add query param to force creation of Jira task for old flaws on update (OSIDB-2882)
-- Add collector for Jira tasks manually edited (OSIDB-1930)
+- Implement a way to switch off each collector (BUGVAULT-2884)
+- Generate Jira tracker "components" field (BUGVAULT-2988)
+- Rudimentary API request logging (BUGVAULT-2514)
+- Add query param to force creation of Jira task for old flaws on update (BUGVAULT-2882)
+- Add collector for Jira tasks manually edited (BUGVAULT-1930)
 
 ### Changed
 - Update the SLA policy
 
 ### Fixed
-- Workflow state of flaws without task automatically changes to 'NEW' (OSIDB-2989)
+- Workflow state of flaws without task automatically changes to 'NEW' (BUGVAULT-2989)
 - Fixed Flaw CC list builder to generate CCs in Bugzilla format
-  for both Bugzilla and Jira tracked PS modules (OSIDB-2985)
-- Flaw comments create action respects is_private (OSIDB-3003)
+  for both Bugzilla and Jira tracked PS modules (BUGVAULT-2985)
+- Flaw comments create action respects is_private (BUGVAULT-3003)
 
 ## [4.0.0] - 2024-06-17
 ### Added
 - Add new OSV option into FlawSource
-- Allow searching by CVE similarity (OSIDB-2482)
-- Add CC lists to Jira trackers and to Bugzilla trackers (OSIDB-2191)
-- Enable flaw draft creation in BZ (OSIDB-2261)
-- Add support for UAT (OSIDB-2447)
-- Added API for Alerts (OSIDB-325)
-- Add bulk PUT for Affects (OSIDB-2407)
-- Add Bugzilla token to promote API (OSIDB-2262)
-- Enable creation of Jira tasks for collector flaws (OSIDB-2649)
-- Add temporary JIRA stage http forwarder passing in params and headers (OSIDB-2734)
-- Add link between trackers to flaws without CVE (OSIDB-2848)
-- Support Bugzilla tracker creation/linking for non-Bugzilla flaws (OSIDB-2845)
-- Add bulk-enabling parameter "sync_to_bz" to POST for Trackers (OSIDB-2609)
-- Add bulk POST, DELETE for Affects (OSIDB-2722)
-- Add audit history to Flaws and Affects (OSIDB-2269)
-- Implement search on emptiness for several fields (OSIDB-2815)
-- Add major_incident_start_dt field (OSIDB-2728)
-- Add empty value to workflow_state (OSIDB-2881)
+- Allow searching by CVE similarity (BUGVAULT-2482)
+- Add CC lists to Jira trackers and to Bugzilla trackers (BUGVAULT-2191)
+- Enable flaw draft creation in BZ (BUGVAULT-2261)
+- Add support for UAT (BUGVAULT-2447)
+- Added API for Alerts (BUGVAULT-325)
+- Add bulk PUT for Affects (BUGVAULT-2407)
+- Add Bugzilla token to promote API (BUGVAULT-2262)
+- Enable creation of Jira tasks for collector flaws (BUGVAULT-2649)
+- Add temporary JIRA stage http forwarder passing in params and headers (BUGVAULT-2734)
+- Add link between trackers to flaws without CVE (BUGVAULT-2848)
+- Support Bugzilla tracker creation/linking for non-Bugzilla flaws (BUGVAULT-2845)
+- Add bulk-enabling parameter "sync_to_bz" to POST for Trackers (BUGVAULT-2609)
+- Add bulk POST, DELETE for Affects (BUGVAULT-2722)
+- Add audit history to Flaws and Affects (BUGVAULT-2269)
+- Implement search on emptiness for several fields (BUGVAULT-2815)
+- Add major_incident_start_dt field (BUGVAULT-2728)
+- Add empty value to workflow_state (BUGVAULT-2881)
 
 ### Changed
-- Make workflows API RESTful (OSIDB-1716)
-- Collect errata not linked to any flaws (OSIDB-1527)
-- Minor change to enable perf tests to run in CI (OSIDB-2447)
-- Allow editing flaws without affects in NEW state (OSIDB-2452)
-- Fixed read replica to perform HTTP requests as atomic transactions (OSIDB-2585)
-- Fixed Bugzilla sync not working when Jira task sync is enabled (OSIDB-2628)
-- Ignore SLA if update stream specifies it's not applicable (OSIDB-2612)
-- Allow filtering by empty or null CVE IDs (OSIDB-2625)
-- Redesign of flaw comments to make them independent of Bugzilla (OSIDB-2760)
-- Allow filling trackers for flaws without bz_id (OSIDB-2819)
-- Split BBSync enablement switch into flaw and tracker ones (OSIDB-2820)
-- Set "Target Release" field in Jira trackers (OSIDB-2727)
-- Tracker resolution is now readonly (OSIDB-2746)
-- Enable tracker suggestions for affects with new affectedness (OSIDB-2843)
-- Correct endpoint for tracker filing schema (OSIDB-2847)
-- Renamed Flaw "description" to "comment_zero" and "summary" to "cve_description" (OSIDB-2740)
-- Update the workflow check of filed trackers (OSIDB-2799)
-- Improve affect validation error messages (OSIDB-2893)
+- Make workflows API RESTful (BUGVAULT-1716)
+- Collect errata not linked to any flaws (BUGVAULT-1527)
+- Minor change to enable perf tests to run in CI (BUGVAULT-2447)
+- Allow editing flaws without affects in NEW state (BUGVAULT-2452)
+- Fixed read replica to perform HTTP requests as atomic transactions (BUGVAULT-2585)
+- Fixed Bugzilla sync not working when Jira task sync is enabled (BUGVAULT-2628)
+- Ignore SLA if update stream specifies it's not applicable (BUGVAULT-2612)
+- Allow filtering by empty or null CVE IDs (BUGVAULT-2625)
+- Redesign of flaw comments to make them independent of Bugzilla (BUGVAULT-2760)
+- Allow filling trackers for flaws without bz_id (BUGVAULT-2819)
+- Split BBSync enablement switch into flaw and tracker ones (BUGVAULT-2820)
+- Set "Target Release" field in Jira trackers (BUGVAULT-2727)
+- Tracker resolution is now readonly (BUGVAULT-2746)
+- Enable tracker suggestions for affects with new affectedness (BUGVAULT-2843)
+- Correct endpoint for tracker filing schema (BUGVAULT-2847)
+- Renamed Flaw "description" to "comment_zero" and "summary" to "cve_description" (BUGVAULT-2740)
+- Update the workflow check of filed trackers (BUGVAULT-2799)
+- Improve affect validation error messages (BUGVAULT-2893)
 
 ### Fixed
-- Fix incorrect ACLs for flaw drafts (OSIDB-2263)
-- Fix workflow rejection endpoint (OSIDB-2456)
-- Fix FlawReference article count validation (OSIDB-2651)
-- Fix not being able to set CVE ID to an empty string through the API (OSIDB-2702)
-- Comments not properly updating when syncing from Bugzilla (OSIDB-1385)
-- Account for empty string in target release of PS update stream (OSIDB-2909)
-- CVSS "comment" field accepts null (OSIDB-2907)
+- Fix incorrect ACLs for flaw drafts (BUGVAULT-2263)
+- Fix workflow rejection endpoint (BUGVAULT-2456)
+- Fix FlawReference article count validation (BUGVAULT-2651)
+- Fix not being able to set CVE ID to an empty string through the API (BUGVAULT-2702)
+- Comments not properly updating when syncing from Bugzilla (BUGVAULT-1385)
+- Account for empty string in target release of PS update stream (BUGVAULT-2909)
+- CVSS "comment" field accepts null (BUGVAULT-2907)
 
 ### Removed
-- Remove "type" field from Affect (OSIDB-2743)
-- Remove "type" field from Flaw (OSIDB-2735)
-- Remove "state" field from Flaw (OSIDB-2736)
-- Remove "resolution" field from Flaw (OSIDB-2737)
-- Remove several cvss fields from Flaw (OSIDB-2749)
-- Remove several cvss fields from Affect (OSIDB-2749)
-- Remove "type" field from FlawComment (OSIDB-2745)
-- Remove FlawMeta (OSIDB-2744)
-- Remove "is_major_incident" field from Flaw (OSIDB-2741)
-- Remove "meta_attr" field from FlawReference (OSIDB-2854)
-- Remove "meta_attr" field from FlawAcknowledgment (OSIDB-2854)
-- Remove "component" field from Flaw (OSIDB-2839)
-- Remove "meta_attr" field from FlawComment (OSIDB-2747)
+- Remove "type" field from Affect (BUGVAULT-2743)
+- Remove "type" field from Flaw (BUGVAULT-2735)
+- Remove "state" field from Flaw (BUGVAULT-2736)
+- Remove "resolution" field from Flaw (BUGVAULT-2737)
+- Remove several cvss fields from Flaw (BUGVAULT-2749)
+- Remove several cvss fields from Affect (BUGVAULT-2749)
+- Remove "type" field from FlawComment (BUGVAULT-2745)
+- Remove FlawMeta (BUGVAULT-2744)
+- Remove "is_major_incident" field from Flaw (BUGVAULT-2741)
+- Remove "meta_attr" field from FlawReference (BUGVAULT-2854)
+- Remove "meta_attr" field from FlawAcknowledgment (BUGVAULT-2854)
+- Remove "component" field from Flaw (BUGVAULT-2839)
+- Remove "meta_attr" field from FlawComment (BUGVAULT-2747)
 
 ## [3.7.3] - 2024-05-28
 ### Fixed
-- Fix erratum-tracker linking (OSIDB-2752)
+- Fix erratum-tracker linking (BUGVAULT-2752)
 
 ## [3.7.2] - 2024-05-17
 ### Fixed
-- Fix JiraTrackerConvertor linking of multi-CVE flaws (OSIDB-2708)
+- Fix JiraTrackerConvertor linking of multi-CVE flaws (BUGVAULT-2708)
 
 ## [3.7.1] - 2024-05-16
 ### Changed
-- Move flaw-affect-tracker linking to the tracker sync (OSIDB-1012, OSIDB-2587)
+- Move flaw-affect-tracker linking to the tracker sync (BUGVAULT-1012, BUGVAULT-2587)
 
 ## [3.7.0] - 2024-04-17
 ### Added
-- Implement flaw unembargo mechanism (OSIDB-1177)
+- Implement flaw unembargo mechanism (BUGVAULT-1177)
 - Make ps_product property available in affect API
-- Add Fedramp stream preselection handler (OSIDB-1876)
-- Introduce CVSS v4 (OSIDB-528)
-- Change tests to have default urls strings where it can't be blank (OSIDB-1679)
-- Add label compliance-priority to jira trackers based on ps-constants compliance_priority.yml (OSIDB-2062)
+- Add Fedramp stream preselection handler (BUGVAULT-1876)
+- Introduce CVSS v4 (BUGVAULT-528)
+- Change tests to have default urls strings where it can't be blank (BUGVAULT-1679)
+- Add label compliance-priority to jira trackers based on ps-constants compliance_priority.yml (BUGVAULT-2062)
 - Expose alerts on API for every model alert supported model,
-  mainly Flaw, Affect, Tracker (OSIDB-2065)
-- Add support for additional_fields in Jira BTS (OSIDB-696)
+  mainly Flaw, Affect, Tracker (BUGVAULT-2065)
+- Add support for additional_fields in Jira BTS (BUGVAULT-696)
 - Add scripts/restore_pg.sh script for restoring sql dump
 
 ### Changed
-- Ignore hosts on VCR recording (OSIDB-1678)
-- Included workflow fields in OpenAPI document for filtering (OSIDB-2083)
-- Set migrated/duplicated delegated resolution to be ignored (OSIDB-1406)
-- Update valid affectedness-resolution combinations (OSIDB-2143)
-- Change Flaw API filter to allow a list of workflow_state (OSIDB-2208)
-- SLA for compliance priority brought to parity with SFM2 (OSIDB-2257)
-- Migrate data with outdated workflow_state values to the current ones (OSIDB-1718)
-- Flaw CVSS score and Affect CVSS score are now readonly (OSIDB-2347)
+- Ignore hosts on VCR recording (BUGVAULT-1678)
+- Included workflow fields in OpenAPI document for filtering (BUGVAULT-2083)
+- Set migrated/duplicated delegated resolution to be ignored (BUGVAULT-1406)
+- Update valid affectedness-resolution combinations (BUGVAULT-2143)
+- Change Flaw API filter to allow a list of workflow_state (BUGVAULT-2208)
+- SLA for compliance priority brought to parity with SFM2 (BUGVAULT-2257)
+- Migrate data with outdated workflow_state values to the current ones (BUGVAULT-1718)
+- Flaw CVSS score and Affect CVSS score are now readonly (BUGVAULT-2347)
 
 ### Fixed
-- Fix Jira sync when bugzilla token is present (OSIDB-2171)
-- Fix Bugzilla summary for first flaw creation (OSIDB-2190)
-- Fix Jira tracker security level not being set based on embargo (OSIDB-2082)
-- Removed writing operations in workflows when READ_ONLY is enabled (OSIDB-2336)
-- Fix Flaw API allowing to sort by all fields (OSIDB-2367)
+- Fix Jira sync when bugzilla token is present (BUGVAULT-2171)
+- Fix Bugzilla summary for first flaw creation (BUGVAULT-2190)
+- Fix Jira tracker security level not being set based on embargo (BUGVAULT-2082)
+- Removed writing operations in workflows when READ_ONLY is enabled (BUGVAULT-2336)
+- Fix Flaw API allowing to sort by all fields (BUGVAULT-2367)
 - Fix FlawCVSS and AffectCVSS "cvss_version" on API to show version enum
 
 ## [3.6.2] - 2024-02-02
 ### Fixed
-- Fix issue with tracker updates through Affect objects (OSIDB-2059)
-- Ensure invalid fields passed to include_fields filter are ignored (OSIDB-2048)
+- Fix issue with tracker updates through Affect objects (BUGVAULT-2059)
+- Ensure invalid fields passed to include_fields filter are ignored (BUGVAULT-2048)
 
 ## [3.6.1] - 2024-02-01
 ### Fixed
-- Fix issue with Flaw updates through collector (OSIDB-2050)
+- Fix issue with Flaw updates through collector (BUGVAULT-2050)
 
 ## [3.6.0] - 2024-01-31
 ### Added
-- Implement writable tracker API (OSIDB-1180)
-- Command for manual sync of Flaws now also accepts CVEs (OSIDB-1544)
-- Add new SOURCE option into FlawReferenceType (OSIDB-1556)
+- Implement writable tracker API (BUGVAULT-1180)
+- Command for manual sync of Flaws now also accepts CVEs (BUGVAULT-1544)
+- Add new SOURCE option into FlawReferenceType (BUGVAULT-1556)
 - Add new NVD option into FlawSource
-- Implement SLA definition parsing and timestamp computation (OSIDB-1428)
-- Implement tracker SLA start date setting (OSIDB-1393)
-- Implement tracker SLA end date setting (OSIDB-96)
-- Properly link Jira trackers to flaws on creation and update (OSIDB-1426)
-- Add OSV collector (OSIDB-677)
+- Implement SLA definition parsing and timestamp computation (BUGVAULT-1428)
+- Implement tracker SLA start date setting (BUGVAULT-1393)
+- Implement tracker SLA end date setting (BUGVAULT-96)
+- Properly link Jira trackers to flaws on creation and update (BUGVAULT-1426)
+- Add OSV collector (BUGVAULT-677)
 - Added GIN indexes for Row Based Security performance on models
 - Added MAX_CONNS to django db conf to enable better concurrency
-- Workflow fields added into Flaw endpoints (OSIDB-1819)
-- Implement after-flaw-update tracker update mechanism (OSIDB-97)
-- Add label verification-requested to jira trackers with NEW affects (OSIDB-1185)
-- Implement after-affect-update tracker update mechanism (OSIDB-97)
-- Keep jira tracker labels added by people or other tools (OSIDB-1440)
-- Add label contract-priority to jira trackers based on ps-constants contract_priority.yml (OSIDB-1709)
+- Workflow fields added into Flaw endpoints (BUGVAULT-1819)
+- Implement after-flaw-update tracker update mechanism (BUGVAULT-97)
+- Add label verification-requested to jira trackers with NEW affects (BUGVAULT-1185)
+- Implement after-affect-update tracker update mechanism (BUGVAULT-97)
+- Keep jira tracker labels added by people or other tools (BUGVAULT-1440)
+- Add label contract-priority to jira trackers based on ps-constants contract_priority.yml (BUGVAULT-1709)
 
 ### Fixed
 - Fix incorrect type bool of is_up2date field in
@@ -499,108 +499,108 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - fix schema to reflect Erratum shipped_dt to be nullable
 - Ensured serializer db calls are read_only
 - Expose git commit id via OPENSHIFT_BUILD_COMMIT env var
-- Fix Jira metadata collector to get all pages from a query (OSIDB-1124)
+- Fix Jira metadata collector to get all pages from a query (BUGVAULT-1124)
 
 ### Changed
-- Renamed OSIM module to Workflows (OSIDB-1395)
-- Change settings to allow regex in CORS policy in stage environment (OSIDB-1737)
+- Renamed OSIM module to Workflows (BUGVAULT-1395)
+- Change settings to allow regex in CORS policy in stage environment (BUGVAULT-1737)
 - Enhanced prefetches on Flaw, Affect, and Tracker api querysets
 - Change default pg configs 
-- Adjust CONN_MAX_AGE and CONN_MAX_CONNS to maintain a minimal pool of idle db conns (OSIDB-1620)
-- Tracker status field is read-only (OSIDB-1780)
-- Change Bugzilla collector and Flaw model to allow multiple components in bz_summary (OSIDB-1420)
+- Adjust CONN_MAX_AGE and CONN_MAX_CONNS to maintain a minimal pool of idle db conns (BUGVAULT-1620)
+- Tracker status field is read-only (BUGVAULT-1780)
+- Change Bugzilla collector and Flaw model to allow multiple components in bz_summary (BUGVAULT-1420)
 
 ### Removed
-- Remove daily monitoring email for failed tasks / collectors (OSIDB-1215)
-- Remove not used taskman APIs and services that has been intregated in OSIM (OSIDB-1321)
+- Remove daily monitoring email for failed tasks / collectors (BUGVAULT-1215)
+- Remove not used taskman APIs and services that has been intregated in OSIM (BUGVAULT-1321)
 
 ## [3.5.2] - 2023-12-06
 ### Added
-- Limit Celery worker to maximum amount of tasks (OSIDB-1540)
+- Limit Celery worker to maximum amount of tasks (BUGVAULT-1540)
 - Add Celery worker concurrency
-- Maximum Bugzilla and Jira connection age (OSIDB-1592, OSIDB-1593)
+- Maximum Bugzilla and Jira connection age (BUGVAULT-1592, BUGVAULT-1593)
 
 ### Fixed
-- Made Querier objects independent on Collector objects (OSIDB-1592, OSIDB-1593)
+- Made Querier objects independent on Collector objects (BUGVAULT-1592, BUGVAULT-1593)
 
 ## [3.5.1] - 2023-10-23
 ### Fixed
-- fix PS contact model (OSIDB-1445)
+- fix PS contact model (BUGVAULT-1445)
 - Improve EPSS collector memory consumption
 
 ## [3.5.0] - 2023-10-09
 ### Added
-- Implement collector for ps-constants project (OSIDB-1199)
-- Validate summary and requires_summary (OSIDB-1164)
-- Validate impact and summary (OSIDB-1164)
-- Implement tracker description generation (OSIDB-1173)
-- Implement endpoint for suggesting trackers to file (OSIDB-90)
-- Add shipped date to erratum model (OSIDB-1197)
-- Flaw creation and update triggers a Jira task sync (OSIDB-861)
-- Config gunicorn access log file depending on environment (OSIDB-879)
-- Link tracker to flaw(s) on create/update (OSIDB-1182)
-- Implement FlawCVSS and AffectCVSS APIs with filters (OSIDB-1105)
-- Implement package_versions API (OSIDB-1066)
-- is_up2date to collector status API (OSIDB-1328)
-- Implement flaw filtering based on erratum id in API (OSIDB-1330)
-- Implement filters for flaw references in API (OSIDB-1368)
-- Reactivate OSIM module unit tests (OSIDB-1320)
+- Implement collector for ps-constants project (BUGVAULT-1199)
+- Validate summary and requires_summary (BUGVAULT-1164)
+- Validate impact and summary (BUGVAULT-1164)
+- Implement tracker description generation (BUGVAULT-1173)
+- Implement endpoint for suggesting trackers to file (BUGVAULT-90)
+- Add shipped date to erratum model (BUGVAULT-1197)
+- Flaw creation and update triggers a Jira task sync (BUGVAULT-861)
+- Config gunicorn access log file depending on environment (BUGVAULT-879)
+- Link tracker to flaw(s) on create/update (BUGVAULT-1182)
+- Implement FlawCVSS and AffectCVSS APIs with filters (BUGVAULT-1105)
+- Implement package_versions API (BUGVAULT-1066)
+- is_up2date to collector status API (BUGVAULT-1328)
+- Implement flaw filtering based on erratum id in API (BUGVAULT-1330)
+- Implement filters for flaw references in API (BUGVAULT-1368)
+- Reactivate OSIM module unit tests (BUGVAULT-1320)
 
 ### Changed
-- Deprecate various cvss fields in Flaw and Affect APIs (OSIDB-1105)
-- Update CORS policy to allow bugzilla-api-key request header (OSIDB-1425)
-- Change workflows to reflect current IR workflow (OSIDB-1319)
+- Deprecate various cvss fields in Flaw and Affect APIs (BUGVAULT-1105)
+- Update CORS policy to allow bugzilla-api-key request header (BUGVAULT-1425)
+- Change workflows to reflect current IR workflow (BUGVAULT-1319)
 
 ### Fixed
 - Fix schema wrongly showing status code for DELETE methods being 204
   whereas the actual returned status code is 200
 
 ### Removed
-- Remove the Django admin interface (OSIDB-1188)
+- Remove the Django admin interface (BUGVAULT-1188)
 
 ## [3.4.2] - 2023-08-31
 ### Changed
-- Reduce the total amount of records per page when querying Bugzilla (OSIDB-1232)
-- Set AFFECTED as highest precedence resolution when calculating Affect.delegated_resolution (OSIDB-1230)
+- Reduce the total amount of records per page when querying Bugzilla (BUGVAULT-1232)
+- Set AFFECTED as highest precedence resolution when calculating Affect.delegated_resolution (BUGVAULT-1230)
 
 ## [3.4.1] - 2023-08-21
 ### Changed
-- Fix FlawCollector to account for an empty acknowledgment affiliation (OSIDB-1195)
+- Fix FlawCollector to account for an empty acknowledgment affiliation (BUGVAULT-1195)
 
 ## [3.4.0] - 2023-08-14
 ### Added
-- Implement major_incident_state in Flaw API (OSIDB-266)
-- Implement a new FlawAcknowledgment API (OSIDB-1002)
-- Implement requires_summary in Flaw API (OSIDB-1005)
-- Implement ps_update_stream in Tracker API (OSIDB-1064)
+- Implement major_incident_state in Flaw API (BUGVAULT-266)
+- Implement a new FlawAcknowledgment API (BUGVAULT-1002)
+- Implement requires_summary in Flaw API (BUGVAULT-1005)
+- Implement ps_update_stream in Tracker API (BUGVAULT-1064)
 - Implement daily monitoring email for failed tasks / collectors
-- Implement nist_cvss_validation in Flaw API (OSIDB-1006)
-- Implement additional tracker validations (OSIDB-787)
-- Validate NIST RH CVSS feedback loop (OSIDB-334)
-- Validate nist_cvss_validation and cvss_scores (OSIDB-1165)
-- Implement tracker summary generation (OSIDB-1172)
+- Implement nist_cvss_validation in Flaw API (BUGVAULT-1006)
+- Implement additional tracker validations (BUGVAULT-787)
+- Validate NIST RH CVSS feedback loop (BUGVAULT-334)
+- Validate nist_cvss_validation and cvss_scores (BUGVAULT-1165)
+- Implement tracker summary generation (BUGVAULT-1172)
 
 ### Changed
-- Change article link validation to be blocking (OSIDB-1060)
-- Deprecate the "is_major_incident" field in Flaw (OSIDB-1103)
-- Change CORS policy to allow credentials (OSIDB-1115)
-- Validate MI and CISA MI separately (OSIDB-1104)
-- Fix auto-timestamp issues (OSIDB-1171)
+- Change article link validation to be blocking (BUGVAULT-1060)
+- Deprecate the "is_major_incident" field in Flaw (BUGVAULT-1103)
+- Change CORS policy to allow credentials (BUGVAULT-1115)
+- Validate MI and CISA MI separately (BUGVAULT-1104)
+- Fix auto-timestamp issues (BUGVAULT-1171)
 
 ## [3.3.0] - 2023-06-28
 ### Added
-- Implement a new FlawReference API (OSIDB-71)
-- Implement adding new flaw comments (OSIDB-81)
-- Erratum advisory name to flaw filter (OSIDB-922)
-- CORS allow-list functionality (OSIDB-967, OSIDB-965)
-- Raw bugzilla summary to Flaw.meta_attr (OSIDB-1016)
+- Implement a new FlawReference API (BUGVAULT-71)
+- Implement adding new flaw comments (BUGVAULT-81)
+- Erratum advisory name to flaw filter (BUGVAULT-922)
+- CORS allow-list functionality (BUGVAULT-967, BUGVAULT-965)
+- Raw bugzilla summary to Flaw.meta_attr (BUGVAULT-1016)
 
 ### Changed
-- Set Jira trackers as public instead of embargoed when private (OSIDB-1013)
+- Set Jira trackers as public instead of embargoed when private (BUGVAULT-1013)
 
 ## [3.2.2] - 2023-06-19
 ### Changed
-- Account for TRIAGE in the title/summary (OSIDB-999)
+- Account for TRIAGE in the title/summary (BUGVAULT-999)
 
 ## [3.2.1] - 2023-06-12
 ### Changed
@@ -608,21 +608,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [3.2.0] - 2023-06-05
 ### Added
-- Introduce flaw ownership through task management system (OSIDB-69)
-- Implement task rejection in Taskman (OSIDB-74)
-- Implement article validation for Major Incident flaw (OSIDB-655)
-- Implement mitigation validation for Major Incident flaw (OSIDB-656)
-- Implement statement validation for Major Incident flaw (OSIDB-657)
-- Introduce new module for creating trackers in Jira (OSIDB-93)
-- Introduce aditional metadata in tasks generated from Taskman (OSIDB-861)
+- Introduce flaw ownership through task management system (BUGVAULT-69)
+- Implement task rejection in Taskman (BUGVAULT-74)
+- Implement article validation for Major Incident flaw (BUGVAULT-655)
+- Implement mitigation validation for Major Incident flaw (BUGVAULT-656)
+- Implement statement validation for Major Incident flaw (BUGVAULT-657)
+- Introduce new module for creating trackers in Jira (BUGVAULT-93)
+- Introduce aditional metadata in tasks generated from Taskman (BUGVAULT-861)
 
 ### Changed
-- Integrate Jira tracker collector with collector framework (OSIDB-576)
-- Make CVSSv3 score mandatory no more (OSIDB-901)
-- Make Bugzilla collector aware of migration of old style acks to SRT notes (OSIDB-904)
-- Fix BBSync flaw summary composition (OSIDB-902, OSIDB-909)
-- Fix Bugzilla import not reflecting some attribute removals (OSIDB-910)
-- Make flaw Bugzilla children entities respect flaw visibility (OSIDB-914)
+- Integrate Jira tracker collector with collector framework (BUGVAULT-576)
+- Make CVSSv3 score mandatory no more (BUGVAULT-901)
+- Make Bugzilla collector aware of migration of old style acks to SRT notes (BUGVAULT-904)
+- Fix BBSync flaw summary composition (BUGVAULT-902, BUGVAULT-909)
+- Fix Bugzilla import not reflecting some attribute removals (BUGVAULT-910)
+- Make flaw Bugzilla children entities respect flaw visibility (BUGVAULT-914)
 
 ## [3.1.4] - 2023-05-22
 ### Changed
@@ -638,142 +638,142 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [3.1.1] - 2023-04-17
 ### Changed
-- Fix Jira tracker collection bug (OSIDB-848)
+- Fix Jira tracker collection bug (BUGVAULT-848)
 
 ## [3.1.0] - 2023-04-12
 ### Added
-- Introduce mitigation field into Flaw and update SRT notes generator (OSIDB-584)
+- Introduce mitigation field into Flaw and update SRT notes generator (BUGVAULT-584)
 - Introduce flaw component attribute
-- Implement validation for allowed flaw sources (OSIDB-73)
-- Implement task management module (Taskman) to keep and update task workflow in Jira (OSIDB-228, OSIDB-684, OSIDB-685, OSIDB-754)
-- Expose task management module (Taskman) REST API (OSIDB-811)
-- More granular filtering for Flaw, Affect and Tracker API endpoints (OSIDB-667)
-- Ordering (ascending/descending) for Flaw, Affect and Tracker API endpoints (OSIDB-668)
-- Implement proper NVD CVSS score collector (OSIDB-632)
+- Implement validation for allowed flaw sources (BUGVAULT-73)
+- Implement task management module (Taskman) to keep and update task workflow in Jira (BUGVAULT-228, BUGVAULT-684, BUGVAULT-685, BUGVAULT-754)
+- Expose task management module (Taskman) REST API (BUGVAULT-811)
+- More granular filtering for Flaw, Affect and Tracker API endpoints (BUGVAULT-667)
+- Ordering (ascending/descending) for Flaw, Affect and Tracker API endpoints (BUGVAULT-668)
+- Implement proper NVD CVSS score collector (BUGVAULT-632)
 
 ### Changed
-- Rework the mapping from Bugzilla sumary to OSIDB title and vice versa (OSIDB-694)
-- Allow updates of flaws with multiple CVE IDs in Bugzilla (OSIDB-382)
-- Deprecate "state" and "resolution" in Flaw (OSIDB-73)
-- Increase the maximum length of "cwe_id" field in Flaw to 255 (OSIDB-73)
-- Make API requests transactional (OSIDB-232)
-- Rename REQUIRES_DOC_TEXT to REQUIRES_SUMMARY in FlawMeta (OSIDB-73)
-- Minimize mid-air collisions (OSIDB-765)
+- Rework the mapping from Bugzilla sumary to BUGVAULT title and vice versa (BUGVAULT-694)
+- Allow updates of flaws with multiple CVE IDs in Bugzilla (BUGVAULT-382)
+- Deprecate "state" and "resolution" in Flaw (BUGVAULT-73)
+- Increase the maximum length of "cwe_id" field in Flaw to 255 (BUGVAULT-73)
+- Make API requests transactional (BUGVAULT-232)
+- Rename REQUIRES_DOC_TEXT to REQUIRES_SUMMARY in FlawMeta (BUGVAULT-73)
+- Minimize mid-air collisions (BUGVAULT-765)
 - API delete methods now returns HTTP 200 status instead of 204
   upon succesful delete
 
 ### Removed
-- Remove "state" and "resolution" from FlawHistory (OSIDB-73)
+- Remove "state" and "resolution" from FlawHistory (BUGVAULT-73)
 
 ## [3.0.0] - 2023-03-21
 ### Added
-- Implement Bugzilla SRT notes builder in Bugzilla Backwards Sync (OSIDB-384)
-- Implement validation for flaw without affect (OSIDB-353)
-- Implement validation for changes in flaws with high criticicity with open tracker (OSIDB-347)
-- Implement validation for components affected by flaws closed as NOTABUG (OSIDB-363)
-- Implement validation for invalid components in software collection (OSIDB-356)
+- Implement Bugzilla SRT notes builder in Bugzilla Backwards Sync (BUGVAULT-384)
+- Implement validation for flaw without affect (BUGVAULT-353)
+- Implement validation for changes in flaws with high criticicity with open tracker (BUGVAULT-347)
+- Implement validation for components affected by flaws closed as NOTABUG (BUGVAULT-363)
+- Implement validation for invalid components in software collection (BUGVAULT-356)
 - Implement Bugzilla metadata collector
-- Implement validation for services related products with WONTREPORT resolution (OSIDB-362)
-- Implement validation for combinations of affectedness and resolution (OSIDB-360)
+- Implement validation for services related products with WONTREPORT resolution (BUGVAULT-362)
+- Implement validation for combinations of affectedness and resolution (BUGVAULT-360)
 - Implement a new API for getting a list of all supported products (PSINSIGHTS-593)
-- Implement CC list builder in Bugzilla backwards sync (OSIDB-386)
-- Implement validation for affects with exceptional combination of affectedness and resolution (OSIDB-361)
-- Implement validation for affects marked as WONTFIX or NOTAFFECTED with open trackers (OSIDB-364)
-- Implement validation for affected special handled modules without summary or statement (OSIDB-328)
-- Implement validation for flaws with private source without ACK (OSIDB-339)
-- Implement validation for unknown component (OSIDB-355)
-- Implement temporary NVD collector (OSIDB-632)
+- Implement CC list builder in Bugzilla backwards sync (BUGVAULT-386)
+- Implement validation for affects with exceptional combination of affectedness and resolution (BUGVAULT-361)
+- Implement validation for affects marked as WONTFIX or NOTAFFECTED with open trackers (BUGVAULT-364)
+- Implement validation for affected special handled modules without summary or statement (BUGVAULT-328)
+- Implement validation for flaws with private source without ACK (BUGVAULT-339)
+- Implement validation for unknown component (BUGVAULT-355)
+- Implement temporary NVD collector (BUGVAULT-632)
 - Implement Exploits report data API endpoint (PSINSIGHTS-764)
-- Implement ACL validations (OSIDB-691)
-- Implement non-empty impact validation (OSIDB-758)
-- Integrate Bugzilla backwards sync into the flaw and affect save (OSIDB-240)
-- Introduce Bugzilla API key as a serializer attribute (OSIDB-368)
-- Implement non-empty source validation (OSIDB-759)
+- Implement ACL validations (BUGVAULT-691)
+- Implement non-empty impact validation (BUGVAULT-758)
+- Integrate Bugzilla backwards sync into the flaw and affect save (BUGVAULT-240)
+- Introduce Bugzilla API key as a serializer attribute (BUGVAULT-368)
+- Implement non-empty source validation (BUGVAULT-759)
 - Local development instance is now able to switch between stage and production easily via env variables
 
 ### Changed
-- Change logging of celery and django to filesystem (OSIDB-418)
-- Implement validation for CWE ID chain in a Flaw (OSIDB-357)
-- Implement validation for embargoed flaws not be able to have public trackers (OSIDB-350)
-- Fix Jira tracker created and updated timestamps (OSIDB-14)
-- Fix errata created and updated timestamps (OSIDB-453)
-- Restrict write operations on placeholder flaws (OSIDB-388)
-- Avoid recreating flaws on CVE ID changes whenever possible (OSIDB-392)
-- Remove unsused data prestage_eligible_date from schemas (OSIDB-695)
+- Change logging of celery and django to filesystem (BUGVAULT-418)
+- Implement validation for CWE ID chain in a Flaw (BUGVAULT-357)
+- Implement validation for embargoed flaws not be able to have public trackers (BUGVAULT-350)
+- Fix Jira tracker created and updated timestamps (BUGVAULT-14)
+- Fix errata created and updated timestamps (BUGVAULT-453)
+- Restrict write operations on placeholder flaws (BUGVAULT-388)
+- Avoid recreating flaws on CVE ID changes whenever possible (BUGVAULT-392)
+- Remove unsused data prestage_eligible_date from schemas (BUGVAULT-695)
 - Revise the allowed API view HTTP methods on models
-  restricting flaw deletion and all tracker write methods (OSIDB-748)
+  restricting flaw deletion and all tracker write methods (BUGVAULT-748)
 - Bugzilla API key is send via Bugzilla-Api-Key HTTP header
 
 ### Removed
-- Remove deprecated mitigated_by field (OSIDB-753)
+- Remove deprecated mitigated_by field (BUGVAULT-753)
 
 ## [2.3.4] - 2022-12-15
 ### Changed
-- Make sure the unacked PS update stream is always linked to PS module (OSIDB-637)
+- Make sure the unacked PS update stream is always linked to PS module (BUGVAULT-637)
 
 ## [2.3.3] - 2022-12-13
 ### Changed
-- Link unacked PS update stream to PS module on product definitions sync (OSIDB-629)
-- Increase PS component name length from 100 to 255 characters (OSIDB-635)
+- Link unacked PS update stream to PS module on product definitions sync (BUGVAULT-629)
+- Increase PS component name length from 100 to 255 characters (BUGVAULT-635)
 
 ## [2.3.2] - 2022-11-28
 ### Changed
-- Catch tracker sync exceptions individually (OSIDB-580)
+- Catch tracker sync exceptions individually (BUGVAULT-580)
 
 ### Added
-- Implement complete Bugzilla groups handling in Bugzilla Backwards Sync (OSIDB-387)
-- Support (CISA) Major Incident label in tracker description (OSIDB-579)
+- Implement complete Bugzilla groups handling in Bugzilla Backwards Sync (BUGVAULT-387)
+- Support (CISA) Major Incident label in tracker description (BUGVAULT-579)
 
 ## [2.3.1] - 2022-10-25
 ### Changed
-- Fix Errata collector saving to handle advisory name change (OSIDB-565)
+- Fix Errata collector saving to handle advisory name change (BUGVAULT-565)
 
 ## [2.3.O] - 2022-10-24
 ### Changed
-- Fix Errata collector design to periodically refresh data (OSIDB-433)
+- Fix Errata collector design to periodically refresh data (BUGVAULT-433)
 - Flaw mitigated_by field is now deprecated and will be completely removed
-  in the next major release (OSIDB-126)
-- Fix component matching from tracker description (OSIDB-464)
+  in the next major release (BUGVAULT-126)
+- Fix component matching from tracker description (BUGVAULT-464)
 - Store FlawMeta alerts on FlawMeta instead of on Flaw
-- Prevent pgtrigger recreating triggers (OSIDB-429)
+- Prevent pgtrigger recreating triggers (BUGVAULT-429)
 
 ### Added
-- Helper for manual flaw synchronization (OSIDB-389)
-- Usage of django-deprecate-fields package for model field deprecation (OSIDB-126)
+- Helper for manual flaw synchronization (BUGVAULT-389)
+- Usage of django-deprecate-fields package for model field deprecation (BUGVAULT-126)
 
 ## [2.2.2] - 2022-09-20
 ### Changed
 - Fix an issue with FlawSource validation for sources that can be both
-  public and private (OSIDB-450)
+  public and private (BUGVAULT-450)
 
 ## [2.2.1] - 2022-09-07
 ### Changed
 - Fix an issue with CVSSv3 validation that was preventing some flaws from
-  being synchronized in OSIDB (OSIDB-426, OSIDB-427)
+  being synchronized in BUGVAULT (BUGVAULT-426, BUGVAULT-427)
 
 ## [2.2.0] - 2022-09-05
 ### Changed
 - Authentication is no longer compulsory for read-only requests against the
-  main OSIDB endpoints such as /flaws, /affects and /trackers (OSIDB-313)
+  main BUGVAULT endpoints such as /flaws, /affects and /trackers (BUGVAULT-313)
 - Fix an issue in which the Jiraffe collector was calling Tracker.affect
   instead of Tracker.affects (ManyToMany field) which resulted in some
   failed JIRA tracker synchronizations.
 - Treat collector failures due to already running collectors or due to
   waiting for dependencies as celery Retry exceptions.
-- OSIDB now uses publicly available images from docker.io (OSIDB-170)
-- fix bug that Major Incident can be unset by unrelated BZ flag (OSIDB-416)
+- BUGVAULT now uses publicly available images from docker.io (BUGVAULT-170)
+- fix bug that Major Incident can be unset by unrelated BZ flag (BUGVAULT-416)
 - CISA collector to run hourly rather than daily (PSINSIGHTS-635)
 
 ### Added
-- support for CVE-less flaws (OSIDB-25)
-- unified logging across the whole OSIDB
-- validate hightouch and hightouch-lite flag value combinations (OSIDB-329)
-- validate differences between Red Hat and NVD CVSS score and severity (OSIDB-333)
-- validate that embargoed flaws do not have public sources (OSIDB-337)
-- validate that flaws from public sources don't contain ack FlawMetas (OSIDB-338)
+- support for CVE-less flaws (BUGVAULT-25)
+- unified logging across the whole BUGVAULT
+- validate hightouch and hightouch-lite flag value combinations (BUGVAULT-329)
+- validate differences between Red Hat and NVD CVSS score and severity (BUGVAULT-333)
+- validate that embargoed flaws do not have public sources (BUGVAULT-337)
+- validate that flaws from public sources don't contain ack FlawMetas (BUGVAULT-338)
 - `AlertMixin` for the creation of easily-serializable alerts on a per-record
-  basis for any model that inherits from said mixin (OSIDB-324)
-- validate that an Affect's `ps_module` exists in product definitions (OSIDB-342)
+  basis for any model that inherits from said mixin (BUGVAULT-324)
+- validate that an Affect's `ps_module` exists in product definitions (BUGVAULT-342)
 - EPSS data API for Red Hat vulnerabilities (PSINSIGHTS-636)
 
 ## [2.1.0] - 2022-08-02
@@ -787,8 +787,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   things like tracker fetching will no longer make the entire flaw
   sync fail.
 - fix a bug where only certain metadata were being correctly synchronized
-  between BZ and OSIDB which resulted in things like typos in acknowledgments
-  persisting in OSIDB despite being removed from BZ.
+  between BZ and BUGVAULT which resulted in things like typos in acknowledgments
+  persisting in BUGVAULT despite being removed from BZ.
 - fix a bug in which the scheme in next/previous links in paginated
   responses was http:// and not https://.
 - fix a bug with the way that the collector framework parsed crontab
@@ -829,39 +829,39 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [2.0.1] - 2022-06-03
 ### Changed
 - fix an issue with objects not being saved to the database due to a bad
-  interaction between FlawSaver and TrackerBugConvertor (OSIDB-142)
+  interaction between FlawSaver and TrackerBugConvertor (BUGVAULT-142)
 
 ## [2.0.0] - 2022-06-01
 ### Added
-- add tracker timestamps (OSIDB-62)
-- provide erratum ID on API together with advisory ID (OSIDB-128)
-- create flaw draft (OSIDB-68)
+- add tracker timestamps (BUGVAULT-62)
+- provide erratum ID on API together with advisory ID (BUGVAULT-128)
+- create flaw draft (BUGVAULT-68)
 - API for Insights Vulnerability application (PSINSIGHTS-608)
 
 ### Changed
 - start using the "Keep a Changelog" format for the CHANGELOG.md
-- reviewed and unified the database fields accross all the models (OSIDB-16)
-- fix and unify creation and modification timestamps handling (OSIDB-62, OSIDB-82)
-- major Bugzilla collection reliability rework (OSIDB-17, OSIDB-130)
-- ignore and remove testing Bugzilla bugs (OSIDB-111)
-- reflect related entity removal on flaw sync (OSIDB-78)
-- improve flaw source handling (OSIDB-61)
+- reviewed and unified the database fields accross all the models (BUGVAULT-16)
+- fix and unify creation and modification timestamps handling (BUGVAULT-62, BUGVAULT-82)
+- major Bugzilla collection reliability rework (BUGVAULT-17, BUGVAULT-130)
+- ignore and remove testing Bugzilla bugs (BUGVAULT-111)
+- reflect related entity removal on flaw sync (BUGVAULT-78)
+- improve flaw source handling (BUGVAULT-61)
 
 ### Removed
-- remove Flawzilla testing app (OSIDB-18)
-- remove old collector APIs (OSIDB-20)
+- remove Flawzilla testing app (BUGVAULT-18)
+- remove old collector APIs (BUGVAULT-20)
 
 ## [1.2.1] - 2022-05-23
 ### Changed
 
-- ensure API ordering is reproducible - fixes pagination issue (OSIDB-133)
+- ensure API ordering is reproducible - fixes pagination issue (BUGVAULT-133)
 
 ## [1.2.0] - 2022-05-02
 ### Added
 - add /bugvault/whoami endpoint to expose currently logged in user information
 - add /affects, /trackers endpoints and allow CRUD operations
 - add collector for Errata Tool IDs and expose "errata that fix this tracker"
-- track OSIDB users' bugzilla and jira usernames
+- track BUGVAULT users' bugzilla and jira usernames
 
 ### Changed
 - unify metadata across all api responses
@@ -888,7 +888,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.1.0] - 2022-03-28
 ### Added
-- add update schema step to OSIDB release docs
+- add update schema step to BUGVAULT release docs
 - add schema extension for custom auth class
 - add exploit collectors (PSINSIGHTS-538, PSINSIGHTS-541)
 - implement more granular LDAP control groups (PSDEVOPS-2664)
@@ -897,7 +897,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - implement read-only mode and enable for prod (PSDEVOPS-3203)
 
 ### Changed
-- raise OSIDB version to 1.1.0
+- raise BUGVAULT version to 1.1.0
 - update documentation regarding LDAP groups
 - increase bugvault-service route timeout from 30s to 300s
 - update django version to fix known vulnerabilities
@@ -908,7 +908,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.0.0] - 2022-02-23
 ### Added
 - implement kerberos authentication via SPNEGO protocol
-- document OSIDB versioning
+- document BUGVAULT versioning
 - add sections about more advanced Flaw queries in tutorial
 - implement collector framework API
 - implement example collector
@@ -930,7 +930,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - fix or refactor attribute validations
 - fix schema definition
 - accommodate flawdb->bugvault rename in openshift
-- fix OSIDB name on the main page
+- fix BUGVAULT name on the main page
 - modify tracker_ids query param to filter out non relevant affects
 - update query parameters description in API schema
 - update LDAP groups docs
@@ -946,7 +946,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.0.1] - 2022-01-21
 ### Added
-- this is the initial OSIDB version
+- this is the initial BUGVAULT version
 - see git repo for the older changes
 
 <!-- TODO: Add links to version comparisons -->

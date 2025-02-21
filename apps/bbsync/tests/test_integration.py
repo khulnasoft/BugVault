@@ -818,7 +818,7 @@ class TestBBSyncIntegration:
         test that CVE ID cannot be removed from a multi-CVE flaw
 
         note that this single flaw in Bugzilla actually
-        corresponds to multiple flaws in OSIDB
+        corresponds to multiple flaws in BUGVAULT
         """
         flaw1 = FlawFactory(
             bz_id="2009119",

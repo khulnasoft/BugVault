@@ -169,7 +169,7 @@ class TestErrataToolCollection:
     def test_unlink_from_errata(self, sample_erratum_with_bz_bugs, sample_erratum_name):
         """
         test that erratum-tracker link removals are respected
-        reproducer for https://issues.redhat.com/browse/OSIDB-2752
+        reproducer for https://issues.redhat.com/browse/BUGVAULT-2752
         """
         ps_module1 = PsModuleFactory(bts_name="bugzilla")
         ps_module2 = PsModuleFactory(bts_name="jboss")

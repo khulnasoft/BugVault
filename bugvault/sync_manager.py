@@ -15,7 +15,7 @@ logger = get_task_logger(__name__)
 
 class SyncManager(models.Model):
     """
-    Abstract model to handle synchronization of some OSIDB data with external system like Bugzilla
+    Abstract model to handle synchronization of some BUGVAULT data with external system like Bugzilla
     or Jira. Its purpose is to handle scheduling Celery tasks, storing meta-data about when those
     tasks were processed, and re-scheduling tasks when necessary.
 
@@ -197,7 +197,7 @@ class SyncManager(models.Model):
         """
         for sync_manager in cls.objects.all():
 
-            # TODO: Find a cause and remove this workaround OSIDB-3131
+            # TODO: Find a cause and remove this workaround BUGVAULT-3131
             # TODO: Should be fixed, check from time to time to see if this problem is logged
             if (
                 sync_manager.last_scheduled_dt is None
@@ -306,7 +306,7 @@ class SyncManager(models.Model):
 
 class FlawDownloadManager(SyncManager):
     """
-    Sync manager class for Bugzilla => OSIDB Flaw synchronization.
+    Sync manager class for Bugzilla => BUGVAULT Flaw synchronization.
     """
 
     @staticmethod
@@ -348,7 +348,7 @@ class FlawDownloadManager(SyncManager):
 
 class BZTrackerDownloadManager(SyncManager):
     """
-    Sync manager class for Bugzilla => OSIDB Tracker synchronization.
+    Sync manager class for Bugzilla => BUGVAULT Tracker synchronization.
     """
 
     @staticmethod
@@ -395,7 +395,7 @@ class BZTrackerDownloadManager(SyncManager):
 
 class BZTrackerLinkManager(SyncManager):
     """
-    Sync manager class for Bugzilla => OSIDB Tracker synchronization where only links between
+    Sync manager class for Bugzilla => BUGVAULT Tracker synchronization where only links between
     Tracker and Affects are updated.
     """
 
@@ -539,7 +539,7 @@ class BZTrackerLinkManager(SyncManager):
 
 class BZSyncManager(SyncManager):
     """
-    Sync manager class for OSIDB => Bugzilla synchronization.
+    Sync manager class for BUGVAULT => Bugzilla synchronization.
     """
 
     @classmethod
@@ -549,7 +549,7 @@ class BZSyncManager(SyncManager):
 
         This implementation uses custom de-duplication logic
         and a 20 seconds delay to mitigate "outdated model" conflicts on bugzilla.
-        See OSIDB-3205 for more details.
+        See BUGVAULT-3205 for more details.
 
         :param sync_id: Unique ID for synchronized data object.
         """
@@ -639,7 +639,7 @@ class BZSyncManager(SyncManager):
 
 class JiraTaskDownloadManager(SyncManager):
     """
-    Sync manager class for Jira => OSIDB Task synchronization.
+    Sync manager class for Jira => BUGVAULT Task synchronization.
     """
 
     @staticmethod
@@ -681,7 +681,7 @@ class JiraTaskDownloadManager(SyncManager):
 
 class JiraTaskSyncManager(SyncManager):
     """
-    Sync manager class for OSIDB => Jira Task synchronization.
+    Sync manager class for BUGVAULT => Jira Task synchronization.
     """
 
     @staticmethod
@@ -726,7 +726,7 @@ class JiraTaskSyncManager(SyncManager):
 
 class JiraTaskTransitionManager(SyncManager):
     """
-    Transition manager class for OSIDB => Jira Task state synchronization.
+    Transition manager class for BUGVAULT => Jira Task state synchronization.
     """
 
     @staticmethod
@@ -771,7 +771,7 @@ class JiraTaskTransitionManager(SyncManager):
 
 class JiraTrackerDownloadManager(SyncManager):
     """
-    Sync manager class for Jira => OSIDB Tracker synchronization.
+    Sync manager class for Jira => BUGVAULT Tracker synchronization.
     """
 
     @staticmethod
@@ -817,7 +817,7 @@ class JiraTrackerDownloadManager(SyncManager):
 
 class JiraTrackerLinkManager(SyncManager):
     """
-    Sync manager class for Jira => OSIDB Tracker synchronization where only links between
+    Sync manager class for Jira => BUGVAULT Tracker synchronization where only links between
     Tracker and Affects are updated.
     """
 
@@ -839,7 +839,7 @@ class JiraTrackerLinkManager(SyncManager):
         # 1) linking from the flaw side
         for flaw in Flaw.objects.filter(meta_attr__jira_trackers__contains=tracker_id):
             # we need to double check the tracker ID
-            # as eg. OSIDB-123 is contained in OSIDB-1234
+            # as eg. BUGVAULT-123 is contained in BUGVAULT-1234
             for item in json.loads(flaw.meta_attr["jira_trackers"]):
                 if tracker_id == item["key"]:
                     flaws.add(flaw)

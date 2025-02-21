@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Update OSIDB version in all places
+# Update BUGVAULT version in all places
 #
 
 if [[ $1 =~ [0-9]*\.[0-9]*\.[0-9]* ]]; then 

@@ -251,8 +251,8 @@ class JiraQuerier(JiraConnector):
         """
         If the link exists in the issue, it will update the title if needed.
         If the link does not exist, it will create it.
-        Sync is done only one way (OSIDB to Jira), so if a link is deleted or modified in Jira,
-        nothing will change back in OSIDB.
+        Sync is done only one way (BUGVAULT to Jira), so if a link is deleted or modified in Jira,
+        nothing will change back in BUGVAULT.
         """
         try:
             links = self.jira_conn.remote_links(issue_key)

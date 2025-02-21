@@ -72,7 +72,7 @@ class TrackerBugzillaQueryBuilder(BugzillaQueryBuilder, TrackerQueryBuilder):
         the relation between a flaw and a tracker is always in the way
         that the tracker blocks the flaw so the flaw depends_on the tracker
         """
-        # there may be multiple flaws in OSIDB with the same Bugzilla ID
+        # there may be multiple flaws in BUGVAULT with the same Bugzilla ID
         flaw_ids = list(
             set(
                 flaw.meta_attr["bz_id"]

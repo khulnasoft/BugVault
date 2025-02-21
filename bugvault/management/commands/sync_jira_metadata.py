@@ -6,7 +6,7 @@ from collectors.jiraffe.collectors import MetadataCollector
 
 
 class Command(BaseCommand):
-    help = "Synchronizes Jira metadata to OSIDB"
+    help = "Synchronizes Jira metadata to BUGVAULT"
 
     def handle(self, *args, **options):
         now = timezone.now()

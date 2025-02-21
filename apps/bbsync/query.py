@@ -535,14 +535,14 @@ class FlawBugzillaQueryBuilder(BugzillaQueryBuilder):
             # TODO: Consider manually bzimporting leftover Flaws without
             #       meta_attr["fixed_in"] before prod goes writable. It might be
             #       a manageable number by then.
-            # TODO: [File an issue to track this, add the OSIDB-<number> ID here.]
+            # TODO: [File an issue to track this, add the BUGVAULT-<number> ID here.]
             #
             # Do not send fixed_in to bugzilla. If this bbsync runs because of an API request
             # to edit fixed_in, the change will be silently discarded.
             #
-            # * If this branch executes, this flaw has not been updated in OSIDB database since
+            # * If this branch executes, this flaw has not been updated in BUGVAULT database since
             #   adding support for fixed_in. That's a long time.
-            # * OSIDB is planned to run for months with meta_attr["fixed_in"] support before the
+            # * BUGVAULT is planned to run for months with meta_attr["fixed_in"] support before the
             #   first usage of the API for modification of fixed_in
             #   (/flaw/<flaw_id>/package_versions). Therefore on most Flaws where users might need
             #   modifying fixed_in, meta_attr["fixed_in"] will have already been bzimported by the

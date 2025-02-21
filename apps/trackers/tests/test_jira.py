@@ -807,7 +807,7 @@ class TestBothNewOldTrackerJiraQueryBuilder:
         test generation of Target Release/Target Version fields
         with PsUpdateStream.target_release being an empty string
 
-        reproducer of https://issues.redhat.com/browse/OSIDB-2909
+        reproducer of https://issues.redhat.com/browse/BUGVAULT-2909
         """
         ps_module = PsModuleFactory(bts_name="jboss")
         ps_update_stream = PsUpdateStreamFactory(
@@ -1545,7 +1545,7 @@ class TestTrackerJiraQueryBuilder:
         properly account for an unexpected
         value scheme of the Severity field
 
-        this test is OSIDB-3767 reproducer
+        this test is BUGVAULT-3767 reproducer
         """
         JiraProjectFields(
             project_key="FOOPROJECT",

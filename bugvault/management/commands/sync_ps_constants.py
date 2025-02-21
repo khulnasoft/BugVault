@@ -6,7 +6,7 @@ from collectors.ps_constants.tasks import collect_step_1_fetch, collect_step_2_s
 
 
 class Command(BaseCommand):
-    help = "Synchronizes ps-constants to OSIDB"
+    help = "Synchronizes ps-constants to BUGVAULT"
 
     def handle(self, *args, **options):
         now = timezone.now()

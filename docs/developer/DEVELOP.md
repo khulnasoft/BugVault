@@ -45,7 +45,7 @@ JIRA_TASKMAN_AUTO_SYNC_FLAW=1
 JIRA_TASKMAN_ASYNCHRONOUS_SYNC=1
 
 # Export the default local postgresql password
-OSIDB_DB_PASSWORD=passw0rd
+BUGVAULT_DB_PASSWORD=passw0rd
 
 # Errata Tool URL
 ET_URL="https://foo.bar"
@@ -64,7 +64,7 @@ PIP_INDEX_URL="https://foo.bar"
 RH_CERT_URL="https://foo.bar"
 
 # enable Bugzilla backwards sync to propagate writes to Bugzilla
-# otherwise all the writes are performed only locally in OSIDB
+# otherwise all the writes are performed only locally in BUGVAULT
 BBSYNC_SYNC_TO_BZ=1
 # enable Bugzilla backwards sync of the flaws
 BBSYNC_SYNC_FLAWS_TO_BZ=1
@@ -74,7 +74,7 @@ BBSYNC_SYNC_FLAWS_TO_BZ_ASYNCHRONOUSLY=1
 BBSYNC_SYNC_TRACKERS_TO_BZ=1
 
 # enable Jira tracker sync to propagate writes to Jira
-# otherwise all the writes are performed only locally in OSIDB
+# otherwise all the writes are performed only locally in BUGVAULT
 TRACKERS_SYNC_TO_JIRA=1
 
 # Run taskman tests behind a proxy (optional)
@@ -85,10 +85,10 @@ HTTPS_TASKMAN_PROXY="http://foo.bar"
 # This variable is only necessary when using bugvault locally and using the Stage Red Hat JIRA instance, which requires a proxy to be accessed. The jira library detects this env variable and uses it automatically.
 HTTPS_PROXY="http://foo.bar"
 
-# OSIDB CORS URLs
-OSIDB_CORS_ALLOWED_ORIGINS='["http://localhost:8000", "http://127.0.0.1:8000", "http://0.0.0.0:8000"]'
-# Custom headers allowed by OSIDB CORS policy
-OSIDB_CORS_ALLOW_HEADERS='["bugzilla-api-key", "jira-api-key"]'
+# BUGVAULT CORS URLs
+BUGVAULT_CORS_ALLOWED_ORIGINS='["http://localhost:8000", "http://127.0.0.1:8000", "http://0.0.0.0:8000"]'
+# Custom headers allowed by BUGVAULT CORS policy
+BUGVAULT_CORS_ALLOW_HEADERS='["bugzilla-api-key", "jira-api-key"]'
 
 # To enable snippets creation in collectors (when date is not set, all snippets are created)
 SNIPPET_CREATION=1
@@ -110,11 +110,11 @@ OSV_COLLECTOR_ENABLED=1
 
 The `.env` file is loaded automatically by podman-compose. It is also loaded as environment variables in a few Makefile targets (run `grep -rF '.env ' mk/` to see which ones).
 
-If podman-compose older than 1.0 is used, `.env` values must not be quoted (e.g. `OSIDB_DB_PASSWORD="passw0rd"` makes the contents of the variable be `"passw0rd"` instead of `passw0rd`).
+If podman-compose older than 1.0 is used, `.env` values must not be quoted (e.g. `BUGVAULT_DB_PASSWORD="passw0rd"` makes the contents of the variable be `"passw0rd"` instead of `passw0rd`).
 
 Note that your `.env` file contains secrets you should not share. Make sure that it stays in `.gitignore` and that you don't commit it to git.
 
-**IMPORTANT:** Reference `.env` files for setting up OSIDB with Production or Stage instances are located in the `bugvault-ops` repository in `env_files/` directory. Whenever a new environment variable is introduced in OSIDB it should be added to that reference files with relevant values as well.
+**IMPORTANT:** Reference `.env` files for setting up BUGVAULT with Production or Stage instances are located in the `bugvault-ops` repository in `env_files/` directory. Whenever a new environment variable is introduced in BUGVAULT it should be added to that reference files with relevant values as well.
 
 ### Image registries
 
@@ -269,9 +269,9 @@ Other ways to start the **full environment**, for specific usecases:
 It's possible to perform local development outside of containers, in the venv that was created by `make dev-env`. However, for simplicity's sake, the database always runs in a container (`bugvault-data` container).
 
 * `make start-local-psql` (Starts only the `bugvault-data` container.)
-* `make shell-local` (Runs `manage.py shell` in local venv, with correctly set `OSIDB_DB_PORT`. Requires running `bugvault-data` container.)
-* `make bash-local` (Runs bash in local venv, with correctly set `OSIDB_DB_PORT`. Requires running `bugvault-data` container.)
-* `make command-local` (Runs `command.py` in `manage.py shell` in local venv, with correctly set `OSIDB_DB_PORT`. Requires running `bugvault-data` container. You must create `command.py` manually. This is to allow repeated execution of the same set of expressions, as an alternative to running `make shell-local` and pasting those expressions manually every time.)
+* `make shell-local` (Runs `manage.py shell` in local venv, with correctly set `BUGVAULT_DB_PORT`. Requires running `bugvault-data` container.)
+* `make bash-local` (Runs bash in local venv, with correctly set `BUGVAULT_DB_PORT`. Requires running `bugvault-data` container.)
+* `make command-local` (Runs `command.py` in `manage.py shell` in local venv, with correctly set `BUGVAULT_DB_PORT`. Requires running `bugvault-data` container. You must create `command.py` manually. This is to allow repeated execution of the same set of expressions, as an alternative to running `make shell-local` and pasting those expressions manually every time.)
 
 See `make help` for a short summary of these _make targets_.
 
@@ -507,7 +507,7 @@ $ make testrunner.all-tests
    all significant commits
 
 ### Using pip-tools
-OSIDB has adopted `pip-tools` as its tool of choice for python dependency management,
+BUGVAULT has adopted `pip-tools` as its tool of choice for python dependency management,
 in this section we'll go over the basics, the similarities and the differences between `pip-tools` and `pip`,
 as well as how to use it effectively.
 
@@ -570,8 +570,8 @@ $ make sync-deps
 > :warning: Make sure to run `pip-sync` within a virtual environment, otherwise you risk having system-wide packages that are not in the `requirements.txt` be uninstalled
 
 As for what each requirements file holds, here's a quick explanation for each:
-- `requirements.txt`: dependencies necessary for running OSIDB
-- `devel-requirements.txt`: dependencies necessary to develop OSIDB
+- `requirements.txt`: dependencies necessary for running BUGVAULT
+- `devel-requirements.txt`: dependencies necessary to develop BUGVAULT
 - `local-requirements.txt`: dependencies specific to your workflow (e.g. `ipython` or any other custom shell/debugger)
 
 `local-requirements.txt` is a special case, it is ignored in the `.gitignore` because it's specific to every developer. Without it, every time `pip-sync` is ran any packages specific to your workflow would be uninstalled and would have to be manually installed.
@@ -637,8 +637,8 @@ Running the shell
 ```bash
 make start-local  # run all the containers including the DB container
 source venv/bin/activate  # source into the python virtual environment
-export OSIDB_DB_PORT="$( podman port bugvault-data | awk -F':' '/5432/ { print $2 }' )"  # get the local port of psql
-export OSIDB_DB_PASSWORD=passw0rd  # this is the password used in docker-compose.yml
+export BUGVAULT_DB_PORT="$( podman port bugvault-data | awk -F':' '/5432/ { print $2 }' )"  # get the local port of psql
+export BUGVAULT_DB_PASSWORD=passw0rd  # this is the password used in docker-compose.yml
 # ...set other necessary variables...
 python3 manage.py shell --settings=config.settings_shell
 ```
@@ -654,17 +654,17 @@ podman exec -it bugvault-service python3 manage.py shell --settings=config.setti
 The two snippets above have make target shortcuts `make shell-local` and `make shell-service`.
 
 For any customization you can export the following env variables to change the DB settings:
- * OSIDB_DB_NAME (default "bugvault")
- * OSIDB_DB_USER (default "bugvault_admin_user")
- * OSIDB_DB_HOST (default "localhost")
- * OSIDB_DB_PORT (default "5432")
+ * BUGVAULT_DB_NAME (default "bugvault")
+ * BUGVAULT_DB_USER (default "bugvault_admin_user")
+ * BUGVAULT_DB_HOST (default "localhost")
+ * BUGVAULT_DB_PORT (default "5432")
 
 If you do that, it is recommended to also add these env variables to your virtual environment's activate script (eg. `venv/bin/activate`).
 
 ### Deprecate fields
 
 When we decide to remove a field from a model, above removing the related functionality we need to carefully
-consider the DB and API compatibility. For the DB we need to ensure that OSIDB is N-1 compatible meaning
+consider the DB and API compatibility. For the DB we need to ensure that BUGVAULT is N-1 compatible meaning
 that the app of version N can work with the DB of version N-1 and vice-versa. For the API we need to ensure
 that the breaking changes are introduced only in major releases. The standard procedure is as follows.
 
@@ -711,7 +711,7 @@ $ make update-schema
 
 Obviously the procedure is simplified and omits steps like review or release
 announcement.
-An example pull request can be seen [here](https://github.com/RedHatProductSecurity/bugvault/pull/55).
+An example pull request can be seen [here](https://github.com/KhulnaSoft/bugvault/pull/55).
 
 ## Row-level security & dummy data
 
@@ -833,7 +833,7 @@ The local dev environment defines this in the related docker-compose.yml:
       ports:
         - "8000:8000"
       environment:
-        OSIDB_DEBUG: ${OSIDB_DEBUG}
+        BUGVAULT_DEBUG: ${BUGVAULT_DEBUG}
         DJANGO_SETTINGS_MODULE: "config.settings_local"
         BZIMPORT_BZ_API_KEY: ${BZIMPORT_BZ_API_KEY}
         JIRA_AUTH_TOKEN: ${JIRA_AUTH_TOKEN}
@@ -855,7 +855,7 @@ Similarly, this environment variable is set (in openshift) for stage/prod enviro
 
 ### Secrets within the codebase
 
-It is possible that during development, a developer may unknowingly introduce secrets (passwords, tokens, etc.) into the codebase. To avoid this, OSIDB uses the `detect-secrets` tool both as a CI step and a pre-commit hook to avoid having any active secrets being merged into the master branch.
+It is possible that during development, a developer may unknowingly introduce secrets (passwords, tokens, etc.) into the codebase. To avoid this, BUGVAULT uses the `detect-secrets` tool both as a CI step and a pre-commit hook to avoid having any active secrets being merged into the master branch.
 
 Sometimes, the secrets found by the tool can be false-positives, if you believe that this is the case, then you should update the baseline and audit the newly found secret. This can be easily done by calling the `update-secrets` Makefile entrypoint. There are other ways of ignoring false-positives (such as pragma directives) but it is recommended to follow the aforementioned approach to easily keep track of all false positives and their history.
 
@@ -872,10 +872,10 @@ Sharing (CORS) is configured using the corsheaders Django app.
 This is crucial for development scenarios where changes to CORS rules are
 necessary, and for operations to load in CORS URLs correctly.
 
-Ensure that the `OSIDB_CORS_ALLOWED_ORIGINS` environment variable is set
+Ensure that the `BUGVAULT_CORS_ALLOWED_ORIGINS` environment variable is set
 correctly when deploying the application, for instance:
 
-The `OSIDB_CORS_ALLOWED_ORIGINS` environment variable should be set as a JSON
+The `BUGVAULT_CORS_ALLOWED_ORIGINS` environment variable should be set as a JSON
 array like so: `["http://example-ui1.com", "http://example-ui2.com"]`.
 
 This configuration allows developers to adjust CORS rules as needed and gives

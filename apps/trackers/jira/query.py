@@ -108,9 +108,9 @@ FLAW_SOURCE_TO_JIRA_SOURCE = {
     FlawSource.TWITTER: "Twitter",
     FlawSource.UBUNTU: "Ubuntu",
     FlawSource.UPSTREAM: "Upstream",
-    # TODO: Double-check that vendor_sec is correct. Tracked in OSIDB-3352.
+    # TODO: Double-check that vendor_sec is correct. Tracked in BUGVAULT-3352.
     FlawSource.VENDOR_SEC: "vendor_sec",
-    # TODO: Double-check that Xen is correct. Tracked in OSIDB-3352.
+    # TODO: Double-check that Xen is correct. Tracked in BUGVAULT-3352.
     FlawSource.XEN: "Xen",
 }
 
@@ -133,7 +133,7 @@ IMPACT_TO_JIRA_CVE_SEVERITY = {
     Impact.IMPORTANT: JiraCVESeverity.IMPORTANT,
     Impact.MODERATE: JiraCVESeverity.MODERATE,
     Impact.LOW: JiraCVESeverity.LOW,
-    # NONE exists in Jira, but not allowable for OSIDB to set.
+    # NONE exists in Jira, but not allowable for BUGVAULT to set.
 }
 
 
@@ -156,7 +156,7 @@ IMPACT_TO_JIRA_SEVERITY = {
     Impact.IMPORTANT: JiraSeverity.IMPORTANT,
     Impact.MODERATE: JiraSeverity.MODERATE,
     Impact.LOW: JiraSeverity.LOW,
-    # INFORMATIONAL and NONE exist in Jira but are not used by OSIDB
+    # INFORMATIONAL and NONE exist in Jira but are not used by BUGVAULT
 }
 
 # NOTE that these four values can change, as they are for sanity-checking
@@ -238,10 +238,10 @@ class OldTrackerJiraQueryBuilder(TrackerQueryBuilder):
             ).allowed_values
         except JiraProjectFields.DoesNotExist:
             # In some cases this information is not available. In that case, Jira will return
-            # its own error if the component is invalid. So in that case, skip OSIDB-side checks.
+            # its own error if the component is invalid. So in that case, skip BUGVAULT-side checks.
             # JiraProjectFields may not be available
             # - in tests
-            # - when OSIDB is run freshly without running product_definitions_collector and metadata_collector first
+            # - when BUGVAULT is run freshly without running product_definitions_collector and metadata_collector first
             # - if metadata_collector fails for some reason
             allowed_component_values = None
 
@@ -289,7 +289,7 @@ class OldTrackerJiraQueryBuilder(TrackerQueryBuilder):
 
     def generate_priority(self):
         """
-        Convert OSIDB impact to Jira Priority
+        Convert BUGVAULT impact to Jira Priority
         """
         try:
             allowed_values = JiraProjectFields.objects.get(
@@ -655,7 +655,7 @@ class TrackerJiraQueryBuilder(OldTrackerJiraQueryBuilder):
         fields, which is relevant for multi-flaw trackers where
         the tracker can have multiple sets of CVE/CVSS/CWE/source
         but the tracker should display only one such set.
-        Quote from 2024-09-27 in OSIDB-3348:
+        Quote from 2024-09-27 in BUGVAULT-3348:
           "For multiflaw trackers, select CVE with highest Impact value,
            if there are multiple such CVE, select the one where flaw has
            the oldest created_date/time value. Use CVE/cvss/cwe/source
@@ -856,7 +856,7 @@ class TrackerJiraQueryBuilder(OldTrackerJiraQueryBuilder):
 
     def generate_upstream_component(self):
         # TODO: Every time the components change in the flaw, the trackers must be updated as well.
-        #       - tracked in OSIDB-3323
+        #       - tracked in BUGVAULT-3323
 
         field_name = "Upstream Affected Component"
         _, field_id = self.field_check_and_get_values_and_id(field_name)

@@ -571,7 +571,7 @@ class TestBugzillaJiraMixinIntegration:
         enable_jira_tracker_sync,
         jira_token,
     ):
-        """Test that sync occurs using internal OSIDB APIs"""
+        """Test that sync occurs using internal BUGVAULT APIs"""
         self.setup_workflow()
         flaw = Flaw(
             title="title",
@@ -627,7 +627,7 @@ class TestBugzillaJiraMixinIntegration:
         jira_token,
         test_api_uri,
     ):
-        """Test that sync occurs using OSIDB REST API"""
+        """Test that sync occurs using BUGVAULT REST API"""
         self.setup_workflow()
 
         flaw_data = {

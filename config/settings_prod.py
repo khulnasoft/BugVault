@@ -13,20 +13,20 @@ SECRET_KEY = get_env("DJANGO_SECRET_KEY")
 USE_X_FORWARDED_HOST = True
 SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 
-# Minimal group for read access of public flaws in OSIDB
+# Minimal group for read access of public flaws in BUGVAULT
 # TODO: In the future we might simply use a proxy group in which
 # membership is based off of one or more LDAP groups
 # e.g. (|(memberOf=group-a)(memberOf=group-b))
 PUBLIC_READ_GROUPS = ["bugvault-prod-public-read", "red-hat-product-security"]
-# Minimal group for write access of public flaws in OSIDB
+# Minimal group for write access of public flaws in BUGVAULT
 PUBLIC_WRITE_GROUP = "bugvault-prod-public-write"
-# Minimal group for read access of embargoed flaws in OSIDB
+# Minimal group for read access of embargoed flaws in BUGVAULT
 EMBARGO_READ_GROUP = "bugvault-prod-embargo-read"
-# Minimal group for write access of embargoed flaws in OSIDB
+# Minimal group for write access of embargoed flaws in BUGVAULT
 EMBARGO_WRITE_GROUP = "bugvault-prod-embargo-write"
-# Minimal group for read access of internal flaws in OSIDB
+# Minimal group for read access of internal flaws in BUGVAULT
 INTERNAL_READ_GROUP = "bugvault-prod-internal-read"
-# Minimal group for write access of internal flaws in OSIDB
+# Minimal group for write access of internal flaws in BUGVAULT
 INTERNAL_WRITE_GROUP = "bugvault-prod-internal-write"
 # Contains all non-admin groups
 ALL_GROUPS = [
@@ -37,7 +37,7 @@ ALL_GROUPS = [
     INTERNAL_READ_GROUP,
     INTERNAL_WRITE_GROUP,
 ]
-# Minimal group for managing the OSIDB service
+# Minimal group for managing the BUGVAULT service
 SERVICE_MANAGE_GROUP = "bugvault-prod-manage"
 
 ldap.set_option(ldap.OPT_X_TLS_REQUIRE_CERT, ldap.OPT_X_TLS_DEMAND)
@@ -78,11 +78,11 @@ AUTH_LDAP_USER_FLAGS_BY_GROUP = {
 
 DATABASES = {
     "default": {
-        "NAME": get_env("OSIDB_DB_NAME", default="bugvault"),
-        "USER": get_env("OSIDB_DB_USER"),
-        "PASSWORD": get_env("OSIDB_DB_PASSWORD"),
-        "HOST": get_env("OSIDB_DB_HOST"),
-        "PORT": get_env("OSIDB_DB_PORT", default="5432"),
+        "NAME": get_env("BUGVAULT_DB_NAME", default="bugvault"),
+        "USER": get_env("BUGVAULT_DB_USER"),
+        "PASSWORD": get_env("BUGVAULT_DB_PASSWORD"),
+        "HOST": get_env("BUGVAULT_DB_HOST"),
+        "PORT": get_env("BUGVAULT_DB_PORT", default="5432"),
         "ENGINE": "psqlextra.backend",
         "ATOMIC_REQUESTS": True,  # perform HTTP requests as atomic transactions
         "OPTIONS": {
@@ -102,7 +102,7 @@ STATIC_URL = "/static/"
 
 # Celery settings
 
-REDIS_PASSWORD = get_env("OSIDB_REDIS_PASSWORD")
+REDIS_PASSWORD = get_env("BUGVAULT_REDIS_PASSWORD")
 CELERY_BROKER_URL = CELERY_RESULT_BACKEND = f"rediss://:{REDIS_PASSWORD}@redis:6379/"
 CELERY_BROKER_USE_SSL = CELERY_REDIS_BACKEND_USE_SSL = CELERY_RHUBARB_BACKEND_KWARGS = {
     "ssl_keyfile": "/opt/app-root/etc/redis/certs/bugvault-redis.key",
@@ -177,6 +177,6 @@ elif get_env("MPP_LOGFILE_LOGGING_ENABLED", is_bool=True, default="False"):
 
 # sets the Access-Control-Allow-Origin response header - accepts literal strings
 # example value: ["https://bugvault.example.com", "https://workflows.example.com"]
-CORS_ALLOWED_ORIGINS = get_env("OSIDB_CORS_ALLOWED_ORIGINS", default="[]", is_json=True)
+CORS_ALLOWED_ORIGINS = get_env("BUGVAULT_CORS_ALLOWED_ORIGINS", default="[]", is_json=True)
 # removes default config that allows regex
 CORS_ALLOWED_ORIGIN_REGEXES = []

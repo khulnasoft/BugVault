@@ -171,7 +171,7 @@ class TestGenerateBasics:
     def test_generate_summary_too_many_cves(self):
         """
         test shortening summary
-        OSIDB-3551 reproducer
+        BUGVAULT-3551 reproducer
         """
         # simply use hundreds
         for i in range(100, 200):
@@ -194,7 +194,7 @@ class TestGenerateBasics:
     def test_generate_summary_added_cve(self):
         """
         test generating of summary when assigning a new CVE
-        OSIDB-902 reproducer
+        BUGVAULT-902 reproducer
         """
         flaw = FlawFactory(
             components=["hammer"],
@@ -211,7 +211,7 @@ class TestGenerateBasics:
     def test_generate_summary_removed_cve(self):
         """
         test generating of summary when removing a CVE
-        OSIDB-909 reproducer
+        BUGVAULT-909 reproducer
         """
         flaw = FlawFactory(
             components=["hammer"],

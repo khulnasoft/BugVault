@@ -1,6 +1,6 @@
 # bugvault 
 
-OSIDB is a database providing data model and services for the storing and management of CVE information.
+BUGVAULT is a database providing data model and services for the storing and management of CVE information.
 
 Features:
 * postgresql database

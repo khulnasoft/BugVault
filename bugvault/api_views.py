@@ -35,7 +35,7 @@ from rest_framework.viewsets import (
 from collectors.jiraffe.constants import HTTPS_PROXY, JIRA_SERVER
 from bugvault.models import Affect, AffectCVSS, Flaw, FlawLabel, Tracker
 
-from .constants import OSIDB_API_VERSION, PYPI_URL, URL_REGEX
+from .constants import BUGVAULT_API_VERSION, PYPI_URL, URL_REGEX
 from .filters import (
     AffectCVSSFilter,
     AffectFilter,
@@ -256,7 +256,7 @@ def get_valid_http_methods(cls: ViewSet, excluded: list[str] = None) -> list[str
 
     Blacklisted HTTP methods can be defined in the django settings, unsafe HTTP
     methods will be removed if the app is running in read-only mode, by setting
-    the OSIDB_READONLY_MODE env variable to "1".
+    the BUGVAULT_READONLY_MODE env variable to "1".
 
     :param cls: The ViewSet class from which http_method_names are inherited
     :param excluded: A list of exlicitly excluded HTTP methods.
@@ -290,7 +290,7 @@ id_param = OpenApiParameter(
     type=str,
     location=OpenApiParameter.PATH,
     description=(
-        "A string representing either the internal OSIDB UUID of the Flaw resource "
+        "A string representing either the internal BUGVAULT UUID of the Flaw resource "
         "or the CVE number corresponding to a Flaw"
     ),
 )
@@ -341,7 +341,7 @@ flaw_id = OpenApiParameter(
     type=str,
     location=OpenApiParameter.PATH,
     description=(
-        "A string representing either the internal OSIDB UUID of the Flaw resource "
+        "A string representing either the internal BUGVAULT UUID of the Flaw resource "
         "or the CVE number corresponding to a Flaw"
     ),
 )
@@ -581,7 +581,7 @@ class FlawView(RudimentaryUserPathLoggingMixin, ModelViewSet):
         response.data = {
             "uuid": response.data["uuid"],
         }
-        response["Location"] = f"/api/{OSIDB_API_VERSION}/flaws/{response.data['uuid']}"
+        response["Location"] = f"/api/{BUGVAULT_API_VERSION}/flaws/{response.data['uuid']}"
         return response
 
 
@@ -784,7 +784,7 @@ def whoami(request: Request) -> Response:
                 type=str,
                 location=OpenApiParameter.PATH,
                 description=(
-                    "A string representing the internal OSIDB UUID of the FlawComment resource."
+                    "A string representing the internal BUGVAULT UUID of the FlawComment resource."
                 ),
             ),
         ],

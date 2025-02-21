@@ -22,7 +22,7 @@ from requests.models import Response
 
 from bugvault.validators import CVE_RE_STR, restrict_regex
 
-from .exceptions import OSIDBException
+from .exceptions import BUGVAULTException
 
 
 def cve_id_comparator(cve_id: str) -> tuple[int, int]:
@@ -77,7 +77,7 @@ def get_env(
 ) -> Any:
     """get environment variable"""
     if (is_bool and is_int) or (is_bool and is_json) or (is_int and is_json):
-        raise OSIDBException(
+        raise BUGVAULTException(
             "Expected environment variable cannot be of multiple types at the same time"
         )
 

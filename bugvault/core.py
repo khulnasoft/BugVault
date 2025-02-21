@@ -7,7 +7,7 @@ import uuid
 
 from django.db import connection
 
-from bugvault.exceptions import OSIDBException
+from bugvault.exceptions import BUGVAULTException
 
 
 def generate_acls(groups):
@@ -38,4 +38,4 @@ def set_user_acls(groups) -> None:
             with connection.cursor() as cursor:
                 cursor.execute("SET bugvault.acl = %s", [",".join(acls)])
     except Exception:
-        raise OSIDBException("Cannot set user acl")
+        raise BUGVAULTException("Cannot set user acl")

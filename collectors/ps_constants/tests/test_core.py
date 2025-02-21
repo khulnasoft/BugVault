@@ -41,7 +41,7 @@ class TestPsConstantsCollection:
             "blocklist_special_cases",
         ]
 
-        # TODO: Record cassette for jira_bug_issuetype, tracked in OSIDB-2980
+        # TODO: Record cassette for jira_bug_issuetype, tracked in BUGVAULT-2980
 
     def test_sync_special_consideration_packages(self):
         """

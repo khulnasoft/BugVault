@@ -9,10 +9,10 @@ import re
 from datetime import timedelta, timezone
 from decimal import Decimal
 
-OSIDB_API_VERSION: str = "v1"
+BUGVAULT_API_VERSION: str = "v1"
 
 # include meta_attr column on all queries (useful for debugging)
-OSIDB_VIEW_META_ATTR = False
+BUGVAULT_VIEW_META_ATTR = False
 
 TZ_OFFSET = 0  # GMT
 TZINFO = timezone(timedelta(hours=TZ_OFFSET))

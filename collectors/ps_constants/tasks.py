@@ -76,7 +76,7 @@ def collect_step_2_sync(
     # TODO: crontab seems to be not sufficient as a scheduler here
     # since it is only capable of running the job at every fixed third hour
     # eg. 3:00,8:00,etc. and thus there exist a scenario in which
-    # the OSIDB is run lets say 3:01 and this job will be scheduled on 8:49
+    # the BUGVAULT is run lets say 3:01 and this job will be scheduled on 8:49
     # which is really not what we want, since there may be other collectors
     # depending on this one, odd minute number was chosen in order to not have multiple
     # tasks running at the same time

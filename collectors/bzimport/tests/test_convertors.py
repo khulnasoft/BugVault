@@ -743,7 +743,7 @@ class TestFlawConvertor:
     def test_flags_major_incident(self, hightouch, hightouch_lite, result):
         """
         Tests that hightouch and hightouch-lite flags from Bugzilla are correctly
-        converted into major_incident_state in OSIDB.
+        converted into major_incident_state in BUGVAULT.
         """
         flaw_bug = self.get_flaw_bug()
         flaw_bug["flags"] = []
@@ -796,7 +796,7 @@ class TestFlawConvertor:
     ):
         """
         Tests that requires_doc_text flag from Bugzilla is correctly
-        converted into requires_cve_description in OSIDB.
+        converted into requires_cve_description in BUGVAULT.
         """
         flaw_bug = self.get_flaw_bug()
         flaw_bug["flags"] = []
@@ -837,7 +837,7 @@ class TestFlawConvertor:
     def test_flag_nist_cvss_validation(self, flag_value, mapped_result):
         """
         Tests that the nist_cvss_validation flag from Bugzilla is correctly
-        converted into nist_cvss_validation field in OSIDB.
+        converted into nist_cvss_validation field in BUGVAULT.
         """
         flaw_bug = self.get_flaw_bug()
         flaw_bug["flags"] = []
@@ -865,7 +865,7 @@ class TestFlawConvertor:
         test that flaw with an affect fixed by a fixup
         can be synced multiple times without causing an error
 
-        this tests that https://issues.redhat.com/browse/OSIDB-152 is fixed
+        this tests that https://issues.redhat.com/browse/BUGVAULT-152 is fixed
         """
         flaw_bug = self.get_flaw_bug()
         srtnotes = """
@@ -1241,7 +1241,7 @@ class TestFlawConvertor:
 
     def test_major_incident_flag_order(self):
         """
-        test reproducer for OSIDB-416 where the erroneous condition logic led to unsetting
+        test reproducer for BUGVAULT-416 where the erroneous condition logic led to unsetting
         is_major_incident boolean when following flag was not setting it to True
         """
         flaw_bug = self.get_flaw_bug()
@@ -1284,7 +1284,7 @@ class TestFlawConvertor:
         test that the attribute removals in Bugzilla
         will correctly result in empty values
 
-        OSIDB-910 reproducer (old non-empty values were not emptied)
+        BUGVAULT-910 reproducer (old non-empty values were not emptied)
         """
         flaw = FlawFactory(
             bz_id="123",
@@ -1552,7 +1552,7 @@ class TestFlawConvertor:
         assert comment.synced_to_bz is True
         assert comment.flaw == flaw
 
-        # Creating a new comment in OSIDB
+        # Creating a new comment in BUGVAULT
         FlawComment(
             order=2,
             external_system_id="",
@@ -1564,7 +1564,7 @@ class TestFlawConvertor:
         ).save()
         assert FlawComment.objects.count() == 2
 
-        # bzimport will not do anything with the comment, it exists only in OSIDB
+        # bzimport will not do anything with the comment, it exists only in BUGVAULT
         fbc = FlawConvertor(
             flaw_bug,
             [
@@ -1600,7 +1600,7 @@ class TestFlawConvertor:
         comment_2_uuid = comment.uuid
 
         # Simulating bbsync and bzimport obtaining an external_system_id for the
-        # second comment created in OSIDB and synced to BZ
+        # second comment created in BUGVAULT and synced to BZ
         bz_comment_2 = {
             "text": "test comment 2",
             "count": 2,
@@ -1646,7 +1646,7 @@ class TestFlawConvertor:
         assert comment.flaw == flaw
         assert comment.uuid == comment_2_uuid
 
-        # Creating another new comment in OSIDB
+        # Creating another new comment in BUGVAULT
         FlawComment(
             order=3,
             external_system_id="",
@@ -1678,7 +1678,7 @@ class TestFlawConvertor:
             "creation_time": "2010-07-12T11:27:50Z",
         }
 
-        # bzimport will not do anything with the existing OSIDB comments and will skip
+        # bzimport will not do anything with the existing BUGVAULT comments and will skip
         # BZ comments since the bifurcation point
         fbc = FlawConvertor(
             flaw_bug,

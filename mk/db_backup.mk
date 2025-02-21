@@ -5,7 +5,7 @@
 #***********************************
 ### Backup postgresql
 #***********************************
-# Git status and known migrations are recorded so that it is easier to debug an unsuccessful DB restore later on, or to provide information about the OSIDB version that produced the database.
+# Git status and known migrations are recorded so that it is easier to debug an unsuccessful DB restore later on, or to provide information about the BUGVAULT version that produced the database.
 .PHONY : db-backup
 db-backup:
 	@[ ! -f bugvault_data_backup_dump.db.gz ] || { echo "Backup NOT created! Please remove the file bugvault_data_backup_dump.db.gz first, or back it up elsewhere. (Protecting your backup from being mistakenly overwritten.)" ; exit 1 ; }

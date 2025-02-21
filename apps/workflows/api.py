@@ -41,7 +41,7 @@ class index(RudimentaryUserPathLoggingMixin, APIView):
         )
 
 
-# TODO do we need this when Workflows is baked into OSIDB service ?
+# TODO do we need this when Workflows is baked into BUGVAULT service ?
 class healthy(RudimentaryUserPathLoggingMixin, APIView):
     """unauthenticated health check API endpoint"""
 
