@@ -1,0 +1,147 @@
+version: 1
+
+#################
+# top level
+#################
+
+dn: dc=redhat,dc=com
+dc: redhat
+o: example
+objectclass: dcObject
+objectclass: organization
+
+dn: ou=users,dc=redhat,dc=com
+objectclass: organizationalUnit
+ou: users
+
+dn: ou=serviceaccounts,dc=redhat,dc=com
+objectclass: organizationalUnit
+ou: serviceaccounts
+
+#################
+# Users
+#################
+
+dn: cn=testuser,ou=users,dc=redhat,dc=com
+cn: User01
+cn: testuser
+gidnumber: 1000
+givenName: Monke
+homedirectory: /home/testuser
+mail: monke@banana.com
+objectclass: inetOrgPerson
+objectclass: posixAccount
+objectclass: shadowAccount
+sn: Perlis
+uid: testuser
+uidnumber: 1000
+userpassword: password
+
+dn: cn=anon,ou=users,dc=redhat,dc=com
+cn: Anonymous
+cn: anon
+gidnumber: 1001
+givenName: Anonymous
+homedirectory: /home/anon
+mail: anon@ymous.com
+objectclass: inetOrgPerson
+objectclass: posixAccount
+objectclass: shadowAccount
+sn: Fool
+uid: anon
+uidnumber: 1001
+userpassword: password
+
+dn: cn=pubread,ou=users,dc=redhat,dc=com
+cn: PublicRead
+cn: pubread
+gidnumber: 1002
+givenName: Robert
+homedirectory: /home/pubread
+mail: pubread@redhat.com
+objectclass: inetOrgPerson
+objectclass: posixAccount
+objectclass: shadowAccount
+sn: California
+uid: pubread
+uidnumber: 1002
+userpassword: password
+
+#################
+# Service accounts
+#################
+
+dn: cn=testservice,ou=serviceaccounts,dc=redhat,dc=com
+cn: Service1
+cn: testservice
+gidnumber: 2000
+givenName: silenceawarning
+homedirectory: /home/testservice
+mail: silenceawarning
+objectclass: inetOrgPerson
+objectclass: posixAccount
+objectclass: shadowAccount
+sn: Faker
+uid: testservice
+uidnumber: 2000
+userpassword: password
+
+#################
+# service groups
+#################
+
+# access to bugvault manage
+dn: cn=bugvault-service-manage,ou=users,dc=redhat,dc=com
+cn: bugvault-service-manage
+member: cn=testuser,ou=users,dc=redhat,dc=com
+objectclass: groupOfNames
+
+# access to bugvault
+dn: cn=active,ou=users,dc=redhat,dc=com
+cn: active
+member: cn=testuser,ou=users,dc=redhat,dc=com
+member: cn=anon,ou=users,dc=redhat,dc=com
+member: cn=pubread,ou=users,dc=redhat,dc=com
+member: cn=testservice,ou=serviceaccounts,dc=redhat,dc=com
+objectclass: groupOfNames
+
+#################
+# data groups
+#################
+
+# prodsec data
+dn: cn=data-prodsec,ou=users,dc=redhat,dc=com
+cn: data-prodsec
+member: cn=testuser,ou=users,dc=redhat,dc=com
+member: cn=pubread,ou=users,dc=redhat,dc=com
+objectclass: groupOfNames
+
+# prodsec data write
+dn: cn=data-prodsec-write,ou=users,dc=redhat,dc=com
+cn: data-prodsec-write
+member: cn=testuser,ou=users,dc=redhat,dc=com
+objectclass: groupOfNames
+
+# topsecret data
+dn: cn=data-topsecret,ou=users,dc=redhat,dc=com
+cn: data-topsecret
+member: cn=testuser,ou=users,dc=redhat,dc=com
+objectclass: groupOfNames
+
+# topsecret data
+dn: cn=data-topsecret-write,ou=users,dc=redhat,dc=com
+cn: data-topsecret-write
+member: cn=testuser,ou=users,dc=redhat,dc=com
+objectclass: groupOfNames
+
+# internal data
+dn: cn=data-internal-read,ou=users,dc=redhat,dc=com
+cn: data-internal-read
+member: cn=testuser,ou=users,dc=redhat,dc=com
+objectclass: groupOfNames
+
+# internal data
+dn: cn=data-internal-write,ou=users,dc=redhat,dc=com
+cn: data-internal-write
+member: cn=testuser,ou=users,dc=redhat,dc=com
+objectclass: groupOfNames

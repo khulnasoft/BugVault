@@ -1,0 +1,53 @@
+version: '3'
+
+services:
+
+    testldap:
+      container_name: testldap
+      image: mirror.gcr.io/bitnami/openldap:2.5
+      ports:
+        - '1389:1389'
+        - '1636:1636'
+      environment:
+        - LDAP_ROOT=dc=redhat,dc=com
+        - LDAP_ADMIN_USERNAME=admin
+        - LDAP_ADMIN_PASSWORD=adminpassword
+        - BITNAMI_DEBUG=true
+      volumes:
+        - ${PWD}/etc/openldap:/ldifs:z
+      # See "NOTE about healthchecks" in docker-compose.yml:
+      # depends_on:
+      #   bugvault-data:
+      #     condition: service_healthy
+
+    testrunner:
+      container_name: testrunner
+      build:
+        context: .
+        dockerfile: test.Dockerfile
+        args:
+          RH_CERT_URL: ${RH_CERT_URL}
+          PYPI_MIRROR: ${PIP_INDEX_URL}
+      image: testrunner
+      stdin_open: true
+      tty: true
+      depends_on: ["bugvault-data"]
+      # See "NOTE about healthchecks" in docker-compose.yml:
+      # depends_on:
+      #   bugvault-data:
+      #     condition: service_healthy
+      #
+      # Empty environment ensures that all the
+      # tests are independent of the local one
+      environment: []
+      volumes:
+        - ${PWD}:/opt/app-root/src:z
+
+    locust:
+      container_name: locust
+      image: mirror.gcr.io/locustio/locust:2.20.1
+      ports:
+        - '9000:8089'
+      volumes:
+        - ${PWD}/perf/main.py:/mnt/locust/main.py:z
+      command: -f /mnt/locust/main.py -H http://bugvault-service:8000 --web-host 0.0.0.0 --modern-ui SFM2User SDEngineUser GriffonUser

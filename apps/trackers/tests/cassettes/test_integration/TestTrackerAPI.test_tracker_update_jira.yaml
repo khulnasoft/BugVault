@@ -1,0 +1,2684 @@
+interactions:
+- request:
+    body: '{"fields": {"issuetype": {"name": "Bug"}, "project": {"key": "OSIDB"},
+      "priority": {"name": "Minor"}, "description": "Public Security Tracking Issue\n\nFlaws:\n------\n\nsample
+      title\nhttps://example.com/show_bug.cgi?id=1663908\n\nComment zero for None\n\nsample
+      title\nhttps://example.com/show_bug.cgi?id=1663907\n\nComment zero for None\n\n~~~",
+      "labels": ["Security", "SecurityTracking", "flaw:bz#1663907", "flaw:bz#1663908",
+      "pscomponent:openshift"], "duedate": "2024-11-26T00:19:54+00:00", "summary":
+      "openshift: various flaws [openshift-4.9.z]", "security": null}, "key": "OSIDB-920"}'
+    headers:
+      Accept:
+      - application/json,*.*;q=0.9
+      Accept-Encoding:
+      - gzip, deflate
+      Cache-Control:
+      - no-cache
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '688'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.32.0
+      X-Atlassian-Token:
+      - no-check
+    method: PUT
+    uri: https://example.com/rest/api/2/issue/OSIDB-920
+  response:
+    body:
+      string: ''
+    headers:
+      Cache-Control:
+      - max-age=0, no-cache, no-store
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Mon, 17 Jun 2024 12:46:38 GMT
+      Expires:
+      - Mon, 17 Jun 2024 12:46:38 GMT
+      Pragma:
+      - no-cache
+      Retry-After:
+      - '0'
+      X-RateLimit-Limit:
+      - '-1'
+      X-RateLimit-Remaining:
+      - '9223372036854775807'
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      strict-transport-security:
+      - max-age=31536000
+      x-anodeid:
+      - rh1-jira-dc-stg-mpp-0
+      x-arequestid:
+      - 766x385094x2
+      x-asessionid:
+      - 1hjintr
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - SAMEORIGIN
+      x-ratelimit-fillrate:
+      - '-1'
+      x-ratelimit-interval-seconds:
+      - '1'
+      x-rh-edge-cache-status:
+      - NotCacheable from child
+      x-rh-edge-reference-id:
+      - 0.7df06e68.1718628397.fa04671
+      x-rh-edge-request-id:
+      - fa04671
+      x-seraph-loginreason:
+      - OK
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 204
+      message: No Content
+- request:
+    body: null
+    headers:
+      Accept:
+      - application/json,*.*;q=0.9
+      Accept-Encoding:
+      - gzip, deflate
+      Cache-Control:
+      - no-cache
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.32.0
+      X-Atlassian-Token:
+      - no-check
+    method: GET
+    uri: https://example.com/rest/api/2/issue/OSIDB-920
+  response:
+    body:
+      string: '{"expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+        "id": "15283457", "self": "https://example.com/rest/api/2/issue/15283457",
+        "key": "OSIDB-920", "fields": {"issuetype": {"self": "https://example.com/rest/api/2/issuetype/1",
+        "id": "1", "description": "A problem that impairs or prevents the functions
+        of the product.", "iconUrl": "https://example.com/secure/viewavatar?size=xsmall&avatarId=13263&avatarType=issuetype",
+        "name": "Bug", "subtask": false, "avatarId": 13263}, "customfield_12324544":
+        "0.0", "customfield_12318341": null, "customfield_12319751": 0.0, "timespent":
+        null, "customfield_12320940": null, "project": {"self": "https://example.com/rest/api/2/project/12332734",
+        "id": "12332734", "key": "OSIDB", "name": "Open Security Issue Database",
+        "projectTypeKey": "software", "avatarUrls": {"48x48": "https://example.com/secure/projectavatar?pid=12332734&avatarId=10010",
+        "24x24": "https://example.com/secure/projectavatar?size=small&pid=12332734&avatarId=10010",
+        "16x16": "https://example.com/secure/projectavatar?size=xsmall&pid=12332734&avatarId=10010",
+        "32x32": "https://example.com/secure/projectavatar?size=medium&pid=12332734&avatarId=10010"}},
+        "fixVersions": [], "customfield_12320944": null, "aggregatetimespent": null,
+        "resolution": null, "customfield_12310220": null, "customfield_12314740":
+        "{summaryBean=com.atlassian.jira.plugin.devstatus.rest.SummaryBean@198d5ccb[summary={pullrequest=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@633e5564[overall=PullRequestOverallBean{stateCount=0,
+        state=''OPEN'', details=PullRequestOverallDetails{openCount=0, mergedCount=0,
+        declinedCount=0}},byInstanceType={}], build=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@627edad5[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BuildOverallBean@737a368b[failedBuildCount=0,successfulBuildCount=0,unknownBuildCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}],
+        review=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@6e48c57f[overall=com.atlassian.jira.plugin.devstatus.summary.beans.ReviewsOverallBean@4a338007[stateCount=0,state=<null>,dueDate=<null>,overDue=false,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}],
+        deployment-environment=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@5e0f43e6[overall=com.atlassian.jira.plugin.devstatus.summary.beans.DeploymentOverallBean@7ce3e8c2[topEnvironments=[],showProjects=false,successfulCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}],
+        repository=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@54a8b91c[overall=com.atlassian.jira.plugin.devstatus.summary.beans.CommitOverallBean@2cd3836[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}],
+        branch=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@26f95bfa[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BranchOverallBean@453f021f[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}]},errors=[],configErrors=[]],
+        devSummaryJson={\"cachedValue\":{\"errors\":[],\"configErrors\":[],\"summary\":{\"pullrequest\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":\"OPEN\",\"details\":{\"openCount\":0,\"mergedCount\":0,\"declinedCount\":0,\"total\":0},\"open\":true},\"byInstanceType\":{}},\"build\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"failedBuildCount\":0,\"successfulBuildCount\":0,\"unknownBuildCount\":0},\"byInstanceType\":{}},\"review\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":null,\"dueDate\":null,\"overDue\":false,\"completed\":false},\"byInstanceType\":{}},\"deployment-environment\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"topEnvironments\":[],\"showProjects\":false,\"successfulCount\":0},\"byInstanceType\":{}},\"repository\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}},\"branch\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}}}},\"isStale\":false}}",
+        "customfield_12310183": null, "resolutiondate": null, "workratio": -1, "customfield_12316840":
+        null, "customfield_12317379": null, "customfield_12316841": null, "customfield_12315950":
+        null, "customfield_12310940": null, "customfield_12319040": null, "lastViewed":
+        "2024-06-17T12:45:21.091+0000", "watches": {"self": "https://example.com/rest/api/2/issue/OSIDB-920/watchers",
+        "watchCount": 3, "isWatching": true}, "created": "2023-05-26T13:54:09.520+0000",
+        "customfield_12321240": null, "customfield_12313140": null, "priority": {"self":
+        "https://example.com/rest/api/2/priority/4", "iconUrl": "https://example.com/images/icons/priorities/minor.svg",
+        "name": "Minor", "id": "4"}, "labels": ["Security", "SecurityTracking", "flaw:bz#1663907",
+        "flaw:bz#1663908",
+        "pscomponent:openshift"], "customfield_12320947": [{"self": "https://example.com/rest/api/2/customFieldOption/27714",
+        "value": "Unclassified", "id": "27714", "disabled": false}], "customfield_12320946":
+        {"self": "https://example.com/rest/api/2/customFieldOption/27705", "value":
+        "False", "id": "27705", "disabled": false}, "aggregatetimeoriginalestimate":
+        null, "timeestimate": null, "versions": [], "issuelinks": [], "customfield_12325240":
+        null, "customfield_12317302": null, "assignee": null, "updated": "2024-06-17T12:46:37.608+0000",
+        "customfield_12313942": null, "customfield_12313941": null, "status": {"self":
+        "https://example.com/rest/api/2/status/10016", "description": "Initial creation
+        status. Implies nothing yet and should be very short lived; also can be a
+        Bugzilla status.", "iconUrl": "https://example.com/images/icons/statuses/generic.png",
+        "name": "New", "id": "10016", "statusCategory": {"self": "https://example.com/rest/api/2/statuscategory/2",
+        "id": 2, "key": "new", "colorName": "default", "name": "To Do"}}, "components":
+        [{"self": "https://example.com/rest/api/2/component/12367567", "id": "12367567",
+        "name": "bugvault"}], "customfield_12316142": null, "timeoriginalestimate": null,
+        "description": "Public Security Tracking Issue\n\nFlaws:\n------\n\nsample
+        title\nhttps://example.com/show_bug.cgi?id=1663908\n\nComment zero for None\n\nsample
+        title\nhttps://example.com/show_bug.cgi?id=1663907\n\nComment zero for None\n\n~~~",
+        "customfield_12314040": null, "customfield_12320844": null, "archiveddate":
+        null, "timetracking": {}, "customfield_12320842": null, "customfield_12310243":
+        3.0, "attachment": [], "aggregatetimeestimate": null, "customfield_12316542":
+        {"self": "https://example.com/rest/api/2/customFieldOption/14655", "value":
+        "False", "id": "14655", "disabled": false}, "customfield_12317313": null,
+        "customfield_12316543": {"self": "https://example.com/rest/api/2/customFieldOption/14657",
+        "value": "False", "id": "14657", "disabled": false}, "customfield_12310840":
+        "9223372036854775807", "customfield_12316544": "None", "customfield_12323640":
+        null, "summary": "openshift: various flaws [openshift-4.9.z]", "customfield_12323642":
+        null, "creator": {"self": "https://example.com/rest/api/2/user?username=atorresj%40redhat.com",
+        "name": "atorresj@redhat.com", "key": "JIRAUSER173566", "emailAddress": "atorresj@redhat.com",
+        "avatarUrls": {"48x48": "https://example.com/secure/useravatar?ownerId=JIRAUSER173566&avatarId=35078",
+        "24x24": "https://example.com/secure/useravatar?size=small&ownerId=JIRAUSER173566&avatarId=35078",
+        "16x16": "https://example.com/secure/useravatar?size=xsmall&ownerId=JIRAUSER173566&avatarId=35078",
+        "32x32": "https://example.com/secure/useravatar?size=medium&ownerId=JIRAUSER173566&avatarId=35078"},
+        "displayName": "Adrian Torres Justo", "active": false, "timeZone": "Europe/Brussels"},
+        "customfield_12323641": null, "subtasks": [], "customfield_12321140": null,
+        "reporter": {"self": "https://example.com/rest/api/2/user?username=atorresj%40redhat.com",
+        "name": "atorresj@redhat.com", "key": "JIRAUSER173566", "emailAddress": "atorresj@redhat.com",
+        "avatarUrls": {"48x48": "https://example.com/secure/useravatar?ownerId=JIRAUSER173566&avatarId=35078",
+        "24x24": "https://example.com/secure/useravatar?size=small&ownerId=JIRAUSER173566&avatarId=35078",
+        "16x16": "https://example.com/secure/useravatar?size=xsmall&ownerId=JIRAUSER173566&avatarId=35078",
+        "32x32": "https://example.com/secure/useravatar?size=medium&ownerId=JIRAUSER173566&avatarId=35078"},
+        "displayName": "Adrian Torres Justo", "active": false, "timeZone": "Europe/Brussels"},
+        "customfield_12320850": null, "aggregateprogress": {"progress": 0, "total":
+        0}, "customfield_12323644": null, "customfield_12323643": null, "customfield_12323646":
+        null, "customfield_12323645": null, "environment": null, "customfield_12315542":
+        null, "customfield_12315740": null, "customfield_12313441": "", "customfield_12313440":
+        "0.0", "customfield_12313240": null, "duedate": "2024-11-26", "customfield_12311140":
+        "OSIDB-6", "customfield_12319742": null, "customfield_12319269": null, "progress":
+        {"progress": 0, "total": 0}, "comment": {"comments": [{"self": "https://example.com/rest/api/2/issue/15283457/comment/22407250",
+        "id": "22407250", "author": {"self": "https://example.com/rest/api/2/user?username=rh-ee-znovacek",
+        "name": "rh-ee-znovacek", "key": "JIRAUSER191853", "emailAddress": "znovacek+stage@redhat.com",
+        "avatarUrls": {"48x48": "https://example.com/secure/useravatar?avatarId=17290",
+        "24x24": "https://example.com/secure/useravatar?size=small&avatarId=17290",
+        "16x16": "https://example.com/secure/useravatar?size=xsmall&avatarId=17290",
+        "32x32": "https://example.com/secure/useravatar?size=medium&avatarId=17290"},
+        "displayName": "Zdenek Novacek", "active": true, "timeZone": "Europe/Prague"},
+        "body": "Needs to be done alongside setting up new collectors for Assembler.",
+        "updateAuthor": {"self": "https://example.com/rest/api/2/user?username=rh-ee-znovacek",
+        "name": "rh-ee-znovacek", "key": "JIRAUSER191853", "emailAddress": "znovacek+stage@redhat.com",
+        "avatarUrls": {"48x48": "https://example.com/secure/useravatar?avatarId=17290",
+        "24x24": "https://example.com/secure/useravatar?size=small&avatarId=17290",
+        "16x16": "https://example.com/secure/useravatar?size=xsmall&avatarId=17290",
+        "32x32": "https://example.com/secure/useravatar?size=medium&avatarId=17290"},
+        "displayName": "Zdenek Novacek", "active": true, "timeZone": "Europe/Prague"},
+        "created": "2023-06-06T09:38:22.556+0000", "updated": "2023-06-06T09:38:22.556+0000"},
+        {"self": "https://example.com/rest/api/2/issue/15283457/comment/23025362",
+        "id": "23025362", "author": {"self": "https://example.com/rest/api/2/user?username=rh-ee-znovacek",
+        "name": "rh-ee-znovacek", "key": "JIRAUSER191853", "emailAddress": "znovacek+stage@redhat.com",
+        "avatarUrls": {"48x48": "https://example.com/secure/useravatar?avatarId=17290",
+        "24x24": "https://example.com/secure/useravatar?size=small&avatarId=17290",
+        "16x16": "https://example.com/secure/useravatar?size=xsmall&avatarId=17290",
+        "32x32": "https://example.com/secure/useravatar?size=medium&avatarId=17290"},
+        "displayName": "Zdenek Novacek", "active": true, "timeZone": "Europe/Prague"},
+        "body": "[~atorresj@redhat.com] - should we move this to the Assembler epic
+        so that it does not get forgotten at a later point?", "updateAuthor": {"self":
+        "https://example.com/rest/api/2/user?username=rh-ee-znovacek", "name": "rh-ee-znovacek",
+        "key": "JIRAUSER191853", "emailAddress": "znovacek+stage@redhat.com", "avatarUrls":
+        {"48x48": "https://example.com/secure/useravatar?avatarId=17290", "24x24":
+        "https://example.com/secure/useravatar?size=small&avatarId=17290", "16x16":
+        "https://example.com/secure/useravatar?size=xsmall&avatarId=17290", "32x32":
+        "https://example.com/secure/useravatar?size=medium&avatarId=17290"}, "displayName":
+        "Zdenek Novacek", "active": true, "timeZone": "Europe/Prague"}, "created":
+        "2023-09-14T15:23:10.629+0000", "updated": "2023-09-14T15:23:10.629+0000"},
+        {"self": "https://example.com/rest/api/2/issue/15283457/comment/24181839",
+        "id": "24181839", "author": {"self": "https://example.com/rest/api/2/user?username=osoukup%40redhat.com",
+        "name": "osoukup@redhat.com", "key": "osoukup", "emailAddress": "osoukup+stage@redhat.com",
+        "avatarUrls": {"48x48": "https://example.com/secure/useravatar?avatarId=17283",
+        "24x24": "https://example.com/secure/useravatar?size=small&avatarId=17283",
+        "16x16": "https://example.com/secure/useravatar?size=xsmall&avatarId=17283",
+        "32x32": "https://example.com/secure/useravatar?size=medium&avatarId=17283"},
+        "displayName": "Ondrej Soukup", "active": true, "timeZone": "UTC"}, "body":
+        "Test.", "updateAuthor": {"self": "https://example.com/rest/api/2/user?username=osoukup%40redhat.com",
+        "name": "osoukup@redhat.com", "key": "osoukup", "emailAddress": "osoukup+stage@redhat.com",
+        "avatarUrls": {"48x48": "https://example.com/secure/useravatar?avatarId=17283",
+        "24x24": "https://example.com/secure/useravatar?size=small&avatarId=17283",
+        "16x16": "https://example.com/secure/useravatar?size=xsmall&avatarId=17283",
+        "32x32": "https://example.com/secure/useravatar?size=medium&avatarId=17283"},
+        "displayName": "Ondrej Soukup", "active": true, "timeZone": "UTC"}, "created":
+        "2024-05-02T16:13:20.912+0000", "updated": "2024-05-02T16:13:20.912+0000"}],
+        "maxResults": 3, "total": 3, "startAt": 0}, "votes": {"self": "https://example.com/rest/api/2/issue/OSIDB-920/votes",
+        "votes": 0, "hasVoted": false}, "customfield_12319743": null, "worklog": {"startAt":
+        0, "maxResults": 20, "total": 0, "worklogs": []}, "customfield_12310213":
+        null, "archivedby": null, "customfield_12311940": "1|zbo868:"}}'
+    headers:
+      Cache-Control:
+      - max-age=0, no-cache, no-store
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Mon, 17 Jun 2024 12:46:38 GMT
+      Expires:
+      - Mon, 17 Jun 2024 12:46:38 GMT
+      Pragma:
+      - no-cache
+      Retry-After:
+      - '0'
+      Vary:
+      - User-Agent
+      - Accept-Encoding
+      X-RateLimit-Limit:
+      - '-1'
+      X-RateLimit-Remaining:
+      - '9223372036854775807'
+      content-length:
+      - '13809'
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      strict-transport-security:
+      - max-age=31536000
+      x-anodeid:
+      - rh1-jira-dc-stg-mpp-1
+      x-arequestid:
+      - 766x421058x1
+      x-asessionid:
+      - 1b4wxmy
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - SAMEORIGIN
+      x-ratelimit-fillrate:
+      - '-1'
+      x-ratelimit-interval-seconds:
+      - '1'
+      x-rh-edge-cache-status:
+      - NotCacheable from child
+      x-rh-edge-reference-id:
+      - 0.7df06e68.1718628398.fa0496a
+      x-rh-edge-request-id:
+      - fa0496a
+      x-seraph-loginreason:
+      - OK
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-bugzilla/3.2.0
+    method: GET
+    uri: https://example.com/rest/version
+  response:
+    body:
+      string: '{"version": "5.0.4.rh97"}'
+    headers:
+      Access-Control-Allow-Headers:
+      - origin, content-type, accept, x-requested-with
+      Access-Control-Allow-Origin:
+      - '*'
+      Cache-Control:
+      - private, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '24'
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Mon, 17 Jun 2024 12:46:39 GMT
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains
+      X-content-type-options:
+      - nosniff
+      X-xss-protection:
+      - 1; mode=block
+      x-rh-edge-cache-status:
+      - Miss from child, Miss from parent
+      x-rh-edge-reference-id:
+      - 0.64f06e68.1718628399.c46d8db
+      x-rh-edge-request-id:
+      - c46d8db
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-bugzilla/3.2.0
+    method: GET
+    uri: https://example.com/rest/user?ids=1
+  response:
+    body:
+      string: '{"users": [{"can_login": true, "real_name": "Need Real Name", "id":
+        1, "email": "aander07@packetmaster.com", "name": "aander07@packetmaster.com"}]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - origin, content-type, accept, x-requested-with
+      Access-Control-Allow-Origin:
+      - '*'
+      Cache-Control:
+      - private, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '137'
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Mon, 17 Jun 2024 12:46:39 GMT
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains
+      X-content-type-options:
+      - nosniff
+      X-xss-protection:
+      - 1; mode=block
+      x-rh-edge-cache-status:
+      - Miss from child, Miss from parent
+      x-rh-edge-reference-id:
+      - 0.64f06e68.1718628399.c46d994
+      x-rh-edge-request-id:
+      - c46d994
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-bugzilla/3.2.0
+    method: GET
+    uri: https://example.com/rest/bug/1663907?extra_fields=comments&extra_fields=description&extra_fields=external_bugs&extra_fields=flags&extra_fields=sub_components&extra_fields=tags&include_fields=id&include_fields=last_change_time
+  response:
+    body:
+      string: '{"bugs": [{"id": 1663907, "last_change_time": "2023-07-07T08:35:40Z",
+        "data_category": "Public"}], "faults": []}'
+    headers:
+      Access-Control-Allow-Headers:
+      - origin, content-type, accept, x-requested-with
+      Access-Control-Allow-Origin:
+      - '*'
+      Cache-Control:
+      - private, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '104'
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Mon, 17 Jun 2024 12:46:40 GMT
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains
+      X-content-type-options:
+      - nosniff
+      X-xss-protection:
+      - 1; mode=block
+      x-rh-edge-cache-status:
+      - Miss from child, Miss from parent
+      x-rh-edge-reference-id:
+      - 0.64f06e68.1718628400.c46dbc8
+      x-rh-edge-request-id:
+      - c46dbc8
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"product": "Security Response", "op_sys": "Linux", "platform": "All",
+      "version": "unspecified", "component": "vulnerability", "cf_release_notes":
+      "foo", "severity": "low", "priority": "low", "summary": "better: child: least:
+      sample title", "keywords": {"add": ["Security"]}, "flags": [{"name": "requires_doc_text",
+      "status": "+"}], "groups": {"add": [], "remove": []}, "cc": {"add": [], "remove":
+      []}, "cf_srtnotes": "{\"affects\": [{\"ps_module\": \"openshift-4\", \"ps_component\":
+      \"openshift\", \"affectedness\": \"affected\", \"resolution\": \"delegated\",
+      \"impact\": \"low\", \"cvss2\": null, \"cvss3\": null, \"cvss4\": null}], \"public\":
+      \"2024-05-30T00:19:54Z\", \"reported\": \"1993-04-17T23:22:34Z\", \"impact\":
+      \"low\", \"jira_trackers\": [{\"bts_name\": \"jboss\", \"key\": \"OSIDB-920\"}],
+      \"source\": \"internet\", \"mitigation\": \"foo\", \"statement\": \"Statement
+      for None\"}", "ids": ["1663907"]}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '919'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-bugzilla/3.2.0
+    method: PUT
+    uri: https://example.com/rest/bug/1663907
+  response:
+    body:
+      string: '{"bugs": [{"last_change_time": "2024-06-17T12:46:41Z", "alias": ["CVE-2018-20535"],
+        "changes": {"summary": {"removed": "CVE-2018-20535 nasm: Use-after-free at
+        asm/preproc.c resulting in a denial of service", "added": "better: child:
+        least: sample title"}, "cf_release_notes": {"added": "foo", "removed": ""},
+        "flagtypes.name": {"added": "requires_doc_text+", "removed": ""}, "cf_srtnotes":
+        {"removed": "{\"affects\": [{\"affectedness\": \"affected\", \"cvss2\": null,
+        \"cvss3\": null, \"impact\": null, \"ps_component\": \"openshift\", \"ps_module\":
+        \"openshift-4\", \"resolution\": \"fix\"}], \"checklists\":
+        [{\"items\": [{\"checked\": false, \"comment\": null, \"item\": \"0. CVSS
+        score is consistent with the description\", \"not_applicable\": false}, {\"checked\":
+        false, \"comment\": null, \"item\": \"1. Flaw bug contains accurate technical
+        information\", \"not_applicable\": false}, {\"checked\": false, \"comment\":
+        null, \"item\": \"2. External References supplied as appropriate (vulnerability
+        article, upstream advisories, etc)\", \"not_applicable\": false}, {\"checked\":
+        false, \"comment\": null, \"item\": \"3. Links to patches/commits or patches
+        are attached\", \"not_applicable\": false}, {\"checked\": false, \"comment\":
+        null, \"item\": \"4. Reproducer/Notes for QE on how to test are present\",
+        \"not_applicable\": false}, {\"checked\": false, \"comment\": null, \"item\":
+        \"5. Flaw has correct acknowledgment text and reporter has given explicit
+        permission to be listed\", \"not_applicable\": false}], \"name\": \"Base flaw\",
+        \"signature\": \"0910426\", \"template\": \"base_flaw\"}], \"cvss3\": \"3.3/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:L\",
+        \"cwe\": \"CWE-416\", \"impact\": \"low\", \"jira_trackers\": [], \"public\":
+        \"2018-11-18\", \"reported\": \"2018-12-28\", \"source\": \"cve\"}", "added":
+        "{\"affects\": [{\"ps_module\": \"openshift-4\", \"ps_component\": \"openshift\",
+        \"affectedness\": \"affected\", \"resolution\": \"delegated\", \"impact\":
+        \"low\", \"cvss2\": null, \"cvss3\": null, \"cvss4\": null}], \"public\":
+        \"2024-05-30T00:19:54Z\", \"reported\": \"1993-04-17T23:22:34Z\", \"impact\":
+        \"low\", \"jira_trackers\": [{\"bts_name\": \"jboss\", \"key\": \"OSIDB-920\"}],
+        \"source\": \"internet\", \"mitigation\": \"foo\", \"statement\": \"Statement
+        for None\"}"}}, "id": 1663907}]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - origin, content-type, accept, x-requested-with
+      Access-Control-Allow-Origin:
+      - '*'
+      Cache-Control:
+      - private, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Mon, 17 Jun 2024 12:46:42 GMT
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      X-content-type-options:
+      - nosniff
+      X-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '2958'
+      x-rh-edge-cache-status:
+      - Miss from child, Miss from parent
+      x-rh-edge-reference-id:
+      - 0.64f06e68.1718628400.c46de3a
+      x-rh-edge-request-id:
+      - c46de3a
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-bugzilla/3.2.0
+    method: GET
+    uri: https://example.com/rest/version
+  response:
+    body:
+      string: '{"version": "5.0.4.rh97"}'
+    headers:
+      Access-Control-Allow-Headers:
+      - origin, content-type, accept, x-requested-with
+      Access-Control-Allow-Origin:
+      - '*'
+      Cache-Control:
+      - private, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '24'
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Mon, 17 Jun 2024 12:46:42 GMT
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains
+      X-content-type-options:
+      - nosniff
+      X-xss-protection:
+      - 1; mode=block
+      x-rh-edge-cache-status:
+      - Miss from child, Miss from parent
+      x-rh-edge-reference-id:
+      - 0.64f06e68.1718628402.c46e73d
+      x-rh-edge-request-id:
+      - c46e73d
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-bugzilla/3.2.0
+    method: GET
+    uri: https://example.com/rest/user?ids=1
+  response:
+    body:
+      string: '{"users": [{"id": 1, "name": "aander07@packetmaster.com", "email":
+        "aander07@packetmaster.com", "can_login": true, "real_name": "Need Real Name"}]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - origin, content-type, accept, x-requested-with
+      Access-Control-Allow-Origin:
+      - '*'
+      Cache-Control:
+      - private, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '137'
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Mon, 17 Jun 2024 12:46:43 GMT
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains
+      X-content-type-options:
+      - nosniff
+      X-xss-protection:
+      - 1; mode=block
+      x-rh-edge-cache-status:
+      - Miss from child, Miss from parent
+      x-rh-edge-reference-id:
+      - 0.64f06e68.1718628402.c46e809
+      x-rh-edge-request-id:
+      - c46e809
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-bugzilla/3.2.0
+    method: GET
+    uri: https://example.com/rest/bug/1663907?extra_fields=comments&extra_fields=description&extra_fields=external_bugs&extra_fields=flags&extra_fields=sub_components&extra_fields=tags
+  response:
+    body:
+      string: '{"bugs": [{"description": "\nA use-after-free vulnerability was found
+        in nasm. A specially crafted file could cause the application to crash.\n\nUpstream
+        issue:\n\nhttps://example.com/show_bug.cgi?id=3392530", "cf_embargoed": null,
+        "creation_time": "2019-01-07T09:53:43Z", "cf_srtnotes": "{\"affects\": [{\"ps_module\":
+        \"openshift-4\", \"ps_component\": \"openshift\", \"affectedness\": \"affected\",
+        \"resolution\": \"delegated\", \"impact\": \"low\", \"cvss2\": null, \"cvss3\":
+        null, \"cvss4\": null}], \"public\": \"2024-05-30T00:19:54Z\", \"reported\":
+        \"1993-04-17T23:22:34Z\", \"impact\": \"low\", \"jira_trackers\": [{\"bts_name\":
+        \"jboss\", \"key\": \"OSIDB-920\"}], \"source\": \"internet\", \"mitigation\":
+        \"foo\", \"statement\": \"Statement for None\"}", "target_milestone": "---",
+        "cf_conditional_nak": ["Upstream"], "target_release": ["---"], "last_change_time":
+        "2024-06-17T12:46:41Z", "cf_major_incident": null, "flags": [{"status": "+",
+        "setter": "osoukup@redhat.com", "type_id": 415, "name": "requires_doc_text",
+        "id": 6115872, "is_active": 1, "modification_date": "2024-06-17T12:46:41Z",
+        "creation_date": "2024-06-17T12:46:41Z"}], "alias": ["CVE-2018-20535"], "op_sys":
+        "Linux", "cf_environment": "", "cc": ["dominik@greysector.net", "java-sig-commits@lists.fedoraproject.org",
+        "mizdebsk@redhat.com", "nickc@redhat.com"],
+        "cf_cust_facing": "---", "cf_build_id": "", "data_category": "Public", "assigned_to_detail":
+        {"id": 29451, "email": "nobody@redhat.com", "name": "nobody@redhat.com", "partner":
+        false, "active": true, "real_name": "Nobody", "insider": false}, "sub_components":
+        {}, "creator_detail": {"id": 391044, "email": "anemec@redhat.com", "name":
+        "anemec@redhat.com", "partner": false, "active": false, "real_name": "Andrej
+        Nemec", "insider": false}, "cf_qe_conditional_nak": [], "is_open": true, "cf_pm_score":
+        "0", "cf_last_closed": null, "creator": "anemec@redhat.com", "version": ["unspecified"],
+        "external_bugs": [], "groups": [], "status": "ASSIGNED", "url": "", "deadline":
+        null, "blocks": [], "whiteboard": "", "component": ["vulnerability"], "id":
+        1663907, "depends_on": [1663909, 1671502, 1671503], "cf_internal_whiteboard":
+        "", "cf_doc_type": "If docs needed, set a value", "resolution": "", "priority":
+        "low", "comments": [{"time": "2019-01-07T09:53:43Z", "bug_id": 1663907, "creation_time":
+        "2019-01-07T09:53:43Z", "creator": "anemec@redhat.com", "text": "\nA use-after-free
+        vulnerability was found in nasm. A specially crafted file could cause the
+        application to crash.\n\nUpstream issue:\n\nhttps://example.com/show_bug.cgi?id=3392530",
+        "private_groups": [], "attachment_id": null, "count": 0, "is_private": false,
+        "id": 12342416, "creator_id": 391044, "tags": []}, {"creator_id": 391044,
+        "tags": [], "id": 12342427, "count": 1, "is_private": false, "attachment_id":
+        null, "private_groups": [], "text": "Created nasm tracking bugs for this issue:\n\nAffects:
+        openshift-4 [bug 1663909]", "creation_time": "2019-01-07T09:54:59Z", "creator":
+        "anemec@redhat.com", "bug_id": 1663907, "time": "2019-01-07T09:54:59Z"}, {"time":
+        "2019-01-17T10:37:38Z", "creation_time": "2019-01-17T10:37:38Z", "creator":
+        "nickc@redhat.com", "bug_id": 1663907, "text": "Setting devel cond NAK - waiting
+        on upstream fix.", "private_groups": [], "attachment_id": null, "tags": [],
+        "creator_id": 145493, "id": 12374342, "is_private": false, "count": 2}, {"count":
+        3, "is_private": false, "id": 12412758, "tags": [], "creator_id": 422051,
+        "attachment_id": null, "private_groups": [], "text": "Red Hat Enterprise 6
+        and 7 are vulnerable. Valgrind output matches upstream''s ASAN output relatively
+        well:\n\n```\npoc:15: error: label or instruction expected at start of line\npoc:16:
+        error: attempt to define a local label before any non-local labels\npoc:18:
+        error: parser: instruction expected\npoc:18: error: parser: instruction expected\npoc:18:
+        error: label or instruction expected at start of line\n==12504== Invalid read
+        of size 4\n==12504==    at 0x4346C5: pp_getline (preproc.c:4957)\n==12504==    by
+        0x4046E3: assemble_file.constprop.3 (nasm.c:1222)\n==12504==    by 0x402D02:
+        main (nasm.c:463)\n```", "bug_id": 1663907, "creator": "sgayou@redhat.com",
+        "creation_time": "2019-01-31T18:18:33Z", "time": "2019-01-31T18:18:33Z"}],
+        "is_confirmed": true, "dupe_of": null, "docs_contact": "", "cf_fixed_in":
+        "", "estimated_time": 0, "cf_devel_whiteboard": "", "keywords": ["Security"],
+        "classification": "Other", "cf_release_notes": "foo", "summary": "better:
+        child: least: sample title", "severity": "low", "assigned_to": "nobody@redhat.com",
+        "qa_contact": "", "cf_clone_of": null, "product": "Security Response", "cf_pgm_internal":
+        "", "cf_qa_whiteboard": "", "is_cc_accessible": true, "actual_time": 0, "platform":
+        "All", "cc_detail": [{"active": true, "insider": false, "real_name": "Dominik
+        ''Rathann'' Mierzejewski", "partner": false, "name": "dominik@greysector.net",
+        "email": "dominik@greysector.net", "id": 192315}, {"name": "java-sig-commits@lists.fedoraproject.org",
+        "email": "java-sig-commits@lists.fedoraproject.org", "partner": false, "id":
+        306302, "active": true, "insider": false, "real_name": "Fedora Java SIG"},
+        {"name": "mizdebsk@redhat.com", "partner": false, "email": "mizdebsk@redhat.com",
+        "id": 329409, "active": true, "insider": true, "real_name": "Mikolaj Izdebski"},
+        {"id": 145493, "name": "nickc@redhat.com", "partner": false, "email": "nickc@redhat.com",
+        "real_name": "Nick Clifton", "insider": true, "active": true}], "is_creator_accessible":
+        true, "remaining_time": 0, "tags": []}], "faults": []}'
+    headers:
+      Access-Control-Allow-Headers:
+      - origin, content-type, accept, x-requested-with
+      Access-Control-Allow-Origin:
+      - '*'
+      Cache-Control:
+      - private, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Mon, 17 Jun 2024 12:46:43 GMT
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      X-content-type-options:
+      - nosniff
+      X-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '6324'
+      x-rh-edge-cache-status:
+      - Miss from child, Miss from parent
+      x-rh-edge-reference-id:
+      - 0.64f06e68.1718628403.c46e9f9
+      x-rh-edge-request-id:
+      - c46e9f9
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-bugzilla/3.2.0
+    method: GET
+    uri: https://example.com/rest/bug/1663907?extra_fields=comments&extra_fields=description&extra_fields=external_bugs&extra_fields=flags&extra_fields=sub_components&extra_fields=tags
+  response:
+    body:
+      string: '{"bugs": [{"comments": [{"attachment_id": null, "id": 12342416, "count":
+        0, "is_private": false, "tags": [], "creator_id": 391044, "time": "2019-01-07T09:53:43Z",
+        "bug_id": 1663907, "creator": "anemec@redhat.com", "creation_time": "2019-01-07T09:53:43Z",
+        "text": "\nA use-after-free vulnerability was found in nasm. A specially crafted
+        file could cause the application to crash.\n\nUpstream issue:\n\nhttps://example.com/show_bug.cgi?id=3392530",
+        "private_groups": []}, {"private_groups": [], "text": "Created nasm tracking
+        bugs for this issue:\n\nAffects: openshift-4 [bug 1663909]", "bug_id": 1663907,
+        "creation_time": "2019-01-07T09:54:59Z", "creator": "anemec@redhat.com", "time":
+        "2019-01-07T09:54:59Z", "is_private": false, "id": 12342427, "count": 1, "creator_id":
+        391044, "tags": [], "attachment_id": null}, {"attachment_id": null, "creator_id":
+        145493, "tags": [], "id": 12374342, "count": 2, "is_private": false, "time":
+        "2019-01-17T10:37:38Z", "creation_time": "2019-01-17T10:37:38Z", "creator":
+        "nickc@redhat.com", "bug_id": 1663907, "text": "Setting devel cond NAK - waiting
+        on upstream fix.", "private_groups": []}, {"creator": "sgayou@redhat.com",
+        "creation_time": "2019-01-31T18:18:33Z", "bug_id": 1663907, "time": "2019-01-31T18:18:33Z",
+        "private_groups": [], "text": "Red Hat Enterprise 6 and 7 are vulnerable.
+        Valgrind output matches upstream''s ASAN output relatively well:\n\n```\npoc:15:
+        error: label or instruction expected at start of line\npoc:16: error: attempt
+        to define a local label before any non-local labels\npoc:18: error: parser:
+        instruction expected\npoc:18: error: parser: instruction expected\npoc:18:
+        error: label or instruction expected at start of line\n==12504== Invalid read
+        of size 4\n==12504==    at 0x4346C5: pp_getline (preproc.c:4957)\n==12504==    by
+        0x4046E3: assemble_file.constprop.3 (nasm.c:1222)\n==12504==    by 0x402D02:
+        main (nasm.c:463)\n```", "attachment_id": null, "tags": [], "creator_id":
+        422051, "id": 12412758, "count": 3, "is_private": false}], "priority": "low",
+        "is_confirmed": true, "dupe_of": null, "cf_doc_type": "If docs needed, set
+        a value", "cf_internal_whiteboard": "", "resolution": "", "blocks": [], "deadline":
+        null, "whiteboard": "", "component": ["vulnerability"], "id": 1663907, "depends_on":
+        [1663909, 1671502, 1671503], "cf_pm_score": "0", "is_open": true, "version":
+        ["unspecified"], "creator": "anemec@redhat.com", "cf_last_closed": null, "groups":
+        [], "external_bugs": [], "url": "", "status": "ASSIGNED", "cc": ["dominik@greysector.net",
+        "java-sig-commits@lists.fedoraproject.org", "mizdebsk@redhat.com", "nickc@redhat.com"],
+        "data_category": "Public", "cf_build_id": "", "assigned_to_detail": {"insider":
+        false, "real_name": "Nobody", "active": true, "email": "nobody@redhat.com",
+        "name": "nobody@redhat.com", "partner": false, "id": 29451}, "cf_cust_facing":
+        "---", "creator_detail": {"id": 391044, "partner": false, "email": "anemec@redhat.com",
+        "name": "anemec@redhat.com", "active": false, "real_name": "Andrej Nemec",
+        "insider": false}, "sub_components": {}, "cf_qe_conditional_nak": [], "last_change_time":
+        "2024-06-17T12:46:41Z", "flags": [{"setter": "osoukup@redhat.com", "type_id":
+        415, "status": "+", "creation_date": "2024-06-17T12:46:41Z", "modification_date":
+        "2024-06-17T12:46:41Z", "is_active": 1, "id": 6115872, "name": "requires_doc_text"}],
+        "alias": ["CVE-2018-20535"], "cf_environment": "", "op_sys": "Linux", "cf_major_incident":
+        null, "target_milestone": "---", "target_release": ["---"], "cf_conditional_nak":
+        ["Upstream"], "description": "\nA use-after-free vulnerability was found in
+        nasm. A specially crafted file could cause the application to crash.\n\nUpstream
+        issue:\n\nhttps://example.com/show_bug.cgi?id=3392530", "creation_time": "2019-01-07T09:53:43Z",
+        "cf_embargoed": null, "cf_srtnotes": "{\"affects\": [{\"ps_module\": \"openshift-4\",
+        \"ps_component\": \"openshift\", \"affectedness\": \"affected\", \"resolution\":
+        \"delegated\", \"impact\": \"low\", \"cvss2\": null, \"cvss3\": null, \"cvss4\":
+        null}], \"public\": \"2024-05-30T00:19:54Z\", \"reported\": \"1993-04-17T23:22:34Z\",
+        \"impact\": \"low\", \"jira_trackers\": [{\"bts_name\": \"jboss\", \"key\":
+        \"OSIDB-920\"}], \"source\": \"internet\", \"mitigation\": \"foo\", \"statement\":
+        \"Statement for None\"}", "remaining_time": 0, "tags": [], "cc_detail": [{"insider":
+        false, "real_name": "Dominik ''Rathann'' Mierzejewski", "active": true, "partner":
+        false, "name": "dominik@greysector.net", "email": "dominik@greysector.net",
+        "id": 192315}, {"email": "java-sig-commits@lists.fedoraproject.org", "name":
+        "java-sig-commits@lists.fedoraproject.org", "partner": false, "id": 306302,
+        "insider": false, "real_name": "Fedora Java SIG", "active": true}, {"real_name":
+        "Mikolaj Izdebski", "insider": true, "active": true, "id": 329409, "email":
+        "mizdebsk@redhat.com", "name": "mizdebsk@redhat.com", "partner": false}, {"active":
+        true, "insider": true, "real_name": "Nick Clifton", "email": "nickc@redhat.com",
+        "name": "nickc@redhat.com", "partner": false, "id": 145493}], "is_creator_accessible":
+        true, "is_cc_accessible": true, "actual_time": 0, "platform": "All", "product":
+        "Security Response", "cf_qa_whiteboard": "", "cf_pgm_internal": "", "cf_clone_of":
+        null, "cf_release_notes": "foo", "assigned_to": "nobody@redhat.com", "summary":
+        "better: child: least: sample title", "severity": "low", "qa_contact": "",
+        "estimated_time": 0, "cf_devel_whiteboard": "", "keywords": ["Security"],
+        "classification": "Other", "docs_contact": "", "cf_fixed_in": ""}], "faults":
+        []}'
+    headers:
+      Access-Control-Allow-Headers:
+      - origin, content-type, accept, x-requested-with
+      Access-Control-Allow-Origin:
+      - '*'
+      Cache-Control:
+      - private, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Mon, 17 Jun 2024 12:46:44 GMT
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      X-content-type-options:
+      - nosniff
+      X-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '6324'
+      x-rh-edge-cache-status:
+      - Miss from child, Miss from parent
+      x-rh-edge-reference-id:
+      - 0.64f06e68.1718628403.c46ecae
+      x-rh-edge-request-id:
+      - c46ecae
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-bugzilla/3.2.0
+    method: GET
+    uri: https://example.com/rest/bug/1663907/comment
+  response:
+    body:
+      string: '{"bugs": {"1663907": {"comments": [{"creator_id": 391044, "tags": [],
+        "is_private": false, "id": 12342416, "count": 0, "attachment_id": null, "text":
+        "\nA use-after-free vulnerability was found in nasm. A specially crafted file
+        could cause the application to crash.\n\nUpstream issue:\n\nhttps://example.com/show_bug.cgi?id=3392530",
+        "private_groups": [], "time": "2019-01-07T09:53:43Z", "creation_time": "2019-01-07T09:53:43Z",
+        "creator": "anemec@redhat.com", "bug_id": 1663907}, {"text": "Created nasm
+        tracking bugs for this issue:\n\nAffects: openshift-4 [bug 1663909]", "private_groups":
+        [], "time": "2019-01-07T09:54:59Z", "bug_id": 1663907, "creator": "anemec@redhat.com",
+        "creation_time": "2019-01-07T09:54:59Z", "is_private": false, "count": 1,
+        "id": 12342427, "tags": [], "creator_id": 391044, "attachment_id": null},
+        {"text": "Setting devel cond NAK - waiting on upstream fix.", "private_groups":
+        [], "time": "2019-01-17T10:37:38Z", "creator": "nickc@redhat.com", "creation_time":
+        "2019-01-17T10:37:38Z", "bug_id": 1663907, "creator_id": 145493, "tags": [],
+        "id": 12374342, "count": 2, "is_private": false, "attachment_id": null}, {"creator_id":
+        422051, "tags": [], "id": 12412758, "count": 3, "is_private": false, "attachment_id":
+        null, "private_groups": [], "text": "Red Hat Enterprise 6 and 7 are vulnerable.
+        Valgrind output matches upstream''s ASAN output relatively well:\n\n```\npoc:15:
+        error: label or instruction expected at start of line\npoc:16: error: attempt
+        to define a local label before any non-local labels\npoc:18: error: parser:
+        instruction expected\npoc:18: error: parser: instruction expected\npoc:18:
+        error: label or instruction expected at start of line\n==12504== Invalid read
+        of size 4\n==12504==    at 0x4346C5: pp_getline (preproc.c:4957)\n==12504==    by
+        0x4046E3: assemble_file.constprop.3 (nasm.c:1222)\n==12504==    by 0x402D02:
+        main (nasm.c:463)\n```", "creator": "sgayou@redhat.com", "creation_time":
+        "2019-01-31T18:18:33Z", "bug_id": 1663907, "time": "2019-01-31T18:18:33Z"}]}},
+        "comments": {}}'
+    headers:
+      Access-Control-Allow-Headers:
+      - origin, content-type, accept, x-requested-with
+      Access-Control-Allow-Origin:
+      - '*'
+      Cache-Control:
+      - private, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Mon, 17 Jun 2024 12:46:45 GMT
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      X-content-type-options:
+      - nosniff
+      X-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '2970'
+      x-rh-edge-cache-status:
+      - Miss from child, Miss from parent
+      x-rh-edge-reference-id:
+      - 0.64f06e68.1718628404.c46efe0
+      x-rh-edge-request-id:
+      - c46efe0
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-bugzilla/3.2.0
+    method: GET
+    uri: https://example.com/rest/version
+  response:
+    body:
+      string: '{"version": "5.0.4.rh97"}'
+    headers:
+      Access-Control-Allow-Headers:
+      - origin, content-type, accept, x-requested-with
+      Access-Control-Allow-Origin:
+      - '*'
+      Cache-Control:
+      - private, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '24'
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Mon, 17 Jun 2024 12:46:46 GMT
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains
+      X-content-type-options:
+      - nosniff
+      X-xss-protection:
+      - 1; mode=block
+      x-rh-edge-cache-status:
+      - Miss from child, Miss from parent
+      x-rh-edge-reference-id:
+      - 0.64f06e68.1718628405.c46f5bb
+      x-rh-edge-request-id:
+      - c46f5bb
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-bugzilla/3.2.0
+    method: GET
+    uri: https://example.com/rest/user?ids=1
+  response:
+    body:
+      string: '{"users": [{"real_name": "Need Real Name", "email": "aander07@packetmaster.com",
+        "name": "aander07@packetmaster.com", "id": 1, "can_login": true}]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - origin, content-type, accept, x-requested-with
+      Access-Control-Allow-Origin:
+      - '*'
+      Cache-Control:
+      - private, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '137'
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Mon, 17 Jun 2024 12:46:46 GMT
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains
+      X-content-type-options:
+      - nosniff
+      X-xss-protection:
+      - 1; mode=block
+      x-rh-edge-cache-status:
+      - Miss from child, Miss from parent
+      x-rh-edge-reference-id:
+      - 0.64f06e68.1718628406.c46f69f
+      x-rh-edge-request-id:
+      - c46f69f
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-bugzilla/3.2.0
+    method: GET
+    uri: https://example.com/rest/bug/1656210?extra_fields=comments&extra_fields=description&extra_fields=external_bugs&extra_fields=flags&extra_fields=sub_components&extra_fields=tags&include_fields=id&include_fields=last_change_time
+  response:
+    body:
+      string: '{"faults": [], "bugs": [{"last_change_time": "2023-07-07T08:30:56Z",
+        "id": 1656210, "data_category": "Public"}]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - origin, content-type, accept, x-requested-with
+      Access-Control-Allow-Origin:
+      - '*'
+      Cache-Control:
+      - private, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '104'
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Mon, 17 Jun 2024 12:46:47 GMT
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains
+      X-content-type-options:
+      - nosniff
+      X-xss-protection:
+      - 1; mode=block
+      x-rh-edge-cache-status:
+      - Miss from child, Miss from parent
+      x-rh-edge-reference-id:
+      - 0.64f06e68.1718628406.c46f854
+      x-rh-edge-request-id:
+      - c46f854
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"product": "Security Response", "op_sys": "Linux", "platform": "All",
+      "version": "unspecified", "component": "vulnerability", "cf_release_notes":
+      "foo", "severity": "low", "priority": "low", "summary": "interview: fish: know:
+      sample title", "keywords": {"add": ["Security"]}, "flags": [], "groups": {"add":
+      [], "remove": []}, "cc": {"add": [], "remove": []}, "cf_srtnotes": "{\"affects\":
+      [{\"ps_module\": \"openshift-4\", \"ps_component\": \"openshift\", \"affectedness\":
+      \"affected\", \"resolution\": \"delegated\", \"impact\": \"low\", \"cvss2\":
+      null, \"cvss3\": null, \"cvss4\": null}], \"public\": \"2024-05-25T06:18:13Z\",
+      \"reported\": \"1990-12-02T22:54:49Z\", \"impact\": \"low\", \"source\": \"internet\",
+      \"cwe\": \"CWE-1\", \"mitigation\": \"foo\", \"statement\": \"Statement for
+      None\"}", "ids": ["1656210"]}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '824'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-bugzilla/3.2.0
+    method: PUT
+    uri: https://example.com/rest/bug/1656210
+  response:
+    body:
+      string: '{"bugs": [{"changes": {"summary": {"removed": "CVE-2018-19755 nasm:
+        out-of-bounds array access in is_mmacro in asm/preproc.c", "added": "interview:
+        fish: know: sample title"}, "cf_release_notes": {"added": "foo", "removed":
+        ""}, "cf_srtnotes": {"added": "{\"affects\": [{\"ps_module\": \"openshift-4\",
+        \"ps_component\": \"openshift\", \"affectedness\": \"affected\", \"resolution\":
+        \"delegated\", \"impact\": \"low\", \"cvss2\": null, \"cvss3\": null, \"cvss4\":
+        null}], \"public\": \"2024-05-25T06:18:13Z\", \"reported\": \"1990-12-02T22:54:49Z\",
+        \"impact\": \"low\", \"source\": \"internet\", \"cwe\": \"CWE-1\", \"mitigation\":
+        \"foo\", \"statement\": \"Statement for None\"}", "removed": "{\"affects\":
+        [{\"affectedness\": \"affected\", \"cvss2\": null, \"cvss3\": null, \"impact\":
+        null, \"ps_component\": \"openshift\", \"ps_module\": \"openshift-4\", \"resolution\":
+        \"fix\"}], \"checklists\": [{\"items\": [{\"checked\":
+        true, \"comment\": null, \"item\": \"0. CVSS score is consistent with the
+        description\", \"not_applicable\": false}, {\"checked\": true, \"comment\":
+        null, \"item\": \"1. Flaw bug contains accurate technical information\", \"not_applicable\":
+        false}, {\"checked\": true, \"comment\": null, \"item\": \"2. External References
+        supplied as appropriate (vulnerability article, upstream advisories, etc)\",
+        \"not_applicable\": false}, {\"checked\": true, \"comment\": null, \"item\":
+        \"3. Links to patches/commits or patches are attached\", \"not_applicable\":
+        false}, {\"checked\": true, \"comment\": null, \"item\": \"4. Reproducer/Notes
+        for QE on how to test are present\", \"not_applicable\": false}, {\"checked\":
+        false, \"comment\": null, \"item\": \"5. Flaw has correct acknowledgment text
+        and reporter has given explicit permission to be listed\", \"not_applicable\":
+        true}], \"name\": \"Base flaw\", \"signature\": \"0910426\", \"template\":
+        \"base_flaw\"}], \"cvss3\": \"7.0/CVSS:3.0/AV:L/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H\",
+        \"cwe\": \"CWE-125\", \"impact\": \"low\", \"jira_trackers\": [], \"public\":
+        \"2018-11-12\", \"reported\": \"2018-11-30\", \"source\": \"cve\", \"statement\":
+        \"This issue affects the versions of nasm as shipped with Red Hat Enterprise
+        Linux 5, 6, and 7.\\n\\nRed Hat Enterprise Linux 5 is now in Extended Life
+        Phase of the support and maintenance life cycle. This issue is not currently
+        planned to be addressed in future updates. For additional information, refer
+        to the Red Hat Enterprise Linux Life Cycle: https://example.com/support/policy/updates/errata/.\\n\\nRed
+        Hat Enterprise Linux 6 is now in Maintenance Support 2 Phase of the support
+        and maintenance life cycle. This has been rated as having a security impact
+        of Low, and is not currently planned to be addressed in future updates. For
+        additional information, refer to the Red Hat Enterprise Linux Life Cycle:
+        https://example.com/support/policy/updates/errata/.\"}"}}, "last_change_time":
+        "2024-06-17T12:46:48Z", "id": 1656210, "alias": ["CVE-2018-19755"]}]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - origin, content-type, accept, x-requested-with
+      Access-Control-Allow-Origin:
+      - '*'
+      Cache-Control:
+      - private, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Mon, 17 Jun 2024 12:46:48 GMT
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      X-content-type-options:
+      - nosniff
+      X-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '3631'
+      x-rh-edge-cache-status:
+      - Miss from child, Miss from parent
+      x-rh-edge-reference-id:
+      - 0.64f06e68.1718628407.c46fb2e
+      x-rh-edge-request-id:
+      - c46fb2e
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-bugzilla/3.2.0
+    method: GET
+    uri: https://example.com/rest/version
+  response:
+    body:
+      string: '{"version": "5.0.4.rh97"}'
+    headers:
+      Access-Control-Allow-Headers:
+      - origin, content-type, accept, x-requested-with
+      Access-Control-Allow-Origin:
+      - '*'
+      Cache-Control:
+      - private, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '24'
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Mon, 17 Jun 2024 12:46:49 GMT
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains
+      X-content-type-options:
+      - nosniff
+      X-xss-protection:
+      - 1; mode=block
+      x-rh-edge-cache-status:
+      - Miss from child, Miss from parent
+      x-rh-edge-reference-id:
+      - 0.64f06e68.1718628409.c47064a
+      x-rh-edge-request-id:
+      - c47064a
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-bugzilla/3.2.0
+    method: GET
+    uri: https://example.com/rest/user?ids=1
+  response:
+    body:
+      string: '{"users": [{"real_name": "Need Real Name", "can_login": true, "id":
+        1, "email": "aander07@packetmaster.com", "name": "aander07@packetmaster.com"}]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - origin, content-type, accept, x-requested-with
+      Access-Control-Allow-Origin:
+      - '*'
+      Cache-Control:
+      - private, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '137'
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Mon, 17 Jun 2024 12:46:50 GMT
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains
+      X-content-type-options:
+      - nosniff
+      X-xss-protection:
+      - 1; mode=block
+      x-rh-edge-cache-status:
+      - Miss from child, Miss from parent
+      x-rh-edge-reference-id:
+      - 0.64f06e68.1718628409.c4706f9
+      x-rh-edge-request-id:
+      - c4706f9
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-bugzilla/3.2.0
+    method: GET
+    uri: https://example.com/rest/bug/1656210?extra_fields=comments&extra_fields=description&extra_fields=external_bugs&extra_fields=flags&extra_fields=sub_components&extra_fields=tags
+  response:
+    body:
+      string: '{"faults": [], "bugs": [{"remaining_time": 0, "tags": [], "is_creator_accessible":
+        true, "cc_detail": [{"real_name": "Dominik ''Rathann'' Mierzejewski", "insider":
+        false, "active": true, "id": 192315, "partner": false, "name": "dominik@greysector.net",
+        "email": "dominik@greysector.net"}, {"id": 306302, "email": "java-sig-commits@lists.fedoraproject.org",
+        "name": "java-sig-commits@lists.fedoraproject.org", "partner": false, "real_name":
+        "Fedora Java SIG", "insider": false, "active": true}, {"real_name": "Mikolaj
+        Izdebski", "insider": true, "active": true, "id": 329409, "email": "mizdebsk@redhat.com",
+        "name": "mizdebsk@redhat.com", "partner": false}, {"name": "nickc@redhat.com",
+        "email": "nickc@redhat.com", "partner": false, "id": 145493, "insider": true,
+        "real_name": "Nick Clifton", "active": true}], "platform": "All", "is_cc_accessible":
+        true, "actual_time": 0, "cf_qa_whiteboard": "", "cf_pgm_internal": "", "product":
+        "Security Response", "cf_clone_of": null, "qa_contact": "", "cf_release_notes":
+        "foo", "assigned_to": "nobody@redhat.com", "summary": "interview: fish: know:
+        sample title", "severity": "low", "keywords": ["Security"], "classification":
+        "Other", "estimated_time": 0, "cf_devel_whiteboard": "", "docs_contact": "",
+        "cf_fixed_in": "", "dupe_of": null, "comments": [{"time": "2018-12-04T22:45:26Z",
+        "bug_id": 1656210, "creator": "lpardo@redhat.com", "creation_time": "2018-12-04T22:45:26Z",
+        "text": "A flaw was found in Netwide Assembler (NASM) 2.14rc16. There is an
+        illegal address access in is_mmacro function at asm/preproc.c that will cause
+        a denial of service (out-of-bounds array access) because a certain conversion
+        can result in a negative integer. \n\n\nReferences:\nhttps://example.com/show_bug.cgi?id=3392528
+        \nhttps://example.com/nasm.git/commit/3079f7966dbed4497e36d5067cbfd896a90358cb",
+        "private_groups": [], "attachment_id": null, "id": 12275094, "count": 0, "is_private":
+        false, "creator_id": 416947, "tags": []}, {"text": "Created nasm tracking
+        bugs for this issue:\n\nAffects: openshift-4 [bug 1656211]", "private_groups":
+        [], "time": "2018-12-04T22:45:49Z", "creation_time": "2018-12-04T22:45:49Z",
+        "creator": "lpardo@redhat.com", "bug_id": 1656210, "creator_id": 416947, "tags":
+        [], "is_private": false, "id": 12275099, "count": 1, "attachment_id": null},
+        {"attachment_id": null, "creator_id": 326134, "tags": [], "id": 12277246,
+        "count": 3, "is_private": false, "creator": "scorneli@redhat.com", "creation_time":
+        "2018-12-05T15:12:07Z", "bug_id": 1656210, "time": "2018-12-05T15:12:07Z",
+        "private_groups": [], "text": "Statement:\n\nThis issue affects the versions
+        of nasm as shipped with Red Hat Enterprise Linux 5, 6, and 7.\n\nRed Hat Enterprise
+        Linux 5 is now in Extended Life Phase of the support and maintenance life
+        cycle. This issue is not currently planned to be addressed in future updates.
+        For additional information, refer to the Red Hat Enterprise Linux Life Cycle:
+        https://example.com/support/policy/updates/errata/.\n\nRed Hat Enterprise
+        Linux 6 is now in Maintenance Support 2 Phase of the support and maintenance
+        life cycle. This has been rated as having a security impact of Low, and is
+        not currently planned to be addressed in future updates. For additional information,
+        refer to the Red Hat Enterprise Linux Life Cycle: https://example.com/support/policy/updates/errata/."}],
+        "priority": "low", "is_confirmed": true, "resolution": "", "cf_doc_type":
+        "If docs needed, set a value", "cf_internal_whiteboard": "", "component":
+        ["vulnerability"], "id": 1656210, "depends_on": [1656211, 1656464, 1656465],
+        "blocks": [], "deadline": null, "whiteboard": "", "groups": [], "external_bugs":
+        [], "url": "", "status": "ASSIGNED", "is_open": true, "cf_pm_score": "0",
+        "version": ["unspecified"], "creator": "lpardo@redhat.com", "cf_last_closed":
+        null, "creator_detail": {"name": "lpardo@redhat.com", "email": "lpardo@redhat.com",
+        "partner": false, "id": 416947, "active": true, "insider": true, "real_name":
+        "Laura Pardo"}, "sub_components": {}, "cf_qe_conditional_nak": [], "cc": ["dominik@greysector.net",
+        "java-sig-commits@lists.fedoraproject.org", "mizdebsk@redhat.com", "nickc@redhat.com"],
+        "data_category": "Public", "cf_build_id": "", "assigned_to_detail": {"real_name":
+        "Nobody", "insider": false, "active": true, "id": 29451, "name": "nobody@redhat.com",
+        "email": "nobody@redhat.com", "partner": false}, "cf_cust_facing": "---",
+        "cf_environment": "", "flags": [{"status": "+", "setter": "bugzilla@redhat.com",
+        "type_id": 415, "id": 6115873, "name": "requires_doc_text", "is_active": 1,
+        "creation_date": "2024-06-17T12:46:48Z", "modification_date": "2024-06-17T12:46:48Z"}],
+        "op_sys": "Linux", "alias": ["CVE-2018-19755"], "cf_major_incident": null,
+        "last_change_time": "2024-06-17T12:46:48Z", "target_milestone": "---", "target_release":
+        ["---"], "cf_conditional_nak": [], "cf_srtnotes": "{\"affects\": [{\"ps_module\":
+        \"openshift-4\", \"ps_component\": \"openshift\", \"affectedness\": \"affected\",
+        \"resolution\": \"delegated\", \"impact\": \"low\", \"cvss2\": null, \"cvss3\":
+        null, \"cvss4\": null}], \"public\": \"2024-05-25T06:18:13Z\", \"reported\":
+        \"1990-12-02T22:54:49Z\", \"impact\": \"low\", \"source\": \"internet\", \"cwe\":
+        \"CWE-1\", \"mitigation\": \"foo\", \"statement\": \"Statement for None\"}",
+        "description": "A flaw was found in Netwide Assembler (NASM) 2.14rc16. There
+        is an illegal address access in is_mmacro function at asm/preproc.c that will
+        cause a denial of service (out-of-bounds array access) because a certain conversion
+        can result in a negative integer. \n\n\nReferences:\nhttps://example.com/show_bug.cgi?id=3392528
+        \nhttps://example.com/nasm.git/commit/3079f7966dbed4497e36d5067cbfd896a90358cb",
+        "creation_time": "2018-12-04T22:45:26Z", "cf_embargoed": null}]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - origin, content-type, accept, x-requested-with
+      Access-Control-Allow-Origin:
+      - '*'
+      Cache-Control:
+      - private, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Mon, 17 Jun 2024 12:46:50 GMT
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      X-content-type-options:
+      - nosniff
+      X-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '6327'
+      x-rh-edge-cache-status:
+      - Miss from child, Miss from parent
+      x-rh-edge-reference-id:
+      - 0.64f06e68.1718628410.c4708e5
+      x-rh-edge-request-id:
+      - c4708e5
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-bugzilla/3.2.0
+    method: GET
+    uri: https://example.com/rest/bug/1656210?extra_fields=comments&extra_fields=description&extra_fields=external_bugs&extra_fields=flags&extra_fields=sub_components&extra_fields=tags
+  response:
+    body:
+      string: '{"faults": [], "bugs": [{"whiteboard": "", "blocks": [], "deadline":
+        null, "id": 1656210, "depends_on": [1656211, 1656464, 1656465], "component":
+        ["vulnerability"], "creator": "lpardo@redhat.com", "version": ["unspecified"],
+        "cf_last_closed": null, "cf_pm_score": "0", "is_open": true, "url": "", "status":
+        "ASSIGNED", "external_bugs": [], "groups": [], "is_confirmed": true, "priority":
+        "low", "comments": [{"private_groups": [], "text": "A flaw was found in Netwide
+        Assembler (NASM) 2.14rc16. There is an illegal address access in is_mmacro
+        function at asm/preproc.c that will cause a denial of service (out-of-bounds
+        array access) because a certain conversion can result in a negative integer.
+        \n\n\nReferences:\nhttps://example.com/show_bug.cgi?id=3392528 \nhttps://example.com/nasm.git/commit/3079f7966dbed4497e36d5067cbfd896a90358cb",
+        "creation_time": "2018-12-04T22:45:26Z", "creator": "lpardo@redhat.com", "bug_id":
+        1656210, "time": "2018-12-04T22:45:26Z", "creator_id": 416947, "tags": [],
+        "is_private": false, "id": 12275094, "count": 0, "attachment_id": null}, {"bug_id":
+        1656210, "creator": "lpardo@redhat.com", "creation_time": "2018-12-04T22:45:49Z",
+        "time": "2018-12-04T22:45:49Z", "private_groups": [], "text": "Created nasm
+        tracking bugs for this issue:\n\nAffects: openshift-4 [bug 1656211]", "attachment_id":
+        null, "is_private": false, "count": 1, "id": 12275099, "tags": [], "creator_id":
+        416947}, {"text": "Statement:\n\nThis issue affects the versions of nasm as
+        shipped with Red Hat Enterprise Linux 5, 6, and 7.\n\nRed Hat Enterprise Linux
+        5 is now in Extended Life Phase of the support and maintenance life cycle.
+        This issue is not currently planned to be addressed in future updates. For
+        additional information, refer to the Red Hat Enterprise Linux Life Cycle:
+        https://example.com/support/policy/updates/errata/.\n\nRed Hat Enterprise
+        Linux 6 is now in Maintenance Support 2 Phase of the support and maintenance
+        life cycle. This has been rated as having a security impact of Low, and is
+        not currently planned to be addressed in future updates. For additional information,
+        refer to the Red Hat Enterprise Linux Life Cycle: https://example.com/support/policy/updates/errata/.",
+        "private_groups": [], "time": "2018-12-05T15:12:07Z", "creation_time": "2018-12-05T15:12:07Z",
+        "creator": "scorneli@redhat.com", "bug_id": 1656210, "creator_id": 326134,
+        "tags": [], "count": 3, "is_private": false, "id": 12277246, "attachment_id":
+        null}], "dupe_of": null, "cf_doc_type": "If docs needed, set a value", "cf_internal_whiteboard":
+        "", "resolution": "", "target_release": ["---"], "cf_conditional_nak": [],
+        "target_milestone": "---", "creation_time": "2018-12-04T22:45:26Z", "cf_embargoed":
+        null, "description": "A flaw was found in Netwide Assembler (NASM) 2.14rc16.
+        There is an illegal address access in is_mmacro function at asm/preproc.c
+        that will cause a denial of service (out-of-bounds array access) because a
+        certain conversion can result in a negative integer. \n\n\nReferences:\nhttps://example.com/show_bug.cgi?id=3392528
+        \nhttps://example.com/nasm.git/commit/3079f7966dbed4497e36d5067cbfd896a90358cb",
+        "cf_srtnotes": "{\"affects\": [{\"ps_module\": \"openshift-4\", \"ps_component\":
+        \"openshift\", \"affectedness\": \"affected\", \"resolution\": \"delegated\",
+        \"impact\": \"low\", \"cvss2\": null, \"cvss3\": null, \"cvss4\": null}],
+        \"public\": \"2024-05-25T06:18:13Z\", \"reported\": \"1990-12-02T22:54:49Z\",
+        \"impact\": \"low\", \"source\": \"internet\", \"cwe\": \"CWE-1\", \"mitigation\":
+        \"foo\", \"statement\": \"Statement for None\"}", "data_category": "Public",
+        "assigned_to_detail": {"email": "nobody@redhat.com", "name": "nobody@redhat.com",
+        "partner": false, "id": 29451, "active": true, "insider": false, "real_name":
+        "Nobody"}, "cf_build_id": "", "cf_cust_facing": "---",
+        "cc": ["dominik@greysector.net", "java-sig-commits@lists.fedoraproject.org",
+        "mizdebsk@redhat.com", "nickc@redhat.com"], "cf_qe_conditional_nak": [], "creator_detail":
+        {"id": 416947, "name": "lpardo@redhat.com", "partner": false, "email": "lpardo@redhat.com",
+        "real_name": "Laura Pardo", "insider": true, "active": true}, "sub_components":
+        {}, "last_change_time": "2024-06-17T12:46:48Z", "cf_environment": "", "alias":
+        ["CVE-2018-19755"], "op_sys": "Linux", "flags": [{"id": 6115873, "name": "requires_doc_text",
+        "creation_date": "2024-06-17T12:46:48Z", "modification_date": "2024-06-17T12:46:48Z",
+        "is_active": 1, "status": "+", "type_id": 415, "setter": "bugzilla@redhat.com"}],
+        "cf_major_incident": null, "actual_time": 0, "is_cc_accessible": true, "platform":
+        "All", "product": "Security Response", "cf_qa_whiteboard": "", "cf_pgm_internal":
+        "", "tags": [], "remaining_time": 0, "cc_detail": [{"name": "dominik@greysector.net",
+        "partner": false, "email": "dominik@greysector.net", "id": 192315, "active":
+        true, "insider": false, "real_name": "Dominik ''Rathann'' Mierzejewski"},
+        {"name": "java-sig-commits@lists.fedoraproject.org", "partner": false, "email":
+        "java-sig-commits@lists.fedoraproject.org", "id": 306302, "active": true,
+        "insider": false, "real_name": "Fedora Java SIG"}, {"active": true, "insider":
+        true, "real_name": "Mikolaj Izdebski", "name": "mizdebsk@redhat.com", "email":
+        "mizdebsk@redhat.com", "partner": false, "id": 329409}, {"real_name": "Nick
+        Clifton", "insider": true, "active": true, "id": 145493, "email": "nickc@redhat.com",
+        "partner": false, "name": "nickc@redhat.com"}], "is_creator_accessible": true,
+        "cf_devel_whiteboard": "", "estimated_time": 0, "classification": "Other",
+        "keywords": ["Security"], "docs_contact": "", "cf_fixed_in": "", "cf_clone_of":
+        null, "assigned_to": "nobody@redhat.com", "severity": "low", "summary": "interview:
+        fish: know: sample title", "cf_release_notes": "foo", "qa_contact": ""}]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - origin, content-type, accept, x-requested-with
+      Access-Control-Allow-Origin:
+      - '*'
+      Cache-Control:
+      - private, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Mon, 17 Jun 2024 12:46:51 GMT
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      X-content-type-options:
+      - nosniff
+      X-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '6327'
+      x-rh-edge-cache-status:
+      - Miss from child, Miss from parent
+      x-rh-edge-reference-id:
+      - 0.64f06e68.1718628411.c470ba4
+      x-rh-edge-request-id:
+      - c470ba4
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-bugzilla/3.2.0
+    method: GET
+    uri: https://example.com/rest/bug/1656210/comment
+  response:
+    body:
+      string: '{"comments": {}, "bugs": {"1656210": {"comments": [{"count": 0, "private_groups":
+        [], "id": 12275094, "attachment_id": null, "creation_time": "2018-12-04T22:45:26Z",
+        "is_private": false, "bug_id": 1656210, "time": "2018-12-04T22:45:26Z", "creator_id":
+        416947, "tags": [], "text": "A flaw was found in Netwide Assembler (NASM)
+        2.14rc16. There is an illegal address access in is_mmacro function at asm/preproc.c
+        that will cause a denial of service (out-of-bounds array access) because a
+        certain conversion can result in a negative integer. \n\n\nReferences:\nhttps://example.com/show_bug.cgi?id=3392528
+        \nhttps://example.com/nasm.git/commit/3079f7966dbed4497e36d5067cbfd896a90358cb",
+        "creator": "lpardo@redhat.com"}, {"count": 1, "private_groups": [], "id":
+        12275099, "bug_id": 1656210, "is_private": false, "creation_time": "2018-12-04T22:45:49Z",
+        "attachment_id": null, "time": "2018-12-04T22:45:49Z", "creator_id": 416947,
+        "tags": [], "text": "Created nasm tracking bugs for this issue:\n\nAffects:
+        openshift-4 [bug 1656211]", "creator": "lpardo@redhat.com"}, {"creator": "scorneli@redhat.com",
+        "text": "Statement:\n\nThis issue affects the versions of nasm as shipped
+        with Red Hat Enterprise Linux 5, 6, and 7.\n\nRed Hat Enterprise Linux 5 is
+        now in Extended Life Phase of the support and maintenance life cycle. This
+        issue is not currently planned to be addressed in future updates. For additional
+        information, refer to the Red Hat Enterprise Linux Life Cycle: https://example.com/support/policy/updates/errata/.\n\nRed
+        Hat Enterprise Linux 6 is now in Maintenance Support 2 Phase of the support
+        and maintenance life cycle. This has been rated as having a security impact
+        of Low, and is not currently planned to be addressed in future updates. For
+        additional information, refer to the Red Hat Enterprise Linux Life Cycle:
+        https://example.com/support/policy/updates/errata/.", "tags": [], "creator_id":
+        326134, "time": "2018-12-05T15:12:07Z", "bug_id": 1656210, "is_private": false,
+        "attachment_id": null, "creation_time": "2018-12-05T15:12:07Z", "id": 12277246,
+        "private_groups": [], "count": 3}]}}}'
+    headers:
+      Access-Control-Allow-Headers:
+      - origin, content-type, accept, x-requested-with
+      Access-Control-Allow-Origin:
+      - '*'
+      Cache-Control:
+      - private, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Mon, 17 Jun 2024 12:46:52 GMT
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      X-content-type-options:
+      - nosniff
+      X-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '2819'
+      x-rh-edge-cache-status:
+      - Miss from child, Miss from parent
+      x-rh-edge-reference-id:
+      - 0.64f06e68.1718628411.c470e48
+      x-rh-edge-request-id:
+      - c470e48
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-bugzilla/3.2.0
+    method: GET
+    uri: https://example.com/rest/version
+  response:
+    body:
+      string: '{"version": "5.0.4.rh97"}'
+    headers:
+      Access-Control-Allow-Headers:
+      - origin, content-type, accept, x-requested-with
+      Access-Control-Allow-Origin:
+      - '*'
+      Cache-Control:
+      - private, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '24'
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Mon, 17 Jun 2024 12:46:53 GMT
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains
+      X-content-type-options:
+      - nosniff
+      X-xss-protection:
+      - 1; mode=block
+      x-rh-edge-cache-status:
+      - Miss from child, Miss from parent
+      x-rh-edge-reference-id:
+      - 0.64f06e68.1718628412.c47140e
+      x-rh-edge-request-id:
+      - c47140e
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-bugzilla/3.2.0
+    method: GET
+    uri: https://example.com/rest/user?ids=1
+  response:
+    body:
+      string: '{"users": [{"can_login": true, "name": "aander07@packetmaster.com",
+        "email": "aander07@packetmaster.com", "id": 1, "real_name": "Need Real Name"}]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - origin, content-type, accept, x-requested-with
+      Access-Control-Allow-Origin:
+      - '*'
+      Cache-Control:
+      - private, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '137'
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Mon, 17 Jun 2024 12:46:53 GMT
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains
+      X-content-type-options:
+      - nosniff
+      X-xss-protection:
+      - 1; mode=block
+      x-rh-edge-cache-status:
+      - Miss from child, Miss from parent
+      x-rh-edge-reference-id:
+      - 0.64f06e68.1718628413.c4714e2
+      x-rh-edge-request-id:
+      - c4714e2
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-bugzilla/3.2.0
+    method: GET
+    uri: https://example.com/rest/bug/1663908?extra_fields=comments&extra_fields=description&extra_fields=external_bugs&extra_fields=flags&extra_fields=sub_components&extra_fields=tags
+  response:
+    body:
+      string: '{"faults": [], "bugs": [{"version": ["unspecified"], "creator": "anemec@redhat.com",
+        "cf_last_closed": null, "is_open": true, "cf_pm_score": "0", "url": "", "status":
+        "ASSIGNED", "groups": [], "external_bugs": [], "whiteboard": "", "blocks":
+        [], "deadline": null, "id": 1663908, "depends_on": [1663909, 1677017, 1677018],
+        "component": ["vulnerability"], "cf_doc_type": "If docs needed, set a value",
+        "cf_internal_whiteboard": "", "resolution": "", "is_confirmed": true, "priority":
+        "low", "comments": [{"is_private": false, "count": 0, "id": 12342419, "creator_id":
+        391044, "tags": [], "attachment_id": null, "text": "\nA use-after-free vulnerability
+        was found in nasm. A specially crafted file could cause the application to
+        crash.\n\nUpstream issue:\n\nhttps://example.com/show_bug.cgi?id=3392531",
+        "private_groups": [], "time": "2019-01-07T09:54:28Z", "bug_id": 1663908, "creator":
+        "anemec@redhat.com", "creation_time": "2019-01-07T09:54:28Z"}, {"attachment_id":
+        null, "creator_id": 391044, "tags": [], "id": 12342429, "is_private": false,
+        "count": 1, "creation_time": "2019-01-07T09:55:02Z", "creator": "anemec@redhat.com",
+        "bug_id": 1663908, "time": "2019-01-07T09:55:02Z", "private_groups": [], "text":
+        "Created nasm tracking bugs for this issue:\n\nAffects: openshift-4 [bug 1663909]"},
+        {"time": "2019-01-17T10:38:24Z", "creation_time": "2019-01-17T10:38:24Z",
+        "creator": "nickc@redhat.com", "bug_id": 1663908, "text": "Setting devel cond
+        NAK - waiting on upstream fix.", "private_groups": [], "attachment_id": null,
+        "creator_id": 145493, "tags": [], "count": 2, "id": 12374348, "is_private":
+        false}, {"private_groups": [], "text": "Similar valgrind output as compared
+        to ASAN:\n\n```\n==12467== Memcheck, a memory error detector\n==12467== Copyright
+        (C) 2002-2017, and GNU GPL''d, by Julian Seward et al.\n==12467== Using Valgrind-3.13.0
+        and LibVEX; rerun with -h for copyright info\n==12467== Command: nasm -f bin
+        attachment.cgi?id=411689 -o xxx\n==12467== \n==12467== Conditional jump or
+        move depends on uninitialised value(s)\n==12467==    at 0x42FD4E: tokenize
+        (preproc.c:1006)\n==12467==    by 0x434189: pp_getline (preproc.c:4969)\n==12467==    by
+        0x4046E3: assemble_file.constprop.3 (nasm.c:1222)\n==12467==    by 0x402D02:
+        main (nasm.c:463)\n==12467== \n==12467== Conditional jump or move depends
+        on uninitialised value(s)\n==12467==    at 0x42FBA1: tokenize (preproc.c:900)\n==12467==    by
+        0x434189: pp_getline (preproc.c:4969)\n==12467==    by 0x4046E3: assemble_file.constprop.3
+        (nasm.c:1222)\n==12467==    by 0x402D02: main (nasm.c:463)\n==12467== \nattachment.cgi?id=411689:15:
+        error: label or instruction expected at start of line\nattachment.cgi?id=411689:16:
+        error: attempt to define a local label before any non-local labels\nattachment.cgi?id=411689:18:
+        error: parser: instruction expected\nattachment.cgi?id=411689:18: error: parser:
+        instruction expected\nattachment.cgi?id=411689:18: error: label or instruction
+        expected at start of line\n==12467== Invalid read of size 4\n==12467==    at
+        0x4346C5: pp_getline (preproc.c:4957)\n==12467==    by 0x4046E3: assemble_file.constprop.3
+        (nasm.c:1222)\n==12467==    by 0x402D02: main (nasm.c:463)\n```\n\nLooks valid.",
+        "bug_id": 1663908, "creation_time": "2019-02-13T18:58:34Z", "creator": "sgayou@redhat.com",
+        "time": "2019-02-13T18:58:34Z", "count": 3, "id": 12454440, "is_private":
+        false, "tags": [], "creator_id": 422051, "attachment_id": null}], "dupe_of":
+        null, "creation_time": "2019-01-07T09:54:28Z", "cf_embargoed": null, "description":
+        "\nA use-after-free vulnerability was found in nasm. A specially crafted file
+        could cause the application to crash.\n\nUpstream issue:\n\nhttps://example.com/show_bug.cgi?id=3392531",
+        "cf_srtnotes": "{\"affects\": [{\"affectedness\": \"affected\", \"cvss2\":
+        null, \"cvss3\": null, \"impact\": null, \"ps_component\": \"openshift\", \"ps_module\":
+        \"openshift-4\", \"resolution\": \"fix\"}], \"checklists\":
+        [{\"items\": [{\"checked\": true, \"comment\": null, \"item\": \"0. CVSS score
+        is consistent with the description\", \"not_applicable\": false}, {\"checked\":
+        true, \"comment\": null, \"item\": \"1. Flaw bug contains accurate technical
+        information\", \"not_applicable\": false}, {\"checked\": false, \"comment\":
+        null, \"item\": \"2. External References supplied as appropriate (vulnerability
+        article, upstream advisories, etc)\", \"not_applicable\": false}, {\"checked\":
+        false, \"comment\": null, \"item\": \"3. Links to patches/commits or patches
+        are attached\", \"not_applicable\": false}, {\"checked\": true, \"comment\":
+        null, \"item\": \"4. Reproducer/Notes for QE on how to test are present\",
+        \"not_applicable\": false}, {\"checked\": false, \"comment\": null, \"item\":
+        \"5. Flaw has correct acknowledgment text and reporter has given explicit
+        permission to be listed\", \"not_applicable\": false}], \"name\": \"Base flaw\",
+        \"signature\": \"0910426\", \"template\": \"base_flaw\"}], \"cvss3\": \"3.3/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:L\",
+        \"cwe\": \"CWE-416\", \"impact\": \"low\", \"jira_trackers\": [], \"public\":
+        \"2018-11-18\", \"reported\": \"2018-12-28\", \"source\": \"cve\"}", "target_release":
+        ["---"], "cf_conditional_nak": ["Upstream"], "target_milestone": "---", "last_change_time":
+        "2023-07-07T08:33:20Z", "alias": ["CVE-2018-20538"], "op_sys": "Linux", "cf_environment":
+        "", "flags": [], "cf_major_incident": null, "data_category": "Public", "cf_build_id":
+        "", "assigned_to_detail": {"insider": false, "real_name": "Nobody", "active":
+        true, "email": "nobody@redhat.com", "partner": false, "name": "nobody@redhat.com",
+        "id": 29451}, "cf_cust_facing": "---",
+        "cc": ["dominik@greysector.net", "java-sig-commits@lists.fedoraproject.org",
+        "mizdebsk@redhat.com", "nickc@redhat.com"], "cf_qe_conditional_nak": [], "creator_detail":
+        {"insider": false, "real_name": "Andrej Nemec", "active": false, "name": "anemec@redhat.com",
+        "partner": false, "email": "anemec@redhat.com", "id": 391044}, "sub_components":
+        {}, "product": "Security Response", "cf_qa_whiteboard": "", "cf_pgm_internal":
+        "", "actual_time": 0, "is_cc_accessible": true, "platform": "All", "cc_detail":
+        [{"id": 192315, "name": "dominik@greysector.net", "email": "dominik@greysector.net",
+        "partner": false, "real_name": "Dominik ''Rathann'' Mierzejewski", "insider":
+        false, "active": true}, {"partner": false, "name": "java-sig-commits@lists.fedoraproject.org",
+        "email": "java-sig-commits@lists.fedoraproject.org", "id": 306302, "active":
+        true, "insider": false, "real_name": "Fedora Java SIG"}, {"id": 329409, "partner":
+        false, "name": "mizdebsk@redhat.com", "email": "mizdebsk@redhat.com", "real_name":
+        "Mikolaj Izdebski", "insider": true, "active": true}, {"active": true, "insider":
+        true, "real_name": "Nick Clifton", "name": "nickc@redhat.com", "partner":
+        false, "email": "nickc@redhat.com", "id": 145493}], "is_creator_accessible":
+        true, "tags": [], "remaining_time": 0, "cf_fixed_in": "", "docs_contact":
+        "", "cf_devel_whiteboard": "", "estimated_time": 0, "classification": "Other",
+        "keywords": ["Security"], "assigned_to": "nobody@redhat.com", "severity":
+        "low", "summary": "CVE-2018-20538 nasm: Use-after-free at asm/preproc.c resulting
+        in a denial of service", "cf_release_notes": "", "qa_contact": "", "cf_clone_of":
+        null}]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - origin, content-type, accept, x-requested-with
+      Access-Control-Allow-Origin:
+      - '*'
+      Cache-Control:
+      - private, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Mon, 17 Jun 2024 12:46:54 GMT
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      X-content-type-options:
+      - nosniff
+      X-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '8446'
+      x-rh-edge-cache-status:
+      - Miss from child, Miss from parent
+      x-rh-edge-reference-id:
+      - 0.64f06e68.1718628413.c4716bb
+      x-rh-edge-request-id:
+      - c4716bb
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-bugzilla/3.2.0
+    method: GET
+    uri: https://example.com/rest/bug/1663908?extra_fields=comments&extra_fields=description&extra_fields=external_bugs&extra_fields=flags&extra_fields=sub_components&extra_fields=tags
+  response:
+    body:
+      string: '{"faults": [], "bugs": [{"product": "Security Response", "cf_pgm_internal":
+        "", "cf_qa_whiteboard": "", "actual_time": 0, "is_cc_accessible": true, "platform":
+        "All", "cc_detail": [{"real_name": "Dominik ''Rathann'' Mierzejewski", "insider":
+        false, "active": true, "id": 192315, "partner": false, "name": "dominik@greysector.net",
+        "email": "dominik@greysector.net"}, {"active": true, "insider": false, "real_name":
+        "Fedora Java SIG", "name": "java-sig-commits@lists.fedoraproject.org", "partner":
+        false, "email": "java-sig-commits@lists.fedoraproject.org", "id": 306302},
+        {"partner": false, "email": "mizdebsk@redhat.com", "name": "mizdebsk@redhat.com",
+        "id": 329409, "active": true, "insider": true, "real_name": "Mikolaj Izdebski"},
+        {"active": true, "insider": true, "real_name": "Nick Clifton", "name": "nickc@redhat.com",
+        "partner": false, "email": "nickc@redhat.com", "id": 145493}], "is_creator_accessible":
+        true, "tags": [], "remaining_time": 0, "cf_fixed_in": "", "docs_contact":
+        "", "cf_devel_whiteboard": "", "estimated_time": 0, "classification": "Other",
+        "keywords": ["Security"], "summary": "CVE-2018-20538 nasm: Use-after-free
+        at asm/preproc.c resulting in a denial of service", "severity": "low", "assigned_to":
+        "nobody@redhat.com", "cf_release_notes": "", "qa_contact": "", "cf_clone_of":
+        null, "cf_last_closed": null, "creator": "anemec@redhat.com", "version": ["unspecified"],
+        "cf_pm_score": "0", "is_open": true, "status": "ASSIGNED", "url": "", "groups":
+        [], "external_bugs": [], "whiteboard": "", "deadline": null, "blocks": [],
+        "depends_on": [1663909, 1677017, 1677018], "id": 1663908, "component": ["vulnerability"],
+        "cf_doc_type": "If docs needed, set a value", "cf_internal_whiteboard": "",
+        "resolution": "", "is_confirmed": true, "priority": "low", "comments": [{"is_private":
+        false, "count": 0, "id": 12342419, "tags": [], "creator_id": 391044, "attachment_id":
+        null, "text": "\nA use-after-free vulnerability was found in nasm. A specially
+        crafted file could cause the application to crash.\n\nUpstream issue:\n\nhttps://example.com/show_bug.cgi?id=3392531",
+        "private_groups": [], "time": "2019-01-07T09:54:28Z", "bug_id": 1663908, "creation_time":
+        "2019-01-07T09:54:28Z", "creator": "anemec@redhat.com"}, {"creator_id": 391044,
+        "tags": [], "is_private": false, "count": 1, "id": 12342429, "attachment_id":
+        null, "text": "Created nasm tracking bugs for this issue:\n\nAffects: openshift-4
+        [bug 1663909]", "private_groups": [], "time": "2019-01-07T09:55:02Z", "creator":
+        "anemec@redhat.com", "creation_time": "2019-01-07T09:55:02Z", "bug_id": 1663908},
+        {"private_groups": [], "text": "Setting devel cond NAK - waiting on upstream
+        fix.", "bug_id": 1663908, "creator": "nickc@redhat.com", "creation_time":
+        "2019-01-17T10:38:24Z", "time": "2019-01-17T10:38:24Z", "is_private": false,
+        "count": 2, "id": 12374348, "creator_id": 145493, "tags": [], "attachment_id":
+        null}, {"id": 12454440, "is_private": false, "count": 3, "creator_id": 422051,
+        "tags": [], "attachment_id": null, "text": "Similar valgrind output as compared
+        to ASAN:\n\n```\n==12467== Memcheck, a memory error detector\n==12467== Copyright
+        (C) 2002-2017, and GNU GPL''d, by Julian Seward et al.\n==12467== Using Valgrind-3.13.0
+        and LibVEX; rerun with -h for copyright info\n==12467== Command: nasm -f bin
+        attachment.cgi?id=411689 -o xxx\n==12467== \n==12467== Conditional jump or
+        move depends on uninitialised value(s)\n==12467==    at 0x42FD4E: tokenize
+        (preproc.c:1006)\n==12467==    by 0x434189: pp_getline (preproc.c:4969)\n==12467==    by
+        0x4046E3: assemble_file.constprop.3 (nasm.c:1222)\n==12467==    by 0x402D02:
+        main (nasm.c:463)\n==12467== \n==12467== Conditional jump or move depends
+        on uninitialised value(s)\n==12467==    at 0x42FBA1: tokenize (preproc.c:900)\n==12467==    by
+        0x434189: pp_getline (preproc.c:4969)\n==12467==    by 0x4046E3: assemble_file.constprop.3
+        (nasm.c:1222)\n==12467==    by 0x402D02: main (nasm.c:463)\n==12467== \nattachment.cgi?id=411689:15:
+        error: label or instruction expected at start of line\nattachment.cgi?id=411689:16:
+        error: attempt to define a local label before any non-local labels\nattachment.cgi?id=411689:18:
+        error: parser: instruction expected\nattachment.cgi?id=411689:18: error: parser:
+        instruction expected\nattachment.cgi?id=411689:18: error: label or instruction
+        expected at start of line\n==12467== Invalid read of size 4\n==12467==    at
+        0x4346C5: pp_getline (preproc.c:4957)\n==12467==    by 0x4046E3: assemble_file.constprop.3
+        (nasm.c:1222)\n==12467==    by 0x402D02: main (nasm.c:463)\n```\n\nLooks valid.",
+        "private_groups": [], "time": "2019-02-13T18:58:34Z", "bug_id": 1663908, "creator":
+        "sgayou@redhat.com", "creation_time": "2019-02-13T18:58:34Z"}], "dupe_of":
+        null, "cf_embargoed": null, "creation_time": "2019-01-07T09:54:28Z", "description":
+        "\nA use-after-free vulnerability was found in nasm. A specially crafted file
+        could cause the application to crash.\n\nUpstream issue:\n\nhttps://example.com/show_bug.cgi?id=3392531",
+        "cf_srtnotes": "{\"affects\": [{\"affectedness\": \"affected\", \"cvss2\":
+        null, \"cvss3\": null, \"impact\": null, \"ps_component\": \"openshift\", \"ps_module\":
+        \"openshift-4\", \"resolution\": \"fix\"}], \"checklists\":
+        [{\"items\": [{\"checked\": true, \"comment\": null, \"item\": \"0. CVSS score
+        is consistent with the description\", \"not_applicable\": false}, {\"checked\":
+        true, \"comment\": null, \"item\": \"1. Flaw bug contains accurate technical
+        information\", \"not_applicable\": false}, {\"checked\": false, \"comment\":
+        null, \"item\": \"2. External References supplied as appropriate (vulnerability
+        article, upstream advisories, etc)\", \"not_applicable\": false}, {\"checked\":
+        false, \"comment\": null, \"item\": \"3. Links to patches/commits or patches
+        are attached\", \"not_applicable\": false}, {\"checked\": true, \"comment\":
+        null, \"item\": \"4. Reproducer/Notes for QE on how to test are present\",
+        \"not_applicable\": false}, {\"checked\": false, \"comment\": null, \"item\":
+        \"5. Flaw has correct acknowledgment text and reporter has given explicit
+        permission to be listed\", \"not_applicable\": false}], \"name\": \"Base flaw\",
+        \"signature\": \"0910426\", \"template\": \"base_flaw\"}], \"cvss3\": \"3.3/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:L\",
+        \"cwe\": \"CWE-416\", \"impact\": \"low\", \"jira_trackers\": [], \"public\":
+        \"2018-11-18\", \"reported\": \"2018-12-28\", \"source\": \"cve\"}", "cf_conditional_nak":
+        ["Upstream"], "target_release": ["---"], "target_milestone": "---", "last_change_time":
+        "2023-07-07T08:33:20Z", "cf_major_incident": null, "flags": [], "op_sys":
+        "Linux", "alias": ["CVE-2018-20538"], "cf_environment": "", "cf_cust_facing":
+        "---", "assigned_to_detail": {"name": "nobody@redhat.com", "email": "nobody@redhat.com",
+        "partner": false, "id": 29451, "active": true, "insider": false, "real_name":
+        "Nobody"}, "cf_build_id": "", "data_category": "Public", "cc": ["dominik@greysector.net",
+        "java-sig-commits@lists.fedoraproject.org", "mizdebsk@redhat.com", "nickc@redhat.com"],
+        "cf_qe_conditional_nak": [], "sub_components": {}, "creator_detail": {"insider":
+        false, "real_name": "Andrej Nemec", "active": false, "name": "anemec@redhat.com",
+        "partner": false, "email": "anemec@redhat.com", "id": 391044}}]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - origin, content-type, accept, x-requested-with
+      Access-Control-Allow-Origin:
+      - '*'
+      Cache-Control:
+      - private, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Mon, 17 Jun 2024 12:46:54 GMT
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      X-content-type-options:
+      - nosniff
+      X-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '8446'
+      x-rh-edge-cache-status:
+      - Miss from child, Miss from parent
+      x-rh-edge-reference-id:
+      - 0.64f06e68.1718628414.c4719c1
+      x-rh-edge-request-id:
+      - c4719c1
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-bugzilla/3.2.0
+    method: GET
+    uri: https://example.com/rest/bug/1663908/comment
+  response:
+    body:
+      string: '{"comments": {}, "bugs": {"1663908": {"comments": [{"creator_id": 391044,
+        "time": "2019-01-07T09:54:28Z", "tags": [], "creator": "anemec@redhat.com",
+        "text": "\nA use-after-free vulnerability was found in nasm. A specially crafted
+        file could cause the application to crash.\n\nUpstream issue:\n\nhttps://example.com/show_bug.cgi?id=3392531",
+        "id": 12342419, "private_groups": [], "count": 0, "bug_id": 1663908, "creation_time":
+        "2019-01-07T09:54:28Z", "is_private": false, "attachment_id": null}, {"tags":
+        [], "creator": "anemec@redhat.com", "text": "Created nasm tracking bugs for
+        this issue:\n\nAffects: openshift-4 [bug 1663909]", "time": "2019-01-07T09:55:02Z",
+        "creator_id": 391044, "bug_id": 1663908, "attachment_id": null, "is_private":
+        false, "creation_time": "2019-01-07T09:55:02Z", "count": 1, "private_groups":
+        [], "id": 12342429}, {"time": "2019-01-17T10:38:24Z", "creator_id": 145493,
+        "creator": "nickc@redhat.com", "text": "Setting devel cond NAK - waiting on
+        upstream fix.", "tags": [], "count": 2, "id": 12374348, "private_groups":
+        [], "is_private": false, "creation_time": "2019-01-17T10:38:24Z", "attachment_id":
+        null, "bug_id": 1663908}, {"count": 3, "id": 12454440, "private_groups": [],
+        "bug_id": 1663908, "attachment_id": null, "is_private": false, "creation_time":
+        "2019-02-13T18:58:34Z", "time": "2019-02-13T18:58:34Z", "creator_id": 422051,
+        "creator": "sgayou@redhat.com", "tags": [], "text": "Similar valgrind output
+        as compared to ASAN:\n\n```\n==12467== Memcheck, a memory error detector\n==12467==
+        Copyright (C) 2002-2017, and GNU GPL''d, by Julian Seward et al.\n==12467==
+        Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info\n==12467==
+        Command: nasm -f bin attachment.cgi?id=411689 -o xxx\n==12467== \n==12467==
+        Conditional jump or move depends on uninitialised value(s)\n==12467==    at
+        0x42FD4E: tokenize (preproc.c:1006)\n==12467==    by 0x434189: pp_getline
+        (preproc.c:4969)\n==12467==    by 0x4046E3: assemble_file.constprop.3 (nasm.c:1222)\n==12467==    by
+        0x402D02: main (nasm.c:463)\n==12467== \n==12467== Conditional jump or move
+        depends on uninitialised value(s)\n==12467==    at 0x42FBA1: tokenize (preproc.c:900)\n==12467==    by
+        0x434189: pp_getline (preproc.c:4969)\n==12467==    by 0x4046E3: assemble_file.constprop.3
+        (nasm.c:1222)\n==12467==    by 0x402D02: main (nasm.c:463)\n==12467== \nattachment.cgi?id=411689:15:
+        error: label or instruction expected at start of line\nattachment.cgi?id=411689:16:
+        error: attempt to define a local label before any non-local labels\nattachment.cgi?id=411689:18:
+        error: parser: instruction expected\nattachment.cgi?id=411689:18: error: parser:
+        instruction expected\nattachment.cgi?id=411689:18: error: label or instruction
+        expected at start of line\n==12467== Invalid read of size 4\n==12467==    at
+        0x4346C5: pp_getline (preproc.c:4957)\n==12467==    by 0x4046E3: assemble_file.constprop.3
+        (nasm.c:1222)\n==12467==    by 0x402D02: main (nasm.c:463)\n```\n\nLooks valid."}]}}}'
+    headers:
+      Access-Control-Allow-Headers:
+      - origin, content-type, accept, x-requested-with
+      Access-Control-Allow-Origin:
+      - '*'
+      Cache-Control:
+      - private, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Mon, 17 Jun 2024 12:46:55 GMT
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      X-content-type-options:
+      - nosniff
+      X-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '3649'
+      x-rh-edge-cache-status:
+      - Miss from child, Miss from parent
+      x-rh-edge-reference-id:
+      - 0.64f06e68.1718628415.c471cd9
+      x-rh-edge-request-id:
+      - c471cd9
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-bugzilla/3.2.0
+    method: GET
+    uri: https://example.com/rest/bug/1656210?extra_fields=comments&extra_fields=description&extra_fields=external_bugs&extra_fields=flags&extra_fields=sub_components&extra_fields=tags
+  response:
+    body:
+      string: '{"faults": [], "bugs": [{"blocks": [], "deadline": null, "whiteboard":
+        "", "component": ["vulnerability"], "id": 1656210, "depends_on": [1656211,
+        1656464, 1656465], "cf_pm_score": "0", "is_open": true, "version": ["unspecified"],
+        "creator": "lpardo@redhat.com", "cf_last_closed": null, "external_bugs": [],
+        "groups": [], "url": "", "status": "ASSIGNED", "comments": [{"time": "2018-12-04T22:45:26Z",
+        "creator": "lpardo@redhat.com", "creation_time": "2018-12-04T22:45:26Z", "bug_id":
+        1656210, "text": "A flaw was found in Netwide Assembler (NASM) 2.14rc16. There
+        is an illegal address access in is_mmacro function at asm/preproc.c that will
+        cause a denial of service (out-of-bounds array access) because a certain conversion
+        can result in a negative integer. \n\n\nReferences:\nhttps://example.com/show_bug.cgi?id=3392528
+        \nhttps://example.com/nasm.git/commit/3079f7966dbed4497e36d5067cbfd896a90358cb",
+        "private_groups": [], "attachment_id": null, "tags": [], "creator_id": 416947,
+        "id": 12275094, "count": 0, "is_private": false}, {"creator_id": 416947, "tags":
+        [], "count": 1, "is_private": false, "id": 12275099, "attachment_id": null,
+        "private_groups": [], "text": "Created nasm tracking bugs for this issue:\n\nAffects:
+        openshift-4 [bug 1656211]", "creator": "lpardo@redhat.com", "creation_time":
+        "2018-12-04T22:45:49Z", "bug_id": 1656210, "time": "2018-12-04T22:45:49Z"},
+        {"count": 3, "is_private": false, "id": 12277246, "tags": [], "creator_id":
+        326134, "attachment_id": null, "text": "Statement:\n\nThis issue affects the
+        versions of nasm as shipped with Red Hat Enterprise Linux 5, 6, and 7.\n\nRed
+        Hat Enterprise Linux 5 is now in Extended Life Phase of the support and maintenance
+        life cycle. This issue is not currently planned to be addressed in future
+        updates. For additional information, refer to the Red Hat Enterprise Linux
+        Life Cycle: https://example.com/support/policy/updates/errata/.\n\nRed Hat
+        Enterprise Linux 6 is now in Maintenance Support 2 Phase of the support and
+        maintenance life cycle. This has been rated as having a security impact of
+        Low, and is not currently planned to be addressed in future updates. For additional
+        information, refer to the Red Hat Enterprise Linux Life Cycle: https://example.com/support/policy/updates/errata/.",
+        "private_groups": [], "time": "2018-12-05T15:12:07Z", "bug_id": 1656210, "creator":
+        "scorneli@redhat.com", "creation_time": "2018-12-05T15:12:07Z"}], "priority":
+        "low", "is_confirmed": true, "dupe_of": null, "cf_doc_type": "If docs needed,
+        set a value", "cf_internal_whiteboard": "", "resolution": "", "target_milestone":
+        "---", "target_release": ["---"], "cf_conditional_nak": [], "description":
+        "A flaw was found in Netwide Assembler (NASM) 2.14rc16. There is an illegal
+        address access in is_mmacro function at asm/preproc.c that will cause a denial
+        of service (out-of-bounds array access) because a certain conversion can result
+        in a negative integer. \n\n\nReferences:\nhttps://example.com/show_bug.cgi?id=3392528
+        \nhttps://example.com/nasm.git/commit/3079f7966dbed4497e36d5067cbfd896a90358cb",
+        "creation_time": "2018-12-04T22:45:26Z", "cf_embargoed": null, "cf_srtnotes":
+        "{\"affects\": [{\"ps_module\": \"openshift-4\", \"ps_component\": \"openshift\",
+        \"affectedness\": \"affected\", \"resolution\": \"delegated\", \"impact\":
+        \"low\", \"cvss2\": null, \"cvss3\": null, \"cvss4\": null}], \"public\":
+        \"2024-05-25T06:18:13Z\", \"reported\": \"1990-12-02T22:54:49Z\", \"impact\":
+        \"low\", \"source\": \"internet\", \"cwe\": \"CWE-1\", \"mitigation\": \"foo\",
+        \"statement\": \"Statement for None\"}",
+        "cc": ["dominik@greysector.net", "java-sig-commits@lists.fedoraproject.org",
+        "mizdebsk@redhat.com", "nickc@redhat.com"], "cf_build_id": "", "assigned_to_detail":
+        {"real_name": "Nobody", "insider": false, "active": true, "id": 29451, "email":
+        "nobody@redhat.com", "name": "nobody@redhat.com", "partner": false}, "data_category":
+        "Public", "cf_cust_facing": "---", "creator_detail": {"active": true, "real_name":
+        "Laura Pardo", "insider": true, "id": 416947, "partner": false, "email": "lpardo@redhat.com",
+        "name": "lpardo@redhat.com"}, "sub_components": {}, "cf_qe_conditional_nak":
+        [], "last_change_time": "2024-06-17T12:46:48Z", "alias": ["CVE-2018-19755"],
+        "flags": [{"creation_date": "2024-06-17T12:46:48Z", "modification_date": "2024-06-17T12:46:48Z",
+        "is_active": 1, "id": 6115873, "name": "requires_doc_text", "type_id": 415,
+        "setter": "bugzilla@redhat.com", "status": "+"}], "op_sys": "Linux", "cf_environment":
+        "", "cf_major_incident": null, "is_cc_accessible": true, "actual_time": 0,
+        "platform": "All", "product": "Security Response", "cf_qa_whiteboard": "",
+        "cf_pgm_internal": "", "remaining_time": 0, "tags": [], "cc_detail": [{"active":
+        true, "real_name": "Dominik ''Rathann'' Mierzejewski", "insider": false, "id":
+        192315, "email": "dominik@greysector.net", "name": "dominik@greysector.net",
+        "partner": false}, {"active": true, "insider": false, "real_name": "Fedora
+        Java SIG", "partner": false, "name": "java-sig-commits@lists.fedoraproject.org",
+        "email": "java-sig-commits@lists.fedoraproject.org", "id": 306302}, {"active":
+        true, "insider": true, "real_name": "Mikolaj Izdebski", "email": "mizdebsk@redhat.com",
+        "name": "mizdebsk@redhat.com", "partner": false, "id": 329409}, {"active":
+        true, "insider": true, "real_name": "Nick Clifton", "email": "nickc@redhat.com",
+        "partner": false, "name": "nickc@redhat.com", "id": 145493}], "is_creator_accessible":
+        true, "estimated_time": 0, "cf_devel_whiteboard": "", "keywords": ["Security"],
+        "classification": "Other", "cf_fixed_in": "", "docs_contact": "", "cf_clone_of":
+        null, "cf_release_notes": "foo", "assigned_to": "nobody@redhat.com", "severity":
+        "low", "summary": "interview: fish: know: sample title", "qa_contact": ""}]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - origin, content-type, accept, x-requested-with
+      Access-Control-Allow-Origin:
+      - '*'
+      Cache-Control:
+      - private, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Mon, 17 Jun 2024 12:46:56 GMT
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      X-content-type-options:
+      - nosniff
+      X-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '6327'
+      x-rh-edge-cache-status:
+      - Miss from child, Miss from parent
+      x-rh-edge-reference-id:
+      - 0.64f06e68.1718628416.c471fef
+      x-rh-edge-request-id:
+      - c471fef
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-bugzilla/3.2.0
+    method: GET
+    uri: https://example.com/rest/bug/1656210?extra_fields=comments&extra_fields=description&extra_fields=external_bugs&extra_fields=flags&extra_fields=sub_components&extra_fields=tags
+  response:
+    body:
+      string: '{"faults": [], "bugs": [{"version": ["unspecified"], "severity": "low",
+        "cf_internal_whiteboard": "", "flags": [{"name": "requires_doc_text", "is_active":
+        1, "status": "+", "creation_date": "2024-06-17T12:46:48Z", "setter": "bugzilla@redhat.com",
+        "modification_date": "2024-06-17T12:46:48Z", "id": 6115873, "type_id": 415}],
+        "cf_environment": "", "cc_detail": [{"name": "dominik@greysector.net", "email":
+        "dominik@greysector.net", "id": 192315, "real_name": "Dominik ''Rathann''
+        Mierzejewski", "active": true, "insider": false, "partner": false}, {"id":
+        306302, "email": "java-sig-commits@lists.fedoraproject.org", "name": "java-sig-commits@lists.fedoraproject.org",
+        "partner": false, "insider": false, "real_name": "Fedora Java SIG", "active":
+        true}, {"id": 329409, "email": "mizdebsk@redhat.com", "name": "mizdebsk@redhat.com",
+        "partner": false, "insider": true, "active": true, "real_name": "Mikolaj Izdebski"},
+        {"name": "nickc@redhat.com", "id": 145493, "email": "nickc@redhat.com", "insider":
+        true, "real_name": "Nick Clifton", "active": true, "partner": false}], "id":
+        1656210, "url": "", "priority": "low", "cf_cust_facing": "---", "alias": ["CVE-2018-19755"],
+        "cc": ["dominik@greysector.net", "java-sig-commits@lists.fedoraproject.org",
+        "mizdebsk@redhat.com", "nickc@redhat.com"], "cf_qa_whiteboard": "", "cf_embargoed":
+        null, "docs_contact": "", "depends_on": [1656211, 1656464, 1656465], "comments":
+        [{"time": "2018-12-04T22:45:26Z", "creator_id": 416947, "tags": [], "text":
+        "A flaw was found in Netwide Assembler (NASM) 2.14rc16. There is an illegal
+        address access in is_mmacro function at asm/preproc.c that will cause a denial
+        of service (out-of-bounds array access) because a certain conversion can result
+        in a negative integer. \n\n\nReferences:\nhttps://example.com/show_bug.cgi?id=3392528
+        \nhttps://example.com/nasm.git/commit/3079f7966dbed4497e36d5067cbfd896a90358cb",
+        "creator": "lpardo@redhat.com", "count": 0, "private_groups": [], "id": 12275094,
+        "bug_id": 1656210, "is_private": false, "creation_time": "2018-12-04T22:45:26Z",
+        "attachment_id": null}, {"time": "2018-12-04T22:45:49Z", "creator_id": 416947,
+        "text": "Created nasm tracking bugs for this issue:\n\nAffects: openshift-4
+        [bug 1656211]", "tags": [], "creator": "lpardo@redhat.com", "count": 1, "private_groups":
+        [], "id": 12275099, "is_private": false, "attachment_id": null, "creation_time":
+        "2018-12-04T22:45:49Z", "bug_id": 1656210}, {"text": "Statement:\n\nThis issue
+        affects the versions of nasm as shipped with Red Hat Enterprise Linux 5, 6,
+        and 7.\n\nRed Hat Enterprise Linux 5 is now in Extended Life Phase of the
+        support and maintenance life cycle. This issue is not currently planned to
+        be addressed in future updates. For additional information, refer to the Red
+        Hat Enterprise Linux Life Cycle: https://example.com/support/policy/updates/errata/.\n\nRed
+        Hat Enterprise Linux 6 is now in Maintenance Support 2 Phase of the support
+        and maintenance life cycle. This has been rated as having a security impact
+        of Low, and is not currently planned to be addressed in future updates. For
+        additional information, refer to the Red Hat Enterprise Linux Life Cycle:
+        https://example.com/support/policy/updates/errata/.", "creator": "scorneli@redhat.com",
+        "tags": [], "time": "2018-12-05T15:12:07Z", "creator_id": 326134, "is_private":
+        false, "attachment_id": null, "creation_time": "2018-12-05T15:12:07Z", "bug_id":
+        1656210, "count": 3, "private_groups": [], "id": 12277246}], "keywords": ["Security"],
+        "cf_conditional_nak": [], "cf_devel_whiteboard": "", "cf_major_incident":
+        null, "cf_pgm_internal": "", "is_cc_accessible": true, "cf_clone_of": null,
+        "assigned_to_detail": {"partner": false, "insider": false, "real_name": "Nobody",
+        "active": true, "id": 29451, "email": "nobody@redhat.com", "name": "nobody@redhat.com"},
+        "target_release": ["---"], "platform": "All", "assigned_to": "nobody@redhat.com",
+        "cf_doc_type": "If docs needed, set a value", "component": ["vulnerability"],
+        "description": "A flaw was found in Netwide Assembler (NASM) 2.14rc16. There
+        is an illegal address access in is_mmacro function at asm/preproc.c that will
+        cause a denial of service (out-of-bounds array access) because a certain conversion
+        can result in a negative integer. \n\n\nReferences:\nhttps://example.com/show_bug.cgi?id=3392528
+        \nhttps://example.com/nasm.git/commit/3079f7966dbed4497e36d5067cbfd896a90358cb",
+        "sub_components": {}, "data_category": "Public", "classification": "Other",
+        "is_creator_accessible": true, "qa_contact": "", "cf_srtnotes": "{\"affects\":
+        [{\"ps_module\": \"openshift-4\", \"ps_component\": \"openshift\", \"affectedness\":
+        \"affected\", \"resolution\": \"delegated\", \"impact\": \"low\", \"cvss2\":
+        null, \"cvss3\": null, \"cvss4\": null}], \"public\": \"2024-05-25T06:18:13Z\",
+        \"reported\": \"1990-12-02T22:54:49Z\", \"impact\": \"low\", \"source\": \"internet\",
+        \"cwe\": \"CWE-1\", \"mitigation\": \"foo\", \"statement\": \"Statement for
+        None\"}", "status": "ASSIGNED", "whiteboard": "", "cf_fixed_in": "", "is_open":
+        true, "cf_release_notes": "foo", "target_milestone": "---", "groups": [],
+        "remaining_time": 0, "creator": "lpardo@redhat.com", "tags": [], "deadline":
+        null, "creator_detail": {"insider": true, "active": true, "real_name": "Laura
+        Pardo", "partner": false, "name": "lpardo@redhat.com", "id": 416947, "email":
+        "lpardo@redhat.com"}, "summary": "interview: fish: know: sample title", "op_sys":
+        "Linux", "cf_qe_conditional_nak": [], "product": "Security Response", "creation_time":
+        "2018-12-04T22:45:26Z", "external_bugs": [], "estimated_time": 0, "dupe_of":
+        null, "last_change_time": "2024-06-17T12:46:48Z", "cf_last_closed": null,
+        "cf_build_id": "", "cf_pm_score": "0", "is_confirmed": true, "blocks": [],
+        "actual_time": 0, "resolution": ""}]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - origin, content-type, accept, x-requested-with
+      Access-Control-Allow-Origin:
+      - '*'
+      Cache-Control:
+      - private, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Mon, 17 Jun 2024 12:46:58 GMT
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      X-content-type-options:
+      - nosniff
+      X-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '6327'
+      x-rh-edge-cache-status:
+      - Miss from child, Miss from parent
+      x-rh-edge-reference-id:
+      - 0.64f06e68.1718628417.c472553
+      x-rh-edge-request-id:
+      - c472553
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-bugzilla/3.2.0
+    method: GET
+    uri: https://example.com/rest/bug/1656210/comment
+  response:
+    body:
+      string: '{"bugs": {"1656210": {"comments": [{"creator_id": 416947, "tags": [],
+        "id": 12275094, "is_private": false, "count": 0, "attachment_id": null, "text":
+        "A flaw was found in Netwide Assembler (NASM) 2.14rc16. There is an illegal
+        address access in is_mmacro function at asm/preproc.c that will cause a denial
+        of service (out-of-bounds array access) because a certain conversion can result
+        in a negative integer. \n\n\nReferences:\nhttps://example.com/show_bug.cgi?id=3392528
+        \nhttps://example.com/nasm.git/commit/3079f7966dbed4497e36d5067cbfd896a90358cb",
+        "private_groups": [], "time": "2018-12-04T22:45:26Z", "creator": "lpardo@redhat.com",
+        "creation_time": "2018-12-04T22:45:26Z", "bug_id": 1656210}, {"private_groups":
+        [], "text": "Created nasm tracking bugs for this issue:\n\nAffects: openshift-4
+        [bug 1656211]", "bug_id": 1656210, "creation_time": "2018-12-04T22:45:49Z",
+        "creator": "lpardo@redhat.com", "time": "2018-12-04T22:45:49Z", "count": 1,
+        "id": 12275099, "is_private": false, "creator_id": 416947, "tags": [], "attachment_id":
+        null}, {"attachment_id": null, "count": 3, "is_private": false, "id": 12277246,
+        "tags": [], "creator_id": 326134, "bug_id": 1656210, "creation_time": "2018-12-05T15:12:07Z",
+        "creator": "scorneli@redhat.com", "time": "2018-12-05T15:12:07Z", "private_groups":
+        [], "text": "Statement:\n\nThis issue affects the versions of nasm as shipped
+        with Red Hat Enterprise Linux 5, 6, and 7.\n\nRed Hat Enterprise Linux 5 is
+        now in Extended Life Phase of the support and maintenance life cycle. This
+        issue is not currently planned to be addressed in future updates. For additional
+        information, refer to the Red Hat Enterprise Linux Life Cycle: https://example.com/support/policy/updates/errata/.\n\nRed
+        Hat Enterprise Linux 6 is now in Maintenance Support 2 Phase of the support
+        and maintenance life cycle. This has been rated as having a security impact
+        of Low, and is not currently planned to be addressed in future updates. For
+        additional information, refer to the Red Hat Enterprise Linux Life Cycle:
+        https://example.com/support/policy/updates/errata/."}]}}, "comments": {}}'
+    headers:
+      Access-Control-Allow-Headers:
+      - origin, content-type, accept, x-requested-with
+      Access-Control-Allow-Origin:
+      - '*'
+      Cache-Control:
+      - private, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Mon, 17 Jun 2024 12:46:59 GMT
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      X-content-type-options:
+      - nosniff
+      X-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '2819'
+      x-rh-edge-cache-status:
+      - Miss from child, Miss from parent
+      x-rh-edge-reference-id:
+      - 0.64f06e68.1718628418.c472d23
+      x-rh-edge-request-id:
+      - c472d23
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-bugzilla/3.2.0
+    method: GET
+    uri: https://example.com/rest/bug/1663907?extra_fields=comments&extra_fields=description&extra_fields=external_bugs&extra_fields=flags&extra_fields=sub_components&extra_fields=tags
+  response:
+    body:
+      string: '{"faults": [], "bugs": [{"cf_release_notes": "foo", "target_milestone":
+        "---", "cf_fixed_in": "", "status": "ASSIGNED", "whiteboard": "", "is_open":
+        true, "groups": [], "remaining_time": 0, "creator": "anemec@redhat.com", "op_sys":
+        "Linux", "cf_qe_conditional_nak": [], "creator_detail": {"name": "anemec@redhat.com",
+        "email": "anemec@redhat.com", "id": 391044, "real_name": "Andrej Nemec", "active":
+        false, "insider": false, "partner": false}, "summary": "better: child: least:
+        sample title", "estimated_time": 0, "product": "Security Response", "creation_time":
+        "2019-01-07T09:53:43Z", "external_bugs": [], "deadline": null, "tags": [],
+        "cf_pm_score": "0",
+        "cf_build_id": "", "resolution": "", "blocks": [], "is_confirmed": true, "actual_time":
+        0, "dupe_of": null, "cf_last_closed": null, "last_change_time": "2024-06-17T12:46:41Z",
+        "url": "", "priority": "low", "id": 1663907, "cc": ["dominik@greysector.net",
+        "java-sig-commits@lists.fedoraproject.org", "mizdebsk@redhat.com", "nickc@redhat.com"],
+        "alias": ["CVE-2018-20535"], "cf_cust_facing": "---", "flags": [{"status":
+        "+", "is_active": 1, "name": "requires_doc_text", "creation_date": "2024-06-17T12:46:41Z",
+        "id": 6115872, "modification_date": "2024-06-17T12:46:41Z", "setter": "osoukup@redhat.com",
+        "type_id": 415}], "cf_environment": "", "version": ["unspecified"], "severity":
+        "low", "cf_internal_whiteboard": "", "cc_detail": [{"partner": false, "active":
+        true, "real_name": "Dominik ''Rathann'' Mierzejewski", "insider": false, "email":
+        "dominik@greysector.net", "id": 192315, "name": "dominik@greysector.net"},
+        {"id": 306302, "email": "java-sig-commits@lists.fedoraproject.org", "name":
+        "java-sig-commits@lists.fedoraproject.org", "partner": false, "insider": false,
+        "active": true, "real_name": "Fedora Java SIG"}, {"real_name": "Mikolaj Izdebski",
+        "active": true, "insider": true, "partner": false, "name": "mizdebsk@redhat.com",
+        "email": "mizdebsk@redhat.com", "id": 329409}, {"name": "nickc@redhat.com",
+        "email": "nickc@redhat.com", "id": 145493, "active": true, "real_name": "Nick
+        Clifton", "insider": true, "partner": false}], "keywords": ["Security"], "cf_conditional_nak":
+        ["Upstream"], "comments": [{"time": "2019-01-07T09:53:43Z", "creator_id":
+        391044, "tags": [], "text": "\nA use-after-free vulnerability was found in
+        nasm. A specially crafted file could cause the application to crash.\n\nUpstream
+        issue:\n\nhttps://example.com/show_bug.cgi?id=3392530", "creator": "anemec@redhat.com",
+        "count": 0, "private_groups": [], "id": 12342416, "creation_time": "2019-01-07T09:53:43Z",
+        "is_private": false, "attachment_id": null, "bug_id": 1663907}, {"tags": [],
+        "creator": "anemec@redhat.com", "text": "Created nasm tracking bugs for this
+        issue:\n\nAffects: openshift-4 [bug 1663909]", "creator_id": 391044, "time":
+        "2019-01-07T09:54:59Z", "bug_id": 1663907, "is_private": false, "attachment_id":
+        null, "creation_time": "2019-01-07T09:54:59Z", "private_groups": [], "id":
+        12342427, "count": 1}, {"count": 2, "private_groups": [], "id": 12374342,
+        "bug_id": 1663907, "is_private": false, "creation_time": "2019-01-17T10:37:38Z",
+        "attachment_id": null, "time": "2019-01-17T10:37:38Z", "creator_id": 145493,
+        "creator": "nickc@redhat.com", "tags": [], "text": "Setting devel cond NAK
+        - waiting on upstream fix."}, {"id": 12412758, "private_groups": [], "count":
+        3, "bug_id": 1663907, "attachment_id": null, "creation_time": "2019-01-31T18:18:33Z",
+        "is_private": false, "creator_id": 422051, "time": "2019-01-31T18:18:33Z",
+        "creator": "sgayou@redhat.com", "text": "Red Hat Enterprise 6 and 7 are vulnerable.
+        Valgrind output matches upstream''s ASAN output relatively well:\n\n```\npoc:15:
+        error: label or instruction expected at start of line\npoc:16: error: attempt
+        to define a local label before any non-local labels\npoc:18: error: parser:
+        instruction expected\npoc:18: error: parser: instruction expected\npoc:18:
+        error: label or instruction expected at start of line\n==12504== Invalid read
+        of size 4\n==12504==    at 0x4346C5: pp_getline (preproc.c:4957)\n==12504==    by
+        0x4046E3: assemble_file.constprop.3 (nasm.c:1222)\n==12504==    by 0x402D02:
+        main (nasm.c:463)\n```", "tags": []}], "depends_on": [1663909, 1671502, 1671503],
+        "cf_embargoed": null, "cf_qa_whiteboard": "", "docs_contact": "", "cf_clone_of":
+        null, "platform": "All", "assigned_to": "nobody@redhat.com", "assigned_to_detail":
+        {"name": "nobody@redhat.com", "id": 29451, "email": "nobody@redhat.com", "insider":
+        false, "active": true, "real_name": "Nobody", "partner": false}, "target_release":
+        ["---"], "cf_devel_whiteboard": "", "cf_pgm_internal": "", "is_cc_accessible":
+        true, "cf_major_incident": null, "classification": "Other", "data_category":
+        "Public", "qa_contact": "", "cf_srtnotes": "{\"affects\": [{\"ps_module\":
+        \"openshift-4\", \"ps_component\": \"openshift\", \"affectedness\": \"affected\",
+        \"resolution\": \"delegated\", \"impact\": \"low\", \"cvss2\": null, \"cvss3\":
+        null, \"cvss4\": null}], \"public\": \"2024-05-30T00:19:54Z\", \"reported\":
+        \"1993-04-17T23:22:34Z\", \"impact\": \"low\", \"jira_trackers\": [{\"bts_name\":
+        \"jboss\", \"key\": \"OSIDB-920\"}], \"source\": \"internet\", \"mitigation\":
+        \"foo\", \"statement\": \"Statement for None\"}", "is_creator_accessible":
+        true, "component": ["vulnerability"], "cf_doc_type": "If docs needed, set
+        a value", "description": "\nA use-after-free vulnerability was found in nasm.
+        A specially crafted file could cause the application to crash.\n\nUpstream
+        issue:\n\nhttps://example.com/show_bug.cgi?id=3392530", "sub_components":
+        {}}]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - origin, content-type, accept, x-requested-with
+      Access-Control-Allow-Origin:
+      - '*'
+      Cache-Control:
+      - private, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Mon, 17 Jun 2024 12:47:00 GMT
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      X-content-type-options:
+      - nosniff
+      X-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '6324'
+      x-rh-edge-cache-status:
+      - Miss from child, Miss from parent
+      x-rh-edge-reference-id:
+      - 0.64f06e68.1718628419.c4730c1
+      x-rh-edge-request-id:
+      - c4730c1
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-bugzilla/3.2.0
+    method: GET
+    uri: https://example.com/rest/bug/1663907?extra_fields=comments&extra_fields=description&extra_fields=external_bugs&extra_fields=flags&extra_fields=sub_components&extra_fields=tags
+  response:
+    body:
+      string: '{"faults": [], "bugs": [{"target_milestone": "---", "cf_release_notes":
+        "foo", "is_open": true, "cf_fixed_in": "", "whiteboard": "", "status": "ASSIGNED",
+        "creator": "anemec@redhat.com", "remaining_time": 0, "groups": [], "estimated_time":
+        0, "creation_time": "2019-01-07T09:53:43Z", "external_bugs": [], "product":
+        "Security Response", "op_sys": "Linux", "cf_qe_conditional_nak": [], "summary":
+        "better: child: least: sample title", "creator_detail": {"active": false,
+        "real_name": "Andrej Nemec", "insider": false, "partner": false, "name": "anemec@redhat.com",
+        "email": "anemec@redhat.com", "id": 391044}, "deadline": null, "tags": [],
+        "resolution": "", "actual_time": 0, "is_confirmed": true, "blocks": [], "cf_pm_score":
+        "0", "cf_build_id": "",
+        "cf_last_closed": null, "last_change_time": "2024-06-17T12:46:41Z", "dupe_of":
+        null, "cc": ["dominik@greysector.net", "java-sig-commits@lists.fedoraproject.org",
+        "mizdebsk@redhat.com", "nickc@redhat.com"], "cf_cust_facing": "---", "alias":
+        ["CVE-2018-20535"], "url": "", "priority": "low", "id": 1663907, "cc_detail":
+        [{"email": "dominik@greysector.net", "id": 192315, "name": "dominik@greysector.net",
+        "partner": false, "real_name": "Dominik ''Rathann'' Mierzejewski", "active":
+        true, "insider": false}, {"name": "java-sig-commits@lists.fedoraproject.org",
+        "email": "java-sig-commits@lists.fedoraproject.org", "id": 306302, "active":
+        true, "real_name": "Fedora Java SIG", "insider": false, "partner": false},
+        {"partner": false, "insider": true, "active": true, "real_name": "Mikolaj
+        Izdebski", "id": 329409, "email": "mizdebsk@redhat.com", "name": "mizdebsk@redhat.com"},
+        {"insider": true, "real_name": "Nick Clifton", "active": true, "partner":
+        false, "name": "nickc@redhat.com", "id": 145493, "email": "nickc@redhat.com"}],
+        "cf_environment": "", "flags": [{"type_id": 415, "setter": "osoukup@redhat.com",
+        "modification_date": "2024-06-17T12:46:41Z", "id": 6115872, "creation_date":
+        "2024-06-17T12:46:41Z", "name": "requires_doc_text", "is_active": 1, "status":
+        "+"}], "severity": "low", "cf_internal_whiteboard": "", "version": ["unspecified"],
+        "cf_conditional_nak": ["Upstream"], "keywords": ["Security"], "comments":
+        [{"private_groups": [], "id": 12342416, "count": 0, "bug_id": 1663907, "is_private":
+        false, "creation_time": "2019-01-07T09:53:43Z", "attachment_id": null, "creator_id":
+        391044, "time": "2019-01-07T09:53:43Z", "text": "\nA use-after-free vulnerability
+        was found in nasm. A specially crafted file could cause the application to
+        crash.\n\nUpstream issue:\n\nhttps://example.com/show_bug.cgi?id=3392530",
+        "tags": [], "creator": "anemec@redhat.com"}, {"creator_id": 391044, "time":
+        "2019-01-07T09:54:59Z", "tags": [], "text": "Created nasm tracking bugs for
+        this issue:\n\nAffects: openshift-4 [bug 1663909]", "creator": "anemec@redhat.com",
+        "id": 12342427, "private_groups": [], "count": 1, "bug_id": 1663907, "attachment_id":
+        null, "is_private": false, "creation_time": "2019-01-07T09:54:59Z"}, {"time":
+        "2019-01-17T10:37:38Z", "creator_id": 145493, "creator": "nickc@redhat.com",
+        "tags": [], "text": "Setting devel cond NAK - waiting on upstream fix.", "count":
+        2, "private_groups": [], "id": 12374342, "creation_time": "2019-01-17T10:37:38Z",
+        "is_private": false, "attachment_id": null, "bug_id": 1663907}, {"creator_id":
+        422051, "time": "2019-01-31T18:18:33Z", "text": "Red Hat Enterprise 6 and
+        7 are vulnerable. Valgrind output matches upstream''s ASAN output relatively
+        well:\n\n```\npoc:15: error: label or instruction expected at start of line\npoc:16:
+        error: attempt to define a local label before any non-local labels\npoc:18:
+        error: parser: instruction expected\npoc:18: error: parser: instruction expected\npoc:18:
+        error: label or instruction expected at start of line\n==12504== Invalid read
+        of size 4\n==12504==    at 0x4346C5: pp_getline (preproc.c:4957)\n==12504==    by
+        0x4046E3: assemble_file.constprop.3 (nasm.c:1222)\n==12504==    by 0x402D02:
+        main (nasm.c:463)\n```", "tags": [], "creator": "sgayou@redhat.com", "private_groups":
+        [], "id": 12412758, "count": 3, "bug_id": 1663907, "is_private": false, "attachment_id":
+        null, "creation_time": "2019-01-31T18:18:33Z"}], "depends_on": [1663909, 1671502,
+        1671503], "docs_contact": "", "cf_embargoed": null, "cf_qa_whiteboard": "",
+        "assigned_to": "nobody@redhat.com", "platform": "All", "target_release": ["---"],
+        "assigned_to_detail": {"insider": false, "real_name": "Nobody", "active":
+        true, "partner": false, "name": "nobody@redhat.com", "id": 29451, "email":
+        "nobody@redhat.com"}, "cf_clone_of": null, "is_cc_accessible": true, "cf_pgm_internal":
+        "", "cf_major_incident": null, "cf_devel_whiteboard": "", "cf_srtnotes": "{\"affects\":
+        [{\"ps_module\": \"openshift-4\", \"ps_component\": \"openshift\", \"affectedness\":
+        \"affected\", \"resolution\": \"delegated\", \"impact\": \"low\", \"cvss2\":
+        null, \"cvss3\": null, \"cvss4\": null}], \"public\": \"2024-05-30T00:19:54Z\",
+        \"reported\": \"1993-04-17T23:22:34Z\", \"impact\": \"low\", \"jira_trackers\":
+        [{\"bts_name\": \"jboss\", \"key\": \"OSIDB-920\"}], \"source\": \"internet\",
+        \"mitigation\": \"foo\", \"statement\": \"Statement for None\"}", "qa_contact":
+        "", "is_creator_accessible": true, "classification": "Other", "data_category":
+        "Public", "sub_components": {}, "description": "\nA use-after-free vulnerability
+        was found in nasm. A specially crafted file could cause the application to
+        crash.\n\nUpstream issue:\n\nhttps://example.com/show_bug.cgi?id=3392530",
+        "cf_doc_type": "If docs needed, set a value", "component": ["vulnerability"]}]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - origin, content-type, accept, x-requested-with
+      Access-Control-Allow-Origin:
+      - '*'
+      Cache-Control:
+      - private, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Mon, 17 Jun 2024 12:47:01 GMT
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      X-content-type-options:
+      - nosniff
+      X-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '6324'
+      x-rh-edge-cache-status:
+      - Miss from child, Miss from parent
+      x-rh-edge-reference-id:
+      - 0.64f06e68.1718628420.c4735c8
+      x-rh-edge-request-id:
+      - c4735c8
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-bugzilla/3.2.0
+    method: GET
+    uri: https://example.com/rest/bug/1663907/comment
+  response:
+    body:
+      string: '{"bugs": {"1663907": {"comments": [{"time": "2019-01-07T09:53:43Z",
+        "creator_id": 391044, "text": "\nA use-after-free vulnerability was found
+        in nasm. A specially crafted file could cause the application to crash.\n\nUpstream
+        issue:\n\nhttps://example.com/show_bug.cgi?id=3392530", "tags": [], "creator":
+        "anemec@redhat.com", "count": 0, "id": 12342416, "private_groups": [], "bug_id":
+        1663907, "attachment_id": null, "is_private": false, "creation_time": "2019-01-07T09:53:43Z"},
+        {"creator": "anemec@redhat.com", "tags": [], "text": "Created nasm tracking
+        bugs for this issue:\n\nAffects: openshift-4 [bug 1663909]", "creator_id":
+        391044, "time": "2019-01-07T09:54:59Z", "is_private": false, "attachment_id":
+        null, "creation_time": "2019-01-07T09:54:59Z", "bug_id": 1663907, "private_groups":
+        [], "id": 12342427, "count": 1}, {"creator_id": 145493, "time": "2019-01-17T10:37:38Z",
+        "creator": "nickc@redhat.com", "tags": [], "text": "Setting devel cond NAK
+        - waiting on upstream fix.", "private_groups": [], "id": 12374342, "count":
+        2, "attachment_id": null, "creation_time": "2019-01-17T10:37:38Z", "is_private":
+        false, "bug_id": 1663907}, {"tags": [], "text": "Red Hat Enterprise 6 and
+        7 are vulnerable. Valgrind output matches upstream''s ASAN output relatively
+        well:\n\n```\npoc:15: error: label or instruction expected at start of line\npoc:16:
+        error: attempt to define a local label before any non-local labels\npoc:18:
+        error: parser: instruction expected\npoc:18: error: parser: instruction expected\npoc:18:
+        error: label or instruction expected at start of line\n==12504== Invalid read
+        of size 4\n==12504==    at 0x4346C5: pp_getline (preproc.c:4957)\n==12504==    by
+        0x4046E3: assemble_file.constprop.3 (nasm.c:1222)\n==12504==    by 0x402D02:
+        main (nasm.c:463)\n```", "creator": "sgayou@redhat.com", "creator_id": 422051,
+        "time": "2019-01-31T18:18:33Z", "attachment_id": null, "creation_time": "2019-01-31T18:18:33Z",
+        "is_private": false, "bug_id": 1663907, "id": 12412758, "private_groups":
+        [], "count": 3}]}}, "comments": {}}'
+    headers:
+      Access-Control-Allow-Headers:
+      - origin, content-type, accept, x-requested-with
+      Access-Control-Allow-Origin:
+      - '*'
+      Cache-Control:
+      - private, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Mon, 17 Jun 2024 12:47:02 GMT
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      X-content-type-options:
+      - nosniff
+      X-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '2970'
+      x-rh-edge-cache-status:
+      - Miss from child, Miss from parent
+      x-rh-edge-reference-id:
+      - 0.64f06e68.1718628421.c4738fa
+      x-rh-edge-request-id:
+      - c4738fa
+    status:
+      code: 200
+      message: OK
+version: 1

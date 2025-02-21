@@ -1,0 +1,32 @@
+name: Meta checks
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, labeled, unlabeled]
+jobs:
+  openapi:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: head
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.base.sha }}
+          path: base
+      - uses: actions/setup-go@v5
+      - name: Install oasdiff go package
+        run: go install github.com/tufin/oasdiff@v1.5.0
+      - name: Compare existing schema to new schema
+        run: oasdiff -fail-on-diff -fail-on-warns -check-breaking -base base/openapi.yml -revision head/openapi.yml
+  changelog:
+    runs-on: ubuntu-latest
+    if: ${{ github.actor != 'dependabot[bot]' }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check existence of CHANGELOG entry
+        uses: Zomzog/changelog-checker@v1.3.0
+        with:
+          fileName: docs/CHANGELOG.md
+          noChangelogLabel: technical
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

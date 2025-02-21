@@ -1,0 +1,44 @@
+backoff
+celery[gevent]
+# alternative scheduler for celery
+celery-redbeat
+cvss
+django
+django-auth-ldap
+django.contrib.postgres
+django-cors-headers
+django-db
+django-deprecate-fields
+django-extensions
+django-filter
+django-model-utils
+django-pghistory
+django-polymorphic
+django-postgres-extra
+djangorestframework
+djangorestframework-csv
+djangorestframework-simplejwt
+djangorestframework-xml
+drf-spectacular
+flower
+gunicorn[gevent,setproctitle]
+inflection
+jira
+jsonschema
+kerberos
+markdown
+nvdlib
+packageurl-python
+psycogreen
+psycopg2
+pyjwt==2.4.0
+python-bugzilla
+python-ldap>=3.4.0
+pyyaml
+redis[hiredis]
+requests
+requests_cache
+requests_gssapi
+# workaround as rhubarb is not on std PyPI and registrations seem to be closed
+rhubarb @ https://github.com/RedHatProductSecurity/rhubarb/releases/download/0.1.0/rhubarb-0.1.0-py3-none-any.whl
+djangoql

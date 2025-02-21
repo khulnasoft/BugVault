@@ -1,0 +1,12 @@
+"""
+    bugvault-service
+"""
+
+from django.apps import AppConfig
+
+
+class OSIDBConfig(AppConfig):
+    name = "bugvault"
+
+    def ready(self):
+        from . import signals  # noqa: F401

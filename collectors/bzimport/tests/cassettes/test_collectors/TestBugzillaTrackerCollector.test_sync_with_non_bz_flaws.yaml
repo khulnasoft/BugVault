@@ -1,0 +1,188 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-bugzilla/3.2.0
+    method: GET
+    uri: https://example.com/rest/version
+  response:
+    body:
+      string: '{"version": "5.0.4.rh97"}'
+    headers:
+      Access-Control-Allow-Headers:
+      - origin, content-type, accept, x-requested-with
+      Access-Control-Allow-Origin:
+      - '*'
+      Cache-Control:
+      - private, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '24'
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Thu, 13 Jun 2024 14:07:35 GMT
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains
+      X-content-type-options:
+      - nosniff
+      X-xss-protection:
+      - 1; mode=block
+      x-rh-edge-cache-status:
+      - Miss from child, Miss from parent
+      x-rh-edge-reference-id:
+      - 0.7df06e68.1718287655.5b1cee2
+      x-rh-edge-request-id:
+      - 5b1cee2
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-bugzilla/3.2.0
+    method: GET
+    uri: https://example.com/rest/user?ids=1
+  response:
+    body:
+      string: '{"users": [{"can_login": true, "real_name": "Need Real Name", "email":
+        "aander07@packetmaster.com", "id": 1, "name": "aander07@packetmaster.com"}]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - origin, content-type, accept, x-requested-with
+      Access-Control-Allow-Origin:
+      - '*'
+      Cache-Control:
+      - private, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '137'
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Thu, 13 Jun 2024 14:07:36 GMT
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains
+      X-content-type-options:
+      - nosniff
+      X-xss-protection:
+      - 1; mode=block
+      x-rh-edge-cache-status:
+      - Miss from child, Miss from parent
+      x-rh-edge-reference-id:
+      - 0.7df06e68.1718287655.5b1cf63
+      x-rh-edge-request-id:
+      - 5b1cf63
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-bugzilla/3.2.0
+    method: GET
+    uri: https://example.com/rest/bug/2280681?extra_fields=comments&extra_fields=description&extra_fields=external_bugs&extra_fields=flags&extra_fields=sub_components&extra_fields=tags
+  response:
+    body:
+      string: '{"faults": [], "bugs": [{"cc": [], "cf_cust_facing": "---", "alias":
+        [], "url": "", "priority": "low", "id": 2280681, "cc_detail": [], "flags":
+        [{"creation_date": "2024-06-05T11:24:13Z", "name": "requires_doc_text", "is_active":
+        1, "status": "-", "type_id": 415, "setter": "bugzilla@redhat.com", "modification_date":
+        "2024-06-05T11:24:13Z", "id": 6115805}], "cf_environment": "", "cf_internal_whiteboard":
+        "", "severity": "low", "version": ["1.0"], "keywords": ["Security", "SecurityTracking"],
+        "cf_conditional_nak": [], "cf_partner": [], "depends_on": [], "comments":
+        [{"creator_id": 412888, "time": "2024-06-05T11:24:13Z", "creator": "osoukup@redhat.com",
+        "text": "rhcertification-9 tracking bug for ssh: see the bugs linked in the
+        \"Blocks\" field of this bug for full details of the security issue(s).\n\nThis
+        bug is never intended to be made public, please put any public notes in the
+        blocked bugs.", "tags": [], "private_groups": [], "id": 18007119, "count":
+        0, "bug_id": 2280681, "creation_time": "2024-06-05T11:24:13Z", "is_private":
+        false, "attachment_id": null}], "docs_contact": "", "cf_embargoed": null,
+        "cf_qa_whiteboard": "", "assigned_to": "jweng@redhat.com", "platform": "Unspecified",
+        "target_release": ["---"], "assigned_to_detail": {"insider": true, "real_name":
+        "Jianwei Weng", "active": true, "partner": false, "name": "jweng@redhat.com",
+        "id": 283338, "email": "jweng@redhat.com"}, "cf_clone_of": null, "is_cc_accessible":
+        true, "cf_pgm_internal": "", "cf_major_incident": null, "cf_devel_whiteboard":
+        "", "qa_contact": "rhcert-qe@redhat.com", "is_creator_accessible": true, "classification":
+        "Red Hat", "data_category": "Engineering", "sub_components": {}, "description":
+        "rhcertification-9 tracking bug for ssh: see the bugs linked in the \"Blocks\"
+        field of this bug for full details of the security issue(s).\n\nThis bug is
+        never intended to be made public, please put any public notes in the blocked
+        bugs.", "cf_doc_type": "No Doc Update", "component": ["redhat-certification"],
+        "target_milestone": "---", "cf_verified": [], "cf_release_notes": "", "is_open":
+        true, "cf_fixed_in": "", "whiteboard": "{\"flaws\": [\"12472365-87e0-4376-be09-c1d4b4cbc6b0\",
+        \"8ea223a7-7805-4d55-9a12-46d8b49b70a3\"]}", "status": "NEW", "cf_target_upstream_version":
+        "", "creator": "osoukup@redhat.com", "remaining_time": 0, "groups": ["devel"],
+        "estimated_time": 0, "qa_contact_detail": {"id": 408554, "email": "rhcert-qe@redhat.com",
+        "name": "rhcert-qe@redhat.com", "partner": false, "insider": false, "real_name":
+        "rhcert qe", "active": false}, "external_bugs": [], "creation_time": "2024-06-05T11:24:13Z",
+        "product": "Red Hat Certification Program", "cf_qe_conditional_nak": [], "op_sys":
+        "Unspecified", "summary": "ssh: various flaws [rhcertification-9]", "creator_detail":
+        {"partner": false, "insider": true, "active": true, "real_name": "Ondrej Soukup",
+        "id": 412888, "email": "osoukup@redhat.com", "name": "osoukup@redhat.com"},
+        "deadline": "2004-03-28", "tags": [], "resolution": "", "actual_time": 0,
+        "is_confirmed": true, "blocks": [], "cf_pm_score": "0", "cf_build_id": "",
+        "cf_last_closed": null, "last_change_time": "2024-06-05T11:24:13Z", "dupe_of":
+        null}]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - origin, content-type, accept, x-requested-with
+      Access-Control-Allow-Origin:
+      - '*'
+      Cache-Control:
+      - private, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Thu, 13 Jun 2024 14:07:36 GMT
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      X-content-type-options:
+      - nosniff
+      X-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '3035'
+      x-rh-edge-cache-status:
+      - Miss from child, Miss from parent
+      x-rh-edge-reference-id:
+      - 0.7df06e68.1718287656.5b1d01b
+      x-rh-edge-request-id:
+      - 5b1d01b
+    status:
+      code: 200
+      message: OK
+version: 1

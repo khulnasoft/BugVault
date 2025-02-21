@@ -1,0 +1,556 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-bugzilla/3.2.0
+    method: GET
+    uri: https://example.com/rest/version
+  response:
+    body:
+      string: '{"version": "5.0.4.rh97"}'
+    headers:
+      Access-Control-Allow-Headers:
+      - origin, content-type, accept, x-requested-with
+      Access-Control-Allow-Origin:
+      - '*'
+      Cache-Control:
+      - private, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '24'
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Fri, 14 Jun 2024 13:49:12 GMT
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains
+      X-content-type-options:
+      - nosniff
+      X-xss-protection:
+      - 1; mode=block
+      x-rh-edge-cache-status:
+      - Miss from child, Miss from parent
+      x-rh-edge-reference-id:
+      - 0.692645f.1718372952.270465f
+      x-rh-edge-request-id:
+      - 270465f
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-bugzilla/3.2.0
+    method: GET
+    uri: https://example.com/rest/user?ids=1
+  response:
+    body:
+      string: '{"users": [{"name": "aander07@packetmaster.com", "id": 1, "email":
+        "aander07@packetmaster.com", "real_name": "Need Real Name", "can_login": true}]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - origin, content-type, accept, x-requested-with
+      Access-Control-Allow-Origin:
+      - '*'
+      Cache-Control:
+      - private, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '137'
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Fri, 14 Jun 2024 13:49:12 GMT
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains
+      X-content-type-options:
+      - nosniff
+      X-xss-protection:
+      - 1; mode=block
+      x-rh-edge-cache-status:
+      - Miss from child, Miss from parent
+      x-rh-edge-reference-id:
+      - 0.692645f.1718372952.2704949
+      x-rh-edge-request-id:
+      - '2704949'
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-bugzilla/3.2.0
+    method: GET
+    uri: https://example.com/rest/bug/2293325?extra_fields=comments&extra_fields=description&extra_fields=external_bugs&extra_fields=flags&extra_fields=sub_components&extra_fields=tags&include_fields=id&include_fields=last_change_time
+  response:
+    body:
+      string: '{"bugs": [{"data_category": "Public", "id": 2293325, "last_change_time":
+        "2024-06-14T13:46:01Z"}], "faults": []}'
+    headers:
+      Access-Control-Allow-Headers:
+      - origin, content-type, accept, x-requested-with
+      Access-Control-Allow-Origin:
+      - '*'
+      Cache-Control:
+      - private, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '104'
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Fri, 14 Jun 2024 13:49:13 GMT
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains
+      X-content-type-options:
+      - nosniff
+      X-xss-protection:
+      - 1; mode=block
+      x-rh-edge-cache-status:
+      - Miss from child, Miss from parent
+      x-rh-edge-reference-id:
+      - 0.692645f.1718372952.2704dc7
+      x-rh-edge-request-id:
+      - 2704dc7
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"product": "Security Response", "op_sys": "Linux", "platform": "All",
+      "version": "unspecified", "component": "vulnerability", "cf_release_notes":
+      "random cve_description", "severity": "medium", "priority": "medium", "summary":
+      "CVE-2000-3000 ssh: I cannot ssh into Matrix", "alias": {"add": ["CVE-2000-3000"],
+      "remove": [""]}, "keywords": {"add": ["Security"]}, "flags": [], "groups": {"add":
+      [], "remove": []}, "cc": {"add": [], "remove": []}, "cf_srtnotes": "{\"affects\":
+      [{\"ps_module\": \"rhel-8\", \"ps_component\": \"libssh\", \"affectedness\":
+      \"notaffected\", \"resolution\": null, \"impact\": \"important\", \"cvss2\":
+      null, \"cvss3\": null, \"cvss4\": null}, {\"ps_module\": \"jbcs-1\", \"ps_component\":
+      \"ssh\", \"affectedness\": \"affected\", \"resolution\": \"delegated\", \"impact\":
+      \"low\", \"cvss2\": null, \"cvss3\": null, \"cvss4\": null}], \"public\": \"2022-04-27T00:00:00Z\",
+      \"reported\": \"2022-04-26T00:00:00Z\", \"impact\": \"moderate\", \"source\":
+      \"customer\", \"mitigation\": \"foo\", \"statement\": \"Statement for \"}",
+      "ids": ["2293325"]}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1074'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-bugzilla/3.2.0
+    method: PUT
+    uri: https://example.com/rest/bug/2293325
+  response:
+    body:
+      string: '{"bugs": [{"last_change_time": "2024-06-14T13:49:14Z", "alias": ["CVE-2021-0773",
+        "CVE-2000-3000"], "changes": {"severity": {"removed": "high", "added": "medium"},
+        "summary": {"removed": "CVE-2021-0773 station: light: manager: Foo", "added":
+        "CVE-2000-3000 ssh: I cannot ssh into Matrix"}, "priority": {"added": "medium",
+        "removed": "high"}, "alias": {"added": "CVE-2000-3000", "removed": ""}, "cf_srtnotes":
+        {"added": "{\"affects\": [{\"ps_module\": \"rhel-8\", \"ps_component\": \"libssh\",
+        \"affectedness\": \"notaffected\", \"resolution\": null, \"impact\": \"important\",
+        \"cvss2\": null, \"cvss3\": null, \"cvss4\": null}, {\"ps_module\": \"jbcs-1\",
+        \"ps_component\": \"ssh\", \"affectedness\": \"affected\", \"resolution\":
+        \"delegated\", \"impact\": \"low\", \"cvss2\": null, \"cvss3\": null, \"cvss4\":
+        null}], \"public\": \"2022-04-27T00:00:00Z\", \"reported\": \"2022-04-26T00:00:00Z\",
+        \"impact\": \"moderate\", \"source\": \"customer\", \"mitigation\": \"foo\",
+        \"statement\": \"Statement for \"}", "removed": "{\"affects\": [{\"ps_module\":
+        \"rhel-8\", \"ps_component\": \"kernel\", \"affectedness\": \"new\", \"resolution\":
+        null, \"impact\": \"low\", \"cvss2\": null, \"cvss3\": null, \"cvss4\": null}],
+        \"public\": \"2000-01-01T22:03:26Z\", \"reported\": \"2022-11-22T15:55:22Z\",
+        \"impact\": \"important\", \"cvss4\": \"9.9/CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:N\",
+        \"source\": \"internet\", \"cwe\": \"CWE-1\", \"statement\": \"Statement for
+        CVE-2021-0773\"}"}}, "id": 2293325}]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - origin, content-type, accept, x-requested-with
+      Access-Control-Allow-Origin:
+      - '*'
+      Cache-Control:
+      - private, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Fri, 14 Jun 2024 13:49:14 GMT
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      X-content-type-options:
+      - nosniff
+      X-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '1491'
+      x-rh-edge-cache-status:
+      - Miss from child, Miss from parent
+      x-rh-edge-reference-id:
+      - 0.692645f.1718372953.27055c6
+      x-rh-edge-request-id:
+      - 27055c6
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-bugzilla/3.2.0
+    method: GET
+    uri: https://example.com/rest/version
+  response:
+    body:
+      string: '{"version": "5.0.4.rh97"}'
+    headers:
+      Access-Control-Allow-Headers:
+      - origin, content-type, accept, x-requested-with
+      Access-Control-Allow-Origin:
+      - '*'
+      Cache-Control:
+      - private, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '24'
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Fri, 14 Jun 2024 13:49:16 GMT
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains
+      X-content-type-options:
+      - nosniff
+      X-xss-protection:
+      - 1; mode=block
+      x-rh-edge-cache-status:
+      - Miss from child, Miss from parent
+      x-rh-edge-reference-id:
+      - 0.1d92645f.1718372954.308f78e
+      x-rh-edge-request-id:
+      - 308f78e
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-bugzilla/3.2.0
+    method: GET
+    uri: https://example.com/rest/user?ids=1
+  response:
+    body:
+      string: '{"users": [{"real_name": "Need Real Name", "name": "aander07@packetmaster.com",
+        "email": "aander07@packetmaster.com", "id": 1, "can_login": true}]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - origin, content-type, accept, x-requested-with
+      Access-Control-Allow-Origin:
+      - '*'
+      Cache-Control:
+      - private, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '137'
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Fri, 14 Jun 2024 13:49:16 GMT
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains
+      X-content-type-options:
+      - nosniff
+      X-xss-protection:
+      - 1; mode=block
+      x-rh-edge-cache-status:
+      - Miss from child, Miss from parent
+      x-rh-edge-reference-id:
+      - 0.1d92645f.1718372956.3090c91
+      x-rh-edge-request-id:
+      - 3090c91
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-bugzilla/3.2.0
+    method: GET
+    uri: https://example.com/rest/bug/2293325?extra_fields=comments&extra_fields=description&extra_fields=external_bugs&extra_fields=flags&extra_fields=sub_components&extra_fields=tags
+  response:
+    body:
+      string: '{"faults": [], "bugs": [{"description": "test", "component": ["vulnerability"],
+        "cf_doc_type": "No Doc Update", "sub_components": {}, "data_category": "Public",
+        "classification": "Other", "is_creator_accessible": true, "cf_srtnotes": "{\"affects\":
+        [{\"ps_module\": \"rhel-8\", \"ps_component\": \"libssh\", \"affectedness\":
+        \"notaffected\", \"resolution\": null, \"impact\": \"important\", \"cvss2\":
+        null, \"cvss3\": null, \"cvss4\": null}, {\"ps_module\": \"jbcs-1\", \"ps_component\":
+        \"ssh\", \"affectedness\": \"affected\", \"resolution\": \"delegated\", \"impact\":
+        \"low\", \"cvss2\": null, \"cvss3\": null, \"cvss4\": null}], \"public\":
+        \"2022-04-27T00:00:00Z\", \"reported\": \"2022-04-26T00:00:00Z\", \"impact\":
+        \"moderate\", \"source\": \"customer\", \"mitigation\": \"foo\", \"statement\":
+        \"Statement for \"}", "qa_contact": "", "cf_devel_whiteboard": "", "cf_major_incident":
+        null, "is_cc_accessible": true, "cf_pgm_internal": "", "cf_clone_of": null,
+        "assigned_to_detail": {"real_name": "Product Security DevOps Team", "active":
+        true, "insider": true, "partner": false, "name": "prodsec-dev@redhat.com",
+        "email": "prodsec-dev@redhat.com", "id": 377884}, "target_release": ["---"],
+        "assigned_to": "prodsec-dev@redhat.com", "platform": "All", "cf_qa_whiteboard":
+        "", "cf_embargoed": null, "docs_contact": "", "depends_on": [], "comments":
+        [{"tags": [], "text": "test", "creator": "osoukup@redhat.com", "time": "2024-06-14T13:37:31Z",
+        "creator_id": 412888, "creation_time": "2024-06-14T13:37:31Z", "is_private":
+        false, "attachment_id": null, "bug_id": 2293325, "count": 0, "private_groups":
+        [], "id": 18019930}], "cf_conditional_nak": [], "keywords": ["Security"],
+        "severity": "medium", "cf_internal_whiteboard": "", "version": ["unspecified"],
+        "flags": [{"creation_date": "2024-06-14T13:42:13Z", "name": "requires_doc_text",
+        "is_active": 1, "status": "+", "type_id": 415, "setter": "bugzilla@redhat.com",
+        "modification_date": "2024-06-14T13:46:01Z", "id": 6115851}], "cf_environment":
+        "", "cc_detail": [], "id": 2293325, "priority": "medium", "url": "", "cf_cust_facing":
+        "---", "alias": ["CVE-2000-3000", "CVE-2021-0773"], "cc": [], "dupe_of": null,
+        "last_change_time": "2024-06-14T13:49:14Z", "cf_last_closed": null, "cf_build_id":
+        "",
+        "cf_pm_score": "0", "actual_time": 0, "blocks": [], "is_confirmed": true,
+        "resolution": "", "tags": [], "deadline": null, "summary": "CVE-2000-3000
+        ssh: I cannot ssh into Matrix", "creator_detail": {"partner": false, "active":
+        true, "real_name": "Ondrej Soukup", "insider": true, "email": "osoukup@redhat.com",
+        "id": 412888, "name": "osoukup@redhat.com"}, "op_sys": "Linux", "cf_qe_conditional_nak":
+        [], "creation_time": "2024-06-14T13:37:31Z", "external_bugs": [], "product":
+        "Security Response", "estimated_time": 0, "groups": [], "creator": "osoukup@redhat.com",
+        "remaining_time": 0, "whiteboard": "", "status": "NEW", "cf_fixed_in": "",
+        "is_open": true, "cf_release_notes": "random cve_description", "target_milestone":
+        "---"}]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - origin, content-type, accept, x-requested-with
+      Access-Control-Allow-Origin:
+      - '*'
+      Cache-Control:
+      - private, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Fri, 14 Jun 2024 13:49:17 GMT
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      X-content-type-options:
+      - nosniff
+      X-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '2862'
+      x-rh-edge-cache-status:
+      - Miss from child, Miss from parent
+      x-rh-edge-reference-id:
+      - 0.1d92645f.1718372956.30910e6
+      x-rh-edge-request-id:
+      - 30910e6
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-bugzilla/3.2.0
+    method: GET
+    uri: https://example.com/rest/bug/2293325?extra_fields=comments&extra_fields=description&extra_fields=external_bugs&extra_fields=flags&extra_fields=sub_components&extra_fields=tags
+  response:
+    body:
+      string: '{"bugs": [{"tags": [], "deadline": null, "product": "Security Response",
+        "external_bugs": [], "creation_time": "2024-06-14T13:37:31Z", "estimated_time":
+        0, "creator_detail": {"insider": true, "active": true, "real_name": "Ondrej
+        Soukup", "partner": false, "name": "osoukup@redhat.com", "id": 412888, "email":
+        "osoukup@redhat.com"}, "summary": "CVE-2000-3000 ssh: I cannot ssh into Matrix",
+        "op_sys": "Linux", "cf_qe_conditional_nak": [], "last_change_time": "2024-06-14T13:49:14Z",
+        "cf_last_closed": null, "dupe_of": null, "blocks": [], "is_confirmed": true,
+        "actual_time": 0, "resolution": "",
+        "cf_build_id": "", "cf_pm_score": "0", "is_open": true, "status": "NEW", "whiteboard":
+        "", "cf_fixed_in": "", "target_milestone": "---", "cf_release_notes": "random
+        cve_description", "remaining_time": 0, "creator": "osoukup@redhat.com", "groups":
+        [], "cf_major_incident": null, "cf_pgm_internal": "", "is_cc_accessible":
+        true, "cf_devel_whiteboard": "", "target_release": ["---"], "assigned_to_detail":
+        {"partner": false, "insider": true, "real_name": "Product Security DevOps
+        Team", "active": true, "id": 377884, "email": "prodsec-dev@redhat.com", "name":
+        "prodsec-dev@redhat.com"}, "platform": "All", "assigned_to": "prodsec-dev@redhat.com",
+        "cf_clone_of": null, "sub_components": {}, "cf_doc_type": "No Doc Update",
+        "component": ["vulnerability"], "description": "test", "is_creator_accessible":
+        true, "qa_contact": "", "cf_srtnotes": "{\"affects\": [{\"ps_module\": \"rhel-8\",
+        \"ps_component\": \"libssh\", \"affectedness\": \"notaffected\", \"resolution\":
+        null, \"impact\": \"important\", \"cvss2\": null, \"cvss3\": null, \"cvss4\":
+        null}, {\"ps_module\": \"jbcs-1\", \"ps_component\": \"ssh\", \"affectedness\":
+        \"affected\", \"resolution\": \"delegated\", \"impact\": \"low\", \"cvss2\":
+        null, \"cvss3\": null, \"cvss4\": null}], \"public\": \"2022-04-27T00:00:00Z\",
+        \"reported\": \"2022-04-26T00:00:00Z\", \"impact\": \"moderate\", \"source\":
+        \"customer\", \"mitigation\": \"foo\", \"statement\": \"Statement for \"}",
+        "data_category": "Public", "classification": "Other", "cc_detail": [], "version":
+        ["unspecified"], "cf_internal_whiteboard": "", "severity": "medium", "cf_environment":
+        "", "flags": [{"id": 6115851, "setter": "bugzilla@redhat.com", "modification_date":
+        "2024-06-14T13:46:01Z", "type_id": 415, "is_active": 1, "status": "+", "name":
+        "requires_doc_text", "creation_date": "2024-06-14T13:42:13Z"}], "cf_cust_facing":
+        "---", "alias": ["CVE-2000-3000", "CVE-2021-0773"], "cc": [], "id": 2293325,
+        "url": "", "priority": "medium", "docs_contact": "", "cf_qa_whiteboard": "",
+        "cf_embargoed": null, "comments": [{"creator": "osoukup@redhat.com", "tags":
+        [], "text": "test", "creator_id": 412888, "time": "2024-06-14T13:37:31Z",
+        "bug_id": 2293325, "attachment_id": null, "is_private": false, "creation_time":
+        "2024-06-14T13:37:31Z", "id": 18019930, "private_groups": [], "count": 0}],
+        "depends_on": [], "cf_conditional_nak": [], "keywords": ["Security"]}], "faults":
+        []}'
+    headers:
+      Access-Control-Allow-Headers:
+      - origin, content-type, accept, x-requested-with
+      Access-Control-Allow-Origin:
+      - '*'
+      Cache-Control:
+      - private, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Fri, 14 Jun 2024 13:49:17 GMT
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      X-content-type-options:
+      - nosniff
+      X-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '2862'
+      x-rh-edge-cache-status:
+      - Miss from child, Miss from parent
+      x-rh-edge-reference-id:
+      - 0.1d92645f.1718372957.3091c17
+      x-rh-edge-request-id:
+      - 3091c17
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-bugzilla/3.2.0
+    method: GET
+    uri: https://example.com/rest/bug/2293325/comment
+  response:
+    body:
+      string: '{"bugs": {"2293325": {"comments": [{"bug_id": 2293325, "creation_time":
+        "2024-06-14T13:37:31Z", "creator": "osoukup@redhat.com", "time": "2024-06-14T13:37:31Z",
+        "private_groups": [], "text": "test", "attachment_id": null, "id": 18019930,
+        "is_private": false, "count": 0, "creator_id": 412888, "tags": []}]}}, "comments":
+        {}}'
+    headers:
+      Access-Control-Allow-Headers:
+      - origin, content-type, accept, x-requested-with
+      Access-Control-Allow-Origin:
+      - '*'
+      Cache-Control:
+      - private, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '296'
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Fri, 14 Jun 2024 13:49:18 GMT
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains
+      X-content-type-options:
+      - nosniff
+      X-xss-protection:
+      - 1; mode=block
+      x-rh-edge-cache-status:
+      - Miss from child, Miss from parent
+      x-rh-edge-reference-id:
+      - 0.1d92645f.1718372957.309243e
+      x-rh-edge-request-id:
+      - 309243e
+    status:
+      code: 200
+      message: OK
+version: 1
